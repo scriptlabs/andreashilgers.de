@@ -3,13 +3,14 @@
 import * as React from "react";
 import { getDictionary } from "@/lib/get-dictionary";
 import { Lock, Unlock, FileText, Award, UserCheck, ChevronRight } from "lucide-react";
-import Link from "next/link";
 import { useParams } from "next/navigation";
+
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
 
 export default function VaultPage() {
   const params = useParams();
   const lang = params.lang as string;
-  const [dict, setDict] = React.useState<any>(null);
+  const [dict, setDict] = React.useState<Dictionary | null>(null);
   const [code, setCode] = React.useState("");
   const [isUnlocked, setIsUnlocked] = React.useState(false);
   const [error, setError] = React.useState(false);

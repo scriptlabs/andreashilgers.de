@@ -1,0 +1,11 @@
+/* TEAM */
+    Developer: Andreas Hilgers
+    LinkedIn: https://linkedin.com/in/andreashilgers
+    Twitter: @andreashilgers
+    Location: Germany
+
+/* SITE */
+    Last update: 2024/04/15
+    Standards: HTML5, CSS3, TypeScript
+    Components: Radix UI, Lucide Icons
+    Software: Next.js, Tailwind CSS

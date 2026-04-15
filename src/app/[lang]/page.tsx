@@ -1,6 +1,5 @@
 import { getDictionary } from "@/lib/get-dictionary";
 import { Github, Linkedin, ExternalLink, Code2, Cpu, Globe } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home({ params }: { params: { lang: string } }) {

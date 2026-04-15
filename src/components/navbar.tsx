@@ -6,10 +6,12 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Monitor, TreePine, Globe, Lock } from "lucide-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { cn } from "@/lib/utils";
+import { getDictionary } from "@/lib/get-dictionary";
+
+type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
 
 interface NavbarProps {
-  dict: any;
+  dict: Dictionary;
   lang: string;
 }
 
