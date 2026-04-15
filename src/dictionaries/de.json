@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Start",
+    "projects": "Projekte",
+    "about": "Über mich",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Willkommen auf meinem Portfolio",
+    "subtitle": "Ich bin Andreas Hilgers, Software-Entwickler mit Leidenschaft für moderne Webtechnologien und barrierefreie Interfaces.",
+    "cta": "Meine Projekte ansehen"
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "project1": {
+      "title": "Projekt 1",
+      "description": "Eine moderne Webanwendung mit Next.js und Radix UI."
+    },
+    "project2": {
+      "title": "Projekt 2",
+      "description": "Barrierefreies Design und performante Schnittstellen."
+    }
+  }
+}

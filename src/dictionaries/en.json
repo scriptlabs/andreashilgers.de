@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About Me",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Welcome to my Portfolio",
+    "subtitle": "I am Andreas Hilgers, a software developer passionate about modern web technologies and accessible interfaces.",
+    "cta": "View my projects"
+  },
+  "projects": {
+    "title": "My Projects",
+    "project1": {
+      "title": "Project 1",
+      "description": "A modern web application built with Next.js and Radix UI."
+    },
+    "project2": {
+      "title": "Project 2",
+      "description": "Accessible design and performant interfaces."
+    }
+  }
+}
