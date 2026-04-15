@@ -2,23 +2,42 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
-    "about": "About Me",
-    "contact": "Contact"
+    "experience": "Experience",
+    "skills": "Skills",
+    "vault": "Vault"
   },
   "hero": {
-    "title": "Welcome to my Portfolio",
-    "subtitle": "I am Andreas Hilgers, a software developer passionate about modern web technologies and accessible interfaces.",
-    "cta": "View my projects"
+    "greeting": "Hi, I'm",
+    "name": "Andreas Hilgers",
+    "role": "Senior Full-Stack Developer",
+    "description": "I design and develop scalable web applications focusing on performance, security, and excellent user experience. Over 10 years of experience in software development.",
+    "cta_projects": "View Projects",
+    "cta_contact": "Get in Touch"
   },
-  "projects": {
-    "title": "My Projects",
-    "project1": {
-      "title": "Project 1",
-      "description": "A modern web application built with Next.js and Radix UI."
+  "sections": {
+    "projects": {
+      "title": "Selected Projects",
+      "subtitle": "A glimpse into my work and technical implementation."
     },
-    "project2": {
-      "title": "Project 2",
-      "description": "Accessible design and performant interfaces."
+    "skills": {
+      "title": "Tech Stack",
+      "subtitle": "Tools and frameworks I use on a daily basis."
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "subtitle": "Milestones of my career as a developer."
+}
+  },
+  "vault": {
+    "title": "Secure Vault",
+    "description": "This area is protected. Please enter the access code to view my application documents and certificates.",
+    "placeholder": "Enter access code",
+    "button": "Unlock",
+    "error": "Invalid code",
+    "documents": {
+      "resume": "Resume (PDF)",
+      "certificates": "Certificates",
+      "references": "References"
     }
   }
 }

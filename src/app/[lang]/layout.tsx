@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "@/components/navbar";
+import { getDictionary } from "@/lib/get-dictionary";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,17 +16,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Andreas Hilgers - Portfolio",
-  description: "Software-Entwickler Portfolio von Andreas Hilgers",
+  title: "Andreas Hilgers - Senior Full-Stack Developer",
+  description: "Portfolio of Andreas Hilgers, a Senior Full-Stack Developer with 10+ years of experience.",
 };
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "de" }];
+}
+
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: { lang: string };
+}) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+
   return (
-    <html lang="de" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider
           attribute="data-theme"
@@ -32,7 +43,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Navbar dict={dict} lang={lang} />
+          <div className="pt-16">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

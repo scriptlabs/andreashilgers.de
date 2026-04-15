@@ -2,23 +2,42 @@
   "nav": {
     "home": "Start",
     "projects": "Projekte",
-    "about": "Über mich",
-    "contact": "Kontakt"
+    "experience": "Erfahrung",
+    "skills": "Skills",
+    "vault": "Tresor"
   },
   "hero": {
-    "title": "Willkommen auf meinem Portfolio",
-    "subtitle": "Ich bin Andreas Hilgers, Software-Entwickler mit Leidenschaft für moderne Webtechnologien und barrierefreie Interfaces.",
-    "cta": "Meine Projekte ansehen"
+    "greeting": "Hallo, ich bin",
+    "name": "Andreas Hilgers",
+    "role": "Senior Full-Stack Developer",
+    "description": "Ich konzipiere und entwickle skalierbare Webanwendungen mit Fokus auf Performance, Security und exzellenter User Experience. Über 10 Jahre Erfahrung in der Softwareentwicklung.",
+    "cta_projects": "Projekte ansehen",
+    "cta_contact": "Kontakt aufnehmen"
   },
-  "projects": {
-    "title": "Meine Projekte",
-    "project1": {
-      "title": "Projekt 1",
-      "description": "Eine moderne Webanwendung mit Next.js und Radix UI."
+  "sections": {
+    "projects": {
+      "title": "Ausgewählte Projekte",
+      "subtitle": "Ein Einblick in meine Arbeit und technische Umsetzung."
     },
-    "project2": {
-      "title": "Projekt 2",
-      "description": "Barrierefreies Design und performante Schnittstellen."
+    "skills": {
+      "title": "Technologie-Stack",
+      "subtitle": "Werkzeuge und Frameworks, mit denen ich täglich arbeite."
+    },
+    "experience": {
+      "title": "Beruflicher Werdegang",
+      "subtitle": "Stationen meiner Karriere als Entwickler."
+    }
+  },
+  "vault": {
+    "title": "Sicherer Bereich",
+    "description": "Dieser Bereich ist geschützt. Bitte geben Sie den Zugangscode ein, um meine Bewerbungsunterlagen und Zeugnisse zu sehen.",
+    "placeholder": "Zugangscode eingeben",
+    "button": "Freischalten",
+    "error": "Ungültiger Code",
+    "documents": {
+      "resume": "Lebenslauf (PDF)",
+      "certificates": "Zeugnisse & Zertifikate",
+      "references": "Referenzen"
     }
   }
 }
