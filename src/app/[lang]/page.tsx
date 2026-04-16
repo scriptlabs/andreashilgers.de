@@ -55,9 +55,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const dict = isEn ? enDict : deDict;
 
   return (
-    <main className="min-h-screen">
+    <main className="h-[calc(100vh-64px)] overflow-hidden">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="h-full flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--background)] via-[var(--primary)]/5 to-[var(--background)] -z-10" />
         
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
@@ -68,7 +68,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </FadeIn>
           
           <FadeIn direction="down" delay={0.4}>
-            <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-[1.15] pb-2">
               <span className="hero-gradient">Andreas Hilgers</span>
             </h1>
           </FadeIn>
@@ -98,10 +98,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           {/* CTA Buttons */}
           <FadeIn direction="up" delay={1.2}>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <Link href={`/${lang}/about`} className="btn-primary px-8 py-3 text-lg rounded-md">
+              <Link href={`/${lang}/about`} className="btn-primary px-8 py-3 text-lg rounded-md font-bold">
                 <span>{dict.nav.about}</span>
               </Link>
-              <Link href={`/${lang}/projects`} className="btn-outline px-8 py-3 text-lg rounded-md">
+              <Link href={`/${lang}/projects`} className="btn-outline px-8 py-3 text-lg rounded-md font-bold">
                 <RiBriefcase4Line size={20} /> {dict.nav.projects}
               </Link>
             </div>
@@ -114,7 +114,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 <RiGithubFill size={24} className="text-[var(--secondary)] group-hover:text-[var(--primary)]" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="p-3 border border-[var(--border)] rounded-sm hover:border-[var(--primary)] hover:scale-110 transition-all group">
+              <a href="https://linkedin.com/in/andreashilgers" target="_blank" rel="noopener noreferrer" className="p-3 border border-[var(--border)] rounded-sm hover:border-[var(--primary)] hover:scale-110 transition-all group">
                 <RiLinkedinBoxFill size={24} className="text-[var(--secondary)] group-hover:text-[var(--primary)]" />
                 <span className="sr-only">LinkedIn</span>
               </a>
@@ -124,112 +124,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               </Link>
             </div>
           </FadeIn>
-        </div>
-        
-        {/* Scroll Down Indicator */}
-        <FadeIn direction="down" delay={1.6}>
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-            <div className="w-8 h-12 border-2 border-[var(--primary)] rounded-sm flex justify-center">
-              <div className="w-1 h-3 bg-[var(--primary)] rounded-full mt-2 animate-bounce" />
-            </div>
-          </div>
-        </FadeIn>
-      </section>
-
-      {/* Preview Cards */}
-      <section className="py-24 bg-[var(--muted)]/30 border-t border-[var(--border)]">
-        <div className="max-w-6xl mx-auto px-6">
-          <FadeIn direction="down" delay={0.2}>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[var(--foreground)]">
-              {dict.hero.subdescription}
-            </h2>
-          </FadeIn>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <FadeIn direction="up" delay={0.4} className="h-full">
-              <Link
-                href={`/${lang}/about`}
-                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
-              >
-                <div className="w-14 h-14 bg-[var(--primary)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--primary)]/20 transition-colors">
-                  <svg className="w-7 h-7 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.about}</h3>
-                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.about.subtitle}</p>
-                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
-                  Learn more <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </span>
-              </Link>
-            </FadeIn>
-            
-            <FadeIn direction="up" delay={0.5} className="h-full">
-              <Link
-                href={`/${lang}/experience`}
-                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
-              >
-                <div className="w-14 h-14 bg-[var(--primary)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--primary)]/20 transition-colors">
-                  <RiBriefcase4Line size={28} className="text-[var(--primary)]" />
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.experience}</h3>
-                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.experience.subtitle}</p>
-                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
-                  View timeline <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </span>
-              </Link>
-            </FadeIn>
-            
-            <FadeIn direction="up" delay={0.6} className="h-full">
-              <Link
-                href={`/${lang}/projects`}
-                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
-              >
-                <div className="w-14 h-14 bg-[var(--primary)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--primary)]/20 transition-colors">
-                  <RiCodeSSlashLine size={28} className="text-[var(--primary)]" />
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.projects}</h3>
-                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.projects.subtitle}</p>
-                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
-                  See my work <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </span>
-              </Link>
-            </FadeIn>
-            
-            <FadeIn direction="up" delay={0.7} className="h-full">
-              <Link
-                href={`/${lang}/skills`}
-                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
-              >
-                <div className="w-14 h-14 bg-[var(--accent)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--accent)]/20 transition-colors">
-                  <svg className="w-7 h-7 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.skills}</h3>
-                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.skills.subtitle}</p>
-                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
-                  My expertise <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </span>
-              </Link>
-            </FadeIn>
-            
-            <FadeIn direction="up" delay={0.8} className="h-full md:col-span-2 lg:col-span-1">
-              <Link
-                href={`/${lang}/contact`}
-                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
-              >
-                <div className="w-14 h-14 bg-[var(--primary)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--primary)]/20 transition-colors">
-                  <RiMailLine size={28} className="text-[var(--primary)]" />
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.contact}</h3>
-                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.contact.subtitle}</p>
-                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
-                  Get in touch <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </span>
-              </Link>
-            </FadeIn>
-          </div>
         </div>
       </section>
     </main>

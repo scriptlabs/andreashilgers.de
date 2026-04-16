@@ -23,7 +23,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold mb-6 uppercase tracking-widest">
             <RiShieldUserLine size={14} /> {lang === 'de' ? 'Hintergrund' : 'Background'}
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-6 hero-gradient leading-tight">
+          <h1 className="text-5xl md:text-7xl font-black mb-6 hero-gradient leading-[1.15] pb-2">
             {dict.about.title}
           </h1>
           <p className="text-xl md:text-2xl text-[var(--secondary)] leading-relaxed">

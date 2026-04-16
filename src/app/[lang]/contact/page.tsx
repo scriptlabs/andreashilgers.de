@@ -17,7 +17,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
   return (
     <main className="max-w-6xl mx-auto px-6 py-20">
       <FadeIn direction="down">
-        <h1 className="text-4xl md:text-6xl font-black mb-4 hero-gradient inline-block">
+        <h1 className="text-4xl md:text-6xl font-black mb-4 hero-gradient inline-block leading-[1.15] pb-2">
           {dict.contact.title}
         </h1>
         <p className="text-xl text-[var(--secondary)] mb-16 max-w-2xl">

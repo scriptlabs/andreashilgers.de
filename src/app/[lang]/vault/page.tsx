@@ -78,7 +78,7 @@ export default function VaultPage() {
               <div className="inline-flex items-center justify-center w-20 h-20 bg-[var(--primary)]/10 text-[var(--primary)] rounded-md mb-6">
                 <RiLockPasswordLine size={40} />
               </div>
-              <h1 className="text-3xl font-bold mb-3">{vaultDict.title}</h1>
+              <h1 className="text-3xl font-bold mb-3 leading-[1.15] pb-1">{vaultDict.title}</h1>
               <p className="text-[var(--secondary)] text-sm">{vaultDict.description}</p>
             </div>
           </FadeIn>
@@ -190,7 +190,7 @@ export default function VaultPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-emerald-500/10 text-emerald-500 text-xs font-bold mb-4 uppercase tracking-wider">
               <RiShieldCheckLine size={14} /> {vaultDict.unlocked_title}
             </div>
-            <h1 className="text-4xl md:text-6xl font-black hero-gradient inline-block">
+            <h1 className="text-4xl md:text-6xl font-black hero-gradient inline-block leading-[1.15] pb-2">
               {vaultDict.title}
             </h1>
           </div>
