@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { getDictionary } from "@/lib/get-dictionary";
+import { Dictionary } from "@/lib/dictionary";
 
 export default async function LocalizedLayout({
   children,
@@ -9,7 +10,7 @@ export default async function LocalizedLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang as "de" | "en");
+  const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
 
   return (
     <>
