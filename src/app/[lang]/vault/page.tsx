@@ -16,7 +16,7 @@ export default function VaultPage() {
   const [error, setError] = React.useState(false);
 
   React.useEffect(() => {
-    getDictionary(lang).then(setDict);
+    getDictionary(lang as "de" | "en").then(setDict);
   }, [lang]);
 
   const handleUnlock = (e: React.FormEvent) => {
