@@ -27,10 +27,11 @@ Every contribution should reinforce the portfolio as a **reference implementatio
 - Use **readonly** and **utility types** (`Partial`, `Pick`, `Omit`, etc.) where appropriate.
 - Ensure exhaustive type checking for discriminated unions.
 
-### 2. Next.js 15 Best Practices
+### 2. Next.js 16 Best Practices
 - Prefer **Server Components** by default; use Client Components only when necessary (e.g., interactivity or browser APIs).
 - Utilize **streaming and suspense** where it improves user experience.
-- Treat `params` and `searchParams` as **Promises**, following Next.js 15 conventions.
+- Treat `params` and `searchParams` as **Promises**, following Next.js 16 conventions.
+- **Middleware/Proxy:** Next.js 16 uses `src/proxy.ts` (with an exported `proxy` function) instead of `middleware.ts`. Do not use `middleware.ts`.
 - Maintain the **localized routing structure** under `/app/[lang]/`.
 - Implement **metadata** using the `generateMetadata` API for optimal SEO.
 - Use **Server Actions** for secure and efficient data mutations when applicable.
@@ -129,7 +130,7 @@ The portfolio should communicate **professionalism, clarity, and technical excel
 
 - Prefer **stable and widely adopted libraries**.
 - Avoid unnecessary dependencies; favor native or framework-provided solutions.
-- Ensure compatibility with **Next.js 15** and **React 19**.
+- Ensure compatibility with **Next.js 16** and **React 19**.
 - Keep dependencies up to date while maintaining stability.
 
 ---

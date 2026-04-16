@@ -1,197 +1,237 @@
-import { getDictionary } from "@/lib/get-dictionary";
-import { ExternalLink, Code2, Cpu, Globe } from "lucide-react";
 import Link from "next/link";
+import { 
+  RiBriefcase4Line, 
+  RiCodeSSlashLine, 
+  RiMailLine, 
+  RiGithubFill, 
+  RiLinkedinBoxFill 
+} from "react-icons/ri";
+import { FadeIn, TypingText } from "@/components/animated-text";
 
-const GithubIcon = ({ size = 20 }: { size?: number }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
-
-const LinkedinIcon = ({ size = 20 }: { size?: number }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "de" }];
+}
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang as "de" | "en");
+  const isEn = lang === "en";
 
-  const skills = [
-    { name: "React / Next.js", level: 95, icon: <Globe size={18} /> },
-    { name: "TypeScript", level: 90, icon: <Code2 size={18} /> },
-    { name: "Node.js / Bun", level: 85, icon: <Cpu size={18} /> },
-    { name: "PostgreSQL / MongoDB", level: 80, icon: <Cpu size={18} /> },
-    { name: "Cloud / DevOps", level: 75, icon: <Globe size={18} /> },
-  ];
-
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "A high-performance online store built with Next.js 15, Tailwind CSS, and Stripe integration.",
-      tags: ["Next.js", "TypeScript", "Tailwind", "Stripe"],
-      code: `export function Cart() {
-  const { items } = useCart();
-  return (
-    <div className="p-4">
-      {items.map(item => (
-        <CartItem key={item.id} {...item} />
-      ))}
-    </div>
-  );
-}`,
-      link: "#",
-      github: "#"
+  const enDict = {
+    nav: { home: "Home", about: "About", experience: "Experience", projects: "Projects", skills: "Skills", contact: "Contact", vault: "Vault" },
+    hero: {
+      greeting: "Hi there,",
+      name: "Andreas Hilgers",
+      role: "Senior Full-Stack Developer & Architect",
+      description: "I design and build scalable, high-performance web applications with a focus on exceptional user experience, accessibility, and modern architecture.",
+      subdescription: "Passionate about transforming complex problems into elegant, maintainable solutions.",
+      cta_primary: "View My Work",
+      cta_secondary: "Get In Touch",
+      typing_texts: ["Full-Stack Developer", "Next.js Expert", "TypeScript Enthusiast", "UI/UX Architect", "Cloud Specialist"]
     },
-    {
-      title: "AI SaaS Dashboard",
-      description: "A dashboard for managing AI agents with real-time streaming and data visualization.",
-      tags: ["React", "OpenAI", "Socket.io", "D3.js"],
-      code: `const agent = new AIAgent({
-  model: "gpt-4o",
-  tools: [search, browser]
-});
-
-await agent.run("Analyze the market...");`,
-      link: "#",
-      github: "#"
-    }
-  ];
+    about: { subtitle: "Who I am and what I do" },
+    experience: { subtitle: "My journey through the tech industry" },
+    projects: { subtitle: "My work and achievements" },
+    skills: { subtitle: "My technical expertise" },
+    contact: { subtitle: "Get in touch with me" }
+  };
+  const deDict = {
+    nav: { home: "Start", about: "Über mich", experience: "Erfahrung", projects: "Projekte", skills: "Fähigkeiten", contact: "Kontakt", vault: "Tresor" },
+    hero: {
+      greeting: "Hallo,",
+      name: "Andreas Hilgers",
+      role: "Senior Full-Stack Entwickler & Architekt",
+      description: "Ich entwerfe und entwickelte skalierbare, hochperformante Webanwendungen mit Fokus auf herausragende Benutzererfahrung, Barrierefreiheit und moderne Architektur.",
+      subdescription: "Leidenschaftlich dabei, komplexe Probleme in elegante, wartbare Lösungen zu verwandeln.",
+      cta_primary: "Meine Arbeit",
+      cta_secondary: "Kontakt aufnehmen",
+      typing_texts: ["Full-Stack Entwickler", "Next.js Experte", "TypeScript Enthusiast", "UI/UX Architekt", "Cloud Spezialist"]
+    },
+    about: { subtitle: "Wer ich bin und was ich mache" },
+    experience: { subtitle: "Mein Weg durch die Tech-Branche" },
+    projects: { subtitle: "Meine Arbeiten und Erfolge" },
+    skills: { subtitle: "Meine technischen Fähigkeiten" },
+    contact: { subtitle: "Kontaktieren Sie mich" }
+  };
+  const dict = isEn ? enDict : deDict;
 
   return (
-    <main>
+    <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-container min-h-[80vh] flex flex-col justify-center items-start">
-        <div className="space-y-4 max-w-3xl">
-          <p className="text-[var(--primary)] font-mono font-medium">{dict.hero.greeting}</p>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight">
-            {dict.hero.name}
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--secondary)]">
-            {dict.hero.role}
-          </h2>
-          <p className="text-xl text-[var(--secondary)] leading-relaxed">
-            {dict.hero.description}
-          </p>
-          <div className="flex flex-wrap gap-4 pt-4">
-            <Link href="#projects" className="btn-primary">
-              {dict.hero.cta_projects}
-            </Link>
-            <Link href="https://linkedin.com/in/andreashilgers" target="_blank" className="btn-outline">
-              <LinkedinIcon size={20} /> LinkedIn
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="section-container bg-[var(--card)] rounded-[3rem] my-12">
-        <div className="space-y-2 mb-12">
-          <h2 className="text-4xl font-bold">{dict.sections.projects.title}</h2>
-          <p className="text-[var(--secondary)]">{dict.sections.projects.subtitle}</p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {projects.map((project, i) => (
-            <div key={i} className="flex flex-col space-y-6">
-              <div className="card h-full flex flex-col">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold">{project.title}</h3>
-                  <div className="flex gap-2">
-                    <Link href={project.github} className="p-2 hover:text-[var(--primary)] transition-colors"><GithubIcon size={20} /></Link>
-                    <Link href={project.link} className="p-2 hover:text-[var(--primary)] transition-colors"><ExternalLink size={20} /></Link>
-                  </div>
-                </div>
-                <p className="text-[var(--secondary)] mb-6">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-[var(--background)] border rounded-full text-xs font-medium">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                
-                {/* Code Preview */}
-                <div className="mt-auto bg-[#1e1e1e] rounded-lg p-4 font-mono text-sm text-gray-300 overflow-hidden shadow-inner">
-                  <div className="flex gap-1.5 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                    <div className="w-3 h-3 rounded-full bg-green-500/50" />
-                  </div>
-                  <pre className="overflow-x-auto">
-                    <code>{project.code}</code>
-                  </pre>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <h2 className="text-4xl font-bold">{dict.sections.skills.title}</h2>
-            <p className="text-[var(--secondary)]">
-              {dict.sections.skills.subtitle}
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--background)] via-[var(--primary)]/5 to-[var(--background)] -z-10" />
+        
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <FadeIn direction="down" delay={0.2}>
+            <p className="text-[var(--primary)] font-mono font-medium text-lg mb-6">
+              {dict.hero.greeting}
             </p>
-            <div className="space-y-6 pt-4">
-              {skills.map((skill) => (
-                <div key={skill.name} className="space-y-2">
-                  <div className="flex justify-between text-sm font-medium">
-                    <span className="flex items-center gap-2">{skill.icon} {skill.name}</span>
-                    <span>{skill.level}%</span>
-                  </div>
-                  <div className="h-2 bg-[var(--border)] rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-[var(--primary)] rounded-full transition-all duration-1000" 
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
+          </FadeIn>
+          
+          <FadeIn direction="down" delay={0.4}>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6">
+              <span className="hero-gradient">Andreas Hilgers</span>
+            </h1>
+          </FadeIn>
+          
+          <FadeIn direction="down" delay={0.6}>
+            <div className="text-2xl md:text-3xl font-bold text-[var(--foreground)] mb-4">
+              {dict.hero.role}
+            </div>
+          </FadeIn>
+          
+          <FadeIn direction="down" delay={0.8}>
+            <TypingText
+              texts={dict.hero.typing_texts}
+              speed={80}
+              pauseDuration={2500}
+              deleteSpeed={40}
+              className="text-xl md:text-2xl font-medium text-[var(--primary)] mb-8"
+            />
+          </FadeIn>
+          
+          <FadeIn direction="down" delay={1}>
+            <p className="text-lg md:text-xl text-[var(--secondary)]/80 leading-relaxed max-w-2xl mx-auto mb-10">
+              {dict.hero.description}
+            </p>
+          </FadeIn>
+          
+          {/* CTA Buttons */}
+          <FadeIn direction="up" delay={1.2}>
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <Link href={`/${lang}/about`} className="btn-primary px-8 py-3 text-lg rounded-md">
+                <span>{dict.nav.about}</span>
+              </Link>
+              <Link href={`/${lang}/projects`} className="btn-outline px-8 py-3 text-lg rounded-md">
+                <RiBriefcase4Line size={20} /> {dict.nav.projects}
+              </Link>
+            </div>
+          </FadeIn>
+          
+          {/* Social Links */}
+          <FadeIn direction="up" delay={1.4}>
+            <div className="flex justify-center gap-6">
+              <a href="https://github.com/scriptlabs" target="_blank" rel="noopener noreferrer" className="p-3 border border-[var(--border)] rounded-sm hover:border-[var(--primary)] hover:scale-110 transition-all group">
+                <RiGithubFill size={24} className="text-[var(--secondary)] group-hover:text-[var(--primary)]" />
+                <span className="sr-only">GitHub</span>
+              </a>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="p-3 border border-[var(--border)] rounded-sm hover:border-[var(--primary)] hover:scale-110 transition-all group">
+                <RiLinkedinBoxFill size={24} className="text-[var(--secondary)] group-hover:text-[var(--primary)]" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <Link href={`/${lang}/contact`} className="p-3 border border-[var(--border)] rounded-sm hover:border-[var(--primary)] hover:scale-110 transition-all group">
+                <RiMailLine size={24} className="text-[var(--secondary)] group-hover:text-[var(--primary)]" />
+                <span className="sr-only">Contact</span>
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+        
+        {/* Scroll Down Indicator */}
+        <FadeIn direction="down" delay={1.6}>
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <div className="w-8 h-12 border-2 border-[var(--primary)] rounded-sm flex justify-center">
+              <div className="w-1 h-3 bg-[var(--primary)] rounded-full mt-2 animate-bounce" />
             </div>
           </div>
-          <div className="relative aspect-square card flex items-center justify-center p-12 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] opacity-20">
-             <Cpu size={200} className="text-[var(--foreground)] animate-pulse" />
+        </FadeIn>
+      </section>
+
+      {/* Preview Cards */}
+      <section className="py-24 bg-[var(--muted)]/30 border-t border-[var(--border)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn direction="down" delay={0.2}>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[var(--foreground)]">
+              {dict.hero.subdescription}
+            </h2>
+          </FadeIn>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <FadeIn direction="up" delay={0.4} className="h-full">
+              <Link
+                href={`/${lang}/about`}
+                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
+              >
+                <div className="w-14 h-14 bg-[var(--primary)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--primary)]/20 transition-colors">
+                  <svg className="w-7 h-7 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.about}</h3>
+                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.about.subtitle}</p>
+                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
+                  Learn more <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+              </Link>
+            </FadeIn>
+            
+            <FadeIn direction="up" delay={0.5} className="h-full">
+              <Link
+                href={`/${lang}/experience`}
+                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
+              >
+                <div className="w-14 h-14 bg-[var(--primary)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--primary)]/20 transition-colors">
+                  <RiBriefcase4Line size={28} className="text-[var(--primary)]" />
+                </div>
+                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.experience}</h3>
+                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.experience.subtitle}</p>
+                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
+                  View timeline <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+              </Link>
+            </FadeIn>
+            
+            <FadeIn direction="up" delay={0.6} className="h-full">
+              <Link
+                href={`/${lang}/projects`}
+                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
+              >
+                <div className="w-14 h-14 bg-[var(--primary)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--primary)]/20 transition-colors">
+                  <RiCodeSSlashLine size={28} className="text-[var(--primary)]" />
+                </div>
+                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.projects}</h3>
+                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.projects.subtitle}</p>
+                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
+                  See my work <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+              </Link>
+            </FadeIn>
+            
+            <FadeIn direction="up" delay={0.7} className="h-full">
+              <Link
+                href={`/${lang}/skills`}
+                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
+              >
+                <div className="w-14 h-14 bg-[var(--accent)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--accent)]/20 transition-colors">
+                  <svg className="w-7 h-7 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.skills}</h3>
+                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.skills.subtitle}</p>
+                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
+                  My expertise <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+              </Link>
+            </FadeIn>
+            
+            <FadeIn direction="up" delay={0.8} className="h-full md:col-span-2 lg:col-span-1">
+              <Link
+                href={`/${lang}/contact`}
+                className="card group p-8 text-left h-full flex flex-col hover:scale-102 transition-transform rounded-md"
+              >
+                <div className="w-14 h-14 bg-[var(--primary)]/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-[var(--primary)]/20 transition-colors">
+                  <RiMailLine size={28} className="text-[var(--primary)]" />
+                </div>
+                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-3">{dict.nav.contact}</h3>
+                <p className="text-[var(--secondary)] text-base mb-6 flex-grow">{dict.contact.subtitle}</p>
+                <span className="text-[var(--primary)] font-medium flex items-center gap-2">
+                  Get in touch <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+              </Link>
+            </FadeIn>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="section-container border-t text-center text-[var(--secondary)] text-sm">
-        <p>© {new Date().getFullYear()} Andreas Hilgers. All rights reserved.</p>
-        <div className="flex justify-center gap-6 mt-4">
-          <Link href="https://github.com" className="hover:text-[var(--primary)] transition-colors">GitHub</Link>
-          <Link href="https://linkedin.com/in/andreashilgers" className="hover:text-[var(--primary)] transition-colors">LinkedIn</Link>
-          <Link href="mailto:contact@andreashilgers.de" className="hover:text-[var(--primary)] transition-colors">Email</Link>
-        </div>
-      </footer>
     </main>
   );
 }

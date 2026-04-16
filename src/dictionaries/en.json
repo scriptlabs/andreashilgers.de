@@ -1,43 +1,254 @@
 {
+  "metadata": {
+    "title": "Andreas Hilgers - Engineering Manager & Senior Full-Stack Developer",
+    "description": "Professional portfolio of Andreas Hilgers, an Engineering Leader and Senior Full-Stack Developer with 20+ years of experience in digital transformation, software architecture, and AI integration.",
+    "ogTitle": "Andreas Hilgers | Engineering Management & Tech Leadership",
+    "ogDescription": "Scaling digital platforms and leading high-performing engineering teams with 20+ years of expertise.",
+    "ogImage": "/og-image.png",
+    "keywords": ["Engineering Manager", "Tech Lead", "Full-Stack Developer", "Software Architect", "Digital Transformation", "AI Development", "Next.js", "TypeScript", "Node.js", "DevOps"]
+  },
   "nav": {
     "home": "Home",
-    "projects": "Projects",
+    "about": "About",
     "experience": "Experience",
+    "projects": "Projects",
     "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact",
     "vault": "Vault"
   },
   "hero": {
-    "greeting": "Hi, I'm",
+    "greeting": "Senior Full-Stack Developer & Engineering Leader",
     "name": "Andreas Hilgers",
-    "role": "Senior Full-Stack Developer",
-    "description": "I design and develop scalable web applications focusing on performance, security, and excellent user experience. Over 10 years of experience in software development.",
-    "cta_projects": "View Projects",
-    "cta_contact": "Get in Touch"
+    "role": "Engineering Manager // Tech-Lead",
+    "description": "Over 20 years of experience designing, building, and scaling digital platforms, APIs, and high-traffic SaaS applications. Expert in leading cross-functional teams and driving end-to-end digital transformation.",
+    "subdescription": "Bridging the gap between business objectives and technical excellence while delivering scalable, secure, and maintainable solutions.",
+    "cta_primary": "View Experience",
+    "cta_secondary": "Get In Touch",
+    "typing_texts": [
+      "Engineering Management",
+      "Technical Leadership",
+      "Software Architecture",
+      "Digital Transformation",
+      "AI & Agentic Development",
+      "Full-Stack Excellence"
+    ]
   },
-  "sections": {
-    "projects": {
-      "title": "Selected Projects",
-      "subtitle": "A glimpse into my work and technical implementation."
+  "about": {
+    "title": "About Me",
+    "subtitle": "Engineering Leadership & Technical Excellence",
+    "description": "I am a Senior Full-Stack Developer and Engineering Leader with a career spanning over two decades. My expertise lies in architecting robust digital ecosystems and leading teams through complex technical challenges. I have a proven track record of modernizing legacy systems and scaling high-traffic applications. Currently, I am focused on advancing the frontiers of vibe coding and agentic development, integrating cutting-edge AI services into production-grade environments.",
+    "details_title": "Professional Profile",
+    "details": {
+      "name": "Andreas Hilgers",
+      "location": "Heinsberg, Germany",
+      "experience": "20+ Years",
+      "specialization": "Leadership & Architecture",
+      "email": "andreas_hilgers@icloud.com",
+      "languages": "English (Business Fluent)\nGerman (Native)"
     },
-    "skills": {
-      "title": "Tech Stack",
-      "subtitle": "Tools and frameworks I use on a daily basis."
+    "stats": {
+      "experience": "20+ Years Experience",
+      "projects": "Legacy Modernization",
+      "leadership": "Team Management",
+      "transformation": "Digital Transformation"
     },
-    "experience": {
-      "title": "Professional Experience",
-      "subtitle": "Milestones of my career as a developer."
-}
+    "quote": "Delivering excellence by bridging the gap between business strategy and scalable software architecture.",
+    "download_cv": "Download Resume"
+  },
+  "experience": {
+    "title": "Professional Journey & Education",
+    "subtitle": "Two decades of technical leadership, innovation, and continuous learning",
+    "current_role": "Engineering Leader",
+    "items": [
+      {
+        "id": "exp-btcecho",
+        "company": "BTC-ECHO",
+        "position": "Head of Development",
+        "period": "2025 – 2026",
+        "description": "Strategically developed the engineering organization. Leading the technological vision with a focus on scalability and innovation.",
+        "technologies": ["Cloud-Computing", "Artificial Intelligence (AI)", "Leadership", "Technology Strategy", "Web3", "OKR"],
+        "type": "work"
+      },
+      {
+        "id": "exp-ocd",
+        "company": "OCD Online Cargo GmbH",
+        "position": "Staff Full-Stack Developer",
+        "period": "2022 – 2025",
+        "description": "Leading digitalization initiatives and technical leadership of the development team in a hybrid environment.",
+        "technologies": ["Cloud-Computing", "Technology Leadership", "Architecture", "Node.js", "React Native", "CI/CD"],
+        "type": "work"
+      },
+      {
+        "id": "cert-scrum",
+        "company": "Scrum Alliance",
+        "position": "Certified Scrum Developer",
+        "period": "2021",
+        "description": "Certification with a focus on agile methodologies and efficient team collaboration.",
+        "technologies": ["Agile", "Scrum", "TDD"],
+        "type": "cert"
+      },
+      {
+        "id": "cert-msm",
+        "company": "Maastricht School of Management",
+        "position": "Project Management\nDesigning and Managing Projects",
+        "period": "2020",
+        "description": "Advanced strategic management skills for international IT projects.",
+        "technologies": ["Project Management", "Strategy"],
+        "type": "cert"
+      },
+      {
+        "id": "edu-ihk",
+        "company": "IHK Aachen",
+        "position": "IT Specialist\nApplication Development",
+        "period": "2017",
+        "description": "State-certified vocational training with a focus on software engineering and architecture.",
+        "technologies": ["Software-Design", "Databases", "IHK Qualification"],
+        "type": "edu"
+      },
+      {
+        "id": "exp-zenguard",
+        "company": "ZenGuard",
+        "position": "Senior Full-Stack Developer",
+        "period": "2015 – 2021",
+        "description": "Long-term responsibility for web technologies and global software infrastructures within a fully remote team.",
+        "technologies": ["Web Technologies", "Software Infrastructure", "Scaling", "APIs", "Cloud"],
+        "type": "work"
+      },
+      {
+        "id": "exp-scriptlabs",
+        "company": "Scriptlabs",
+        "position": "Founder",
+        "period": "2008 – 2014",
+        "description": "Founding and building an agency for bespoke B2B solutions with a focus on Cloud and Mobile.",
+        "technologies": ["Cloud-Computing", "Mobile App Development", "Entrepreneurship", "B2B"],
+        "type": "work"
+      },
+      {
+        "id": "exp-aixhibit",
+        "company": "AIXhibit AG",
+        "position": "Junior Developer",
+        "period": "2005 – 2008",
+        "description": "Entering professional software development with a focus on database-driven web applications.",
+        "technologies": ["Cloud-Computing", "Web Development", "SQL", "PHP"],
+        "type": "work"
+      },
+      {
+        "id": "edu-ita",
+        "company": "Berufskolleg Alsdorf",
+        "position": "Information Technology Assistant",
+        "period": "2002 – 2006",
+        "description": "Sound technical foundation including advanced technical college entrance qualification.",
+        "technologies": ["Networking", "Programming"],
+        "type": "edu"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Strategic Initiatives",
+    "subtitle": "Selected impact-driven projects",
+    "description": "A collection of high-scale platforms and digital transformation projects delivered over the years.",
+    "items": [
+      {
+        "id": "p1",
+        "title": "Enterprise Logistics OS",
+        "category": "Digital Transformation",
+        "description": "End-to-end digitalization of paper-based workflows for a European rail logistics provider.",
+        "tech": ["React Native", "Node.js", "AWS"],
+        "link": "#"
+      },
+      {
+        "id": "p2",
+        "title": "Global VPN Infrastructure",
+        "category": "High-Traffic SaaS",
+        "description": "Architecture and scaling of API endpoints for millions of users worldwide.",
+        "tech": ["PHP", "Laravel", "WebSocket"],
+        "link": "#"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Core Competencies",
+    "subtitle": "Expertise across the technology stack",
+    "description": "A comprehensive set of skills developed through two decades of professional practice.",
+    "categories": [
+      {
+        "name": "Leadership & Strategy",
+        "items": ["Engineering Management", "Technical Leadership", "Agile Methodologies", "Stakeholder Management", "Digital Transformation"]
+      },
+      {
+        "name": "Architecture & Cloud",
+        "items": ["System Design", "Microservices", "API Design", "AWS", "Infrastructure-as-Code", "Docker/K8s"]
+      },
+      {
+        "name": "Development & AI",
+        "items": ["TypeScript/Node.js", "React/Next.js", "Python (FastAPI)", "AI Integration", "LangChain/Agents", "Automated Testing"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's discuss how I can drive your technical vision forward",
+    "description": "Available for strategic roles, technical leadership, or high-impact engineering consultations.",
+    "info_title": "Contact Details",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Inquiry",
+      "placeholder_name": "Full Name",
+      "placeholder_email": "email@example.com",
+      "placeholder_message": "Tell me about your project or vision..."
+    }
   },
   "vault": {
-    "title": "Secure Vault",
-    "description": "This area is protected. Please enter the access code to view my application documents and certificates.",
+    "title": "Secure Document Vault",
+    "description": "Access my confidential documents including professional qualification and certifications.",
     "placeholder": "Enter access code",
-    "button": "Unlock",
-    "error": "Invalid code",
+    "button": "Open Vault",
+    "error": "Invalid access code. Please try again.",
+    "hint": "Hint: Contact me for the access code.",
+    "locked_title": "Vault is Locked",
+    "unlocked_title": "Vault Unlocked",
     "documents": {
-      "resume": "Resume (PDF)",
-      "certificates": "Certificates",
-      "references": "References"
+      "cv": {
+        "title": "Resume (PDF)",
+        "location": "Heinsberg, Germany",
+        "provider": "Andreas Hilgers",
+        "degree": "Engineering Leader",
+        "type": "Curriculum Vitae"
+      },
+      "ihk": {
+        "title": "IHK Professional Qualification",
+        "location": "Aachen, Germany",
+        "provider": "Chamber of Commerce (IHK)",
+        "degree": "IT Specialist",
+        "type": "Vocational Training"
+      },
+      "msm": {
+        "title": "MSM Project Management",
+        "location": "Bucharest, Romania",
+        "provider": "Maastricht School of Management",
+        "degree": "Project Management",
+        "type": "Course"
+      },
+      "scrum": {
+        "title": "Scrum Developer",
+        "location": "Online",
+        "provider": "Scrum Alliance",
+        "degree": "Certified Developer",
+        "type": "Course"
+      }
+    },
+    "back_to_site": "Back to Website"
+  },
+  "error": {
+    "404": {
+      "title": "Page Not Found",
+      "description": "The requested resource could not be found.",
+      "back_home": "Back to Home",
+      "contact": "Contact"
     }
   }
 }

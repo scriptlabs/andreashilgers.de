@@ -16,7 +16,7 @@ This repository contains the personal portfolio of **Andreas Hilgers**, a **Seni
 
 ## 🏗️ Architecture & Conventions
 
-### Framework: Next.js 15+ (App Router)
+### Framework: Next.js 16 (App Router)
 
 - **Localized Routing:**  
   All routes must reside within:
@@ -38,6 +38,8 @@ Supported languages:
 - Use the `generateMetadata` API for all pages.
 - Ensure metadata is localized for each language.
 - Favor **Static Site Generation (SSG)** or **Incremental Static Regeneration (ISR)** where applicable.
+- In Next.js 16, `params` and `searchParams` are asynchronous and must be awaited.
+- **Middleware Convention:** Next.js 16 uses `src/proxy.ts` (with an exported `proxy` function) instead of `middleware.ts`. Never rename `proxy.ts` to `middleware.ts`.
 
 ---
 

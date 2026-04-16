@@ -20,7 +20,7 @@ This portfolio highlights professional experience, technical skills, and selecte
 
 ## 🚀 Tech Stack
 
-* **Framework:** [Next.js 15+](https://nextjs.org/) – App Router with Server Components and optimized rendering strategies
+* **Framework:** [Next.js 16](https://nextjs.org/) – App Router with Server Components and optimized rendering strategies
 * **Language:** [TypeScript](https://www.typescriptlang.org/) – Strict mode for enhanced reliability and maintainability
 * **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) – Utility-first styling with CSS-native variables
 * **UI Primitives:** [Radix UI](https://www.radix-ui.com/) – Accessible and composable component foundations

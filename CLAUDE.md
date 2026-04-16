@@ -17,7 +17,8 @@ Maintain a production-grade, performant, accessible, and visually refined applic
 
 ## ⚡ Quick Summary
 
-- **Framework:** Next.js 15+ (App Router, Server Components)
+- **Framework:** Next.js 16 (App Router, Server Components)
+- **Convention:** Use `src/proxy.ts` (function `proxy`) instead of `middleware.ts` for Next.js 16.
 - **Language:** TypeScript (Strict Mode)
 - **Styling:** Tailwind CSS v4 with theme variables
 - **UI Components:** Radix UI (accessibility-first primitives)

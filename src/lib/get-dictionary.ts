@@ -1,6 +1,6 @@
 const dictionaries = {
-  de: () => import("../dictionaries/de.json").then((module) => module.default),
-  en: () => import("../dictionaries/en.json").then((module) => module.default),
+  de: () => import("../dictionaries/de.json").then((m) => m.default || m),
+  en: () => import("../dictionaries/en.json").then((m) => m.default || m),
 };
 
 export const getDictionary = async (locale: keyof typeof dictionaries) => {

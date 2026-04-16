@@ -1,43 +1,254 @@
 {
+  "metadata": {
+    "title": "Andreas Hilgers - Engineering Manager & Senior Full-Stack Entwickler",
+    "description": "Professionelles Portfolio von Andreas Hilgers, Engineering Leader und Senior Full-Stack Entwickler mit über 20 Jahren Erfahrung in digitaler Transformation, Software-Architektur und KI-Integration.",
+    "ogTitle": "Andreas Hilgers | Engineering Management & Tech Leadership",
+    "ogDescription": "Skalierung digitaler Plattformen und Leitung hochperformanter Engineering-Teams mit über 20 Jahren Expertise.",
+    "ogImage": "/og-image.png",
+    "keywords": ["Engineering Manager", "Tech Lead", "Full-Stack Entwickler", "Software-Architekt", "Digitale Transformation", "KI-Entwicklung", "Next.js", "TypeScript", "Node.js", "DevOps"]
+  },
   "nav": {
-    "home": "Start",
-    "projects": "Projekte",
+    "home": "Startseite",
+    "about": "Über mich",
     "experience": "Erfahrung",
-    "skills": "Skills",
-    "vault": "Tresor"
+    "projects": "Projekte",
+    "skills": "Fähigkeiten",
+    "education": "Ausbildung",
+    "contact": "Kontakt",
+    "vault": "Dokumente"
   },
   "hero": {
-    "greeting": "Hallo, ich bin",
+    "greeting": "Senior Full-Stack Entwickler & Engineering Leader",
     "name": "Andreas Hilgers",
-    "role": "Senior Full-Stack Developer",
-    "description": "Ich konzipiere und entwickle skalierbare Webanwendungen mit Fokus auf Performance, Security und exzellenter User Experience. Über 10 Jahre Erfahrung in der Softwareentwicklung.",
-    "cta_projects": "Projekte ansehen",
-    "cta_contact": "Kontakt aufnehmen"
+    "role": "Engineering Manager // Tech-Lead",
+    "description": "Über 20 Jahre Erfahrung in Design, Entwicklung und Skalierung digitaler Plattformen, APIs und hochfrequentierter SaaS-Anwendungen. Experte in der Leitung cross-funktionaler Teams und der Steuerung end-to-end digitaler Transformationen.",
+    "subdescription": "Schnittstelle zwischen Geschäftssteuerung und technischer Exzellenz – für skalierbare, sichere und wartbare Lösungen.",
+    "cta_primary": "Berufsweg ansehen",
+    "cta_secondary": "Kontakt aufnehmen",
+    "typing_texts": [
+      "Engineering Management",
+      "Technische Leitung",
+      "Software-Architektur",
+      "Digitale Transformation",
+      "KI & Agentic Development",
+      "Full-Stack Exzellenz"
+    ]
   },
-  "sections": {
-    "projects": {
-      "title": "Ausgewählte Projekte",
-      "subtitle": "Ein Einblick in meine Arbeit und technische Umsetzung."
+  "about": {
+    "title": "Über mich",
+    "subtitle": "Engineering Leadership & Technische Exzellenz",
+    "description": "Als Senior Full-Stack Entwickler und Engineering Leader blicke ich auf eine über zwei Jahrzehnte währende Karriere zurück. Meine Expertise liegt in der Architektur robuster digitaler Ökosysteme und der Führung von Teams durch komplexe technische Herausforderungen. Ich verfüge über eine fundierte Erfolgsbilanz in der Modernisierung von Legacy-Systemen und der Skalierung von High-Traffic-Anwendungen. Aktuell konzentriere ich mich auf die Weiterentwicklung von Vibe Coding und Agentic Development sowie die Integration modernster KI-Dienste in produktionsreife Umgebungen.",
+    "details_title": "Professionelles Profil",
+    "details": {
+      "name": "Andreas Hilgers",
+      "location": "Heinsberg, Deutschland",
+      "experience": "20+ Jahre",
+      "specialization": "Leadership & Architektur",
+      "email": "andreas_hilgers@icloud.com",
+      "languages": "Deutsch (Muttersprache)\nEnglisch (Verhandlungssicher)"
     },
-    "skills": {
-      "title": "Technologie-Stack",
-      "subtitle": "Werkzeuge und Frameworks, mit denen ich täglich arbeite."
+    "stats": {
+      "experience": "20+ Jahre Erfahrung",
+      "projects": "Legacy-Modernisierung",
+      "leadership": "Team-Management",
+      "transformation": "Digitale Transformation"
     },
-    "experience": {
-      "title": "Beruflicher Werdegang",
-      "subtitle": "Stationen meiner Karriere als Entwickler."
+    "quote": "Exzellenz entsteht an der Schnittstelle zwischen Unternehmensstrategie und skalierbarer Software-Architektur.",
+    "download_cv": "Lebenslauf herunterladen"
+  },
+  "experience": {
+    "title": "Berufsweg & Ausbildung",
+    "subtitle": "Zwei Jahrzehnte technischer Führung, Innovation und kontinuierliche Weiterbildung",
+    "current_role": "Engineering Leader",
+    "items": [
+      {
+        "id": "exp-btcecho",
+        "company": "BTC-ECHO",
+        "position": "Leiter der Entwicklung (Head of Development)",
+        "period": "2025 – 2026",
+        "description": "Strategische Weiterentwicklung der Engineering-Organisation. Leitung der technologischen Ausrichtung mit Fokus auf Skalierbarkeit und Innovation.",
+        "technologies": ["Cloud-Computing", "Künstliche Intelligenz (KI)", "Leadership", "Technology Strategy", "Web3", "OKR"],
+        "type": "work"
+      },
+      {
+        "id": "exp-ocd",
+        "company": "OCD Online Cargo GmbH",
+        "position": "Staff Full-Stack Developer",
+        "period": "2022 – 2025",
+        "description": "Leitung der Digitalisierungsprojekte und technologische Führung des Entwicklungsteams in einer Hybrid-Umgebung.",
+        "technologies": ["Cloud-Computing", "Technology Leadership", "Architecture", "Node.js", "React Native", "CI/CD"],
+        "type": "work"
+      },
+      {
+        "id": "cert-scrum",
+        "company": "Scrum Alliance",
+        "position": "Certified Scrum Developer",
+        "period": "2021",
+        "description": "Zertifizierung mit Fokus auf agile Methodiken und effiziente Team-Kollaboration.",
+        "technologies": ["Agile", "Scrum", "TDD"],
+        "type": "cert"
+      },
+      {
+        "id": "cert-msm",
+        "company": "Maastricht School of Management",
+        "position": "Project Management\nDesigning and Managing Projects",
+        "period": "2020",
+        "description": "Vertiefung strategischer Management-Kompetenzen für internationale IT-Projekte.",
+        "technologies": ["Projektmanagement", "Strategie"],
+        "type": "cert"
+      },
+      {
+        "id": "edu-ihk",
+        "company": "IHK Aachen",
+        "position": "Fachinformatiker\nAnwendungsentwicklung",
+        "period": "2017",
+        "description": "Staatlich anerkannte Ausbildung mit Schwerpunkt auf Software-Engineering und Architektur.",
+        "technologies": ["Software-Design", "Datenbanken", "IHK Abschluss"],
+        "type": "edu"
+      },
+      {
+        "id": "exp-zenguard",
+        "company": "ZenGuard",
+        "position": "Senior Full-Stack Developer",
+        "period": "2015 – 2021",
+        "description": "Langjährige Verantwortung für Webtechnologien und globale Software-Infrastrukturen in einem vollständig remote arbeitenden Team.",
+        "technologies": ["Webtechnologien", "Software-Infrastruktur", "Scaling", "APIs", "Cloud"],
+        "type": "work"
+      },
+      {
+        "id": "exp-scriptlabs",
+        "company": "Scriptlabs",
+        "position": "Founder",
+        "period": "2008 – 2014",
+        "description": "Gründung und Aufbau einer Agentur für individuelle B2B-Lösungen mit Schwerpunkt auf Cloud und Mobile.",
+        "technologies": ["Cloud-Computing", "App-Entwicklung", "Entrepreneurship", "B2B"],
+        "type": "work"
+      },
+      {
+        "id": "exp-aixhibit",
+        "company": "AIXhibit AG",
+        "position": "Junior Developer",
+        "period": "2005 – 2008",
+        "description": "Einstieg in die professionelle Softwareentwicklung mit Fokus auf datenbankgestützte Webanwendungen.",
+        "technologies": ["Cloud-Computing", "Webentwicklung", "SQL", "PHP"],
+        "type": "work"
+      },
+      {
+        "id": "edu-ita",
+        "company": "Berufskolleg Alsdorf",
+        "position": "Informationstechnischer Assistent",
+        "period": "2002 – 2006",
+        "description": "Fundierte technische Grundausbildung inklusive Fachhochschulreife.",
+        "technologies": ["Netzwerktechnik", "Programmierung"],
+        "type": "edu"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Strategische Initiativen",
+    "subtitle": "Ausgewählte Projekte mit hoher Hebelwirkung",
+    "description": "Eine Auswahl skalierbarer Plattformen und Projekte zur digitalen Transformation, die über die Jahre realisiert wurden.",
+    "items": [
+      {
+        "id": "p1",
+        "title": "Enterprise Logistics OS",
+        "category": "Digitale Transformation",
+        "description": "End-to-End Digitalisierung papierbasierter Prozesse für einen europaweiten Schienengüterverkehrsanbieter.",
+        "tech": ["React Native", "Node.js", "AWS"],
+        "link": "#"
+      },
+      {
+        "id": "p2",
+        "title": "Global VPN Infrastructure",
+        "category": "High-Traffic SaaS",
+        "description": "Architektur und Skalierung von API-Endpunkten für Millionen Nutzer weltweit.",
+        "tech": ["PHP", "Laravel", "WebSocket"],
+        "link": "#"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Kernkompetenzen",
+    "subtitle": "Expertise im gesamten Technologie-Stack",
+    "description": "Ein umfassendes Spektrum an Fähigkeiten, entwickelt in zwei Jahrzehnten professioneller Praxis.",
+    "categories": [
+      {
+        "name": "Führung & Strategie",
+        "items": ["Engineering Management", "Technische Leitung", "Agile Methoden", "Stakeholder-Management", "Digitale Transformation"]
+      },
+      {
+        "name": "Architektur & Cloud",
+        "items": ["Systemdesign", "Microservices", "API-Design", "AWS", "Infrastructure-as-Code", "Docker/K8s"]
+      },
+      {
+        "name": "Entwicklung & KI",
+        "items": ["TypeScript/Node.js", "React/Next.js", "Python (FastAPI)", "KI-Integration", "LangChain/Agents", "Automatisiertes Testen"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Lassen Sie uns besprechen, wie ich Ihre technische Vision vorantreiben kann",
+    "description": "Verfügbar für strategische Rollen, technische Leitung oder Engineering-Beratung mit hoher Hebelwirkung.",
+    "info_title": "Kontaktdaten",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "submit": "Anfrage senden",
+      "placeholder_name": "Vollständiger Name",
+      "placeholder_email": "email@beispiel.de",
+      "placeholder_message": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Vision..."
     }
   },
   "vault": {
-    "title": "Sicherer Bereich",
-    "description": "Dieser Bereich ist geschützt. Bitte geben Sie den Zugangscode ein, um meine Bewerbungsunterlagen und Zeugnisse zu sehen.",
+    "title": "Sicherer Dokumenten-Tresor",
+    "description": "Greifen Sie auf meine vertraulichen Dokumente zu, einschließlich Berufsabschluss und Zertifizierungen.",
     "placeholder": "Zugangscode eingeben",
-    "button": "Freischalten",
-    "error": "Ungültiger Code",
+    "button": "Tresor öffnen",
+    "error": "Ungültiger Zugangscode. Bitte versuchen Sie es erneut.",
+    "hint": "Hinweis: Kontaktieren Sie mich für den Zugangscode.",
+    "locked_title": "Tresor ist gesperrt",
+    "unlocked_title": "Tresor freigeschaltet",
     "documents": {
-      "resume": "Lebenslauf (PDF)",
-      "certificates": "Zeugnisse & Zertifikate",
-      "references": "Referenzen"
+      "cv": {
+        "title": "Lebenslauf (PDF)",
+        "location": "Heinsberg, Deutschland",
+        "provider": "Andreas Hilgers",
+        "degree": "Engineering Leader",
+        "type": "Curriculum Vitae"
+      },
+      "ihk": {
+        "title": "IHK Berufsabschluss",
+        "location": "Aachen, Deutschland",
+        "provider": "Industrie- und Handelskammer (IHK)",
+        "degree": "Fachinformatiker",
+        "type": "Berufsausbildung"
+      },
+      "msm": {
+        "title": "MSM Projektmanagement",
+        "location": "Bukarest, Rumänien",
+        "provider": "Maastricht School of Management",
+        "degree": "Projektmanagement",
+        "type": "Lehrgang"
+      },
+      "scrum": {
+        "title": "Scrum Developer",
+        "location": "Online",
+        "provider": "Scrum Alliance",
+        "degree": "Zertifizierter Entwickler",
+        "type": "Lehrgang"
+      }
+    },
+    "back_to_site": "Zurück zur Website"
+  },
+  "error": {
+    "404": {
+      "title": "Seite nicht gefunden",
+      "description": "Die angeforderte Ressource konnte nicht gefunden werden.",
+      "back_home": "Zurück zur Startseite",
+      "contact": "Kontakt"
     }
   }
 }
