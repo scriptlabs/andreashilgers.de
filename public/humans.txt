@@ -1,11 +1,11 @@
 /* TEAM */
     Developer: Andreas Hilgers
     Site: https://andreashilgers.de
-    Twitter: @scriptlabs
+    LinkedIn: https://linkedin.com/in/andreashilgers
     Location: Heinsberg, Germany
 
 /* SITE */
-    Last update: 2026/04/17
+    Last update: 2026/04/01
     Standards: HTML5, CSS3, TypeScript, Next.js
     Components: Radix UI, Framer Motion
     Software: VS Code, Warp, Coffee (lots of it)

@@ -24,6 +24,7 @@ export interface Dictionary {
     education: string;
     contact: string;
     vault: string;
+    hire_me: string;
   };
   hero: {
     greeting: string;

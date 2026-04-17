@@ -145,10 +145,10 @@ export function Navbar({ dict, lang }: NavbarProps) {
 
               {/* Hire Me Badge */}
               <Link
-                href="mailto:andreas_hilgers@icloud.com"
-                className="hidden lg:block bg-[var(--primary)] text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-[var(--primary-hover)] transition-colors"
+                href={`/${lang}/contact`}
+                className="hidden lg:block bg-[var(--primary)] text-white px-5 py-2 rounded-md text-sm font-bold hover:bg-[var(--primary-hover)] transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                Hire Me
+                {dict.nav.hire_me}
               </Link>
             </div>
           </div>
