@@ -167,16 +167,13 @@ Use **Lucide React** as the standard icon library for visual consistency.
 
 ```
 - **Purpose:**  
-Provides a password-protected area for accessing sensitive career-related documents such as resumes and certificates.
+Provides a password-protected area for accessing sensitive career-related documents such as resumes and certificates. Features integrated contact information (Google Maps, E-Mail, Phone) and secure session management.
 
 - **Current Implementation:**  
 - Utilizes a **demo client-side access code (`4242`)**.
-- Intended for demonstration purposes only.
-
-- **Future Considerations:**  
-- Migrate authentication logic to a **server-side** implementation.
-- Protect sensitive resources using environment variables or secure storage.
-- Avoid exposing confidential data in the client bundle.
+- Features a **Lock Vault** mechanism with a custom confirmation dialog (Radix Alert Dialog).
+- Mobile-optimized: PDF previews are disabled on small screens for reliability.
+- Displays comprehensive personal contact data only after successful unlock.
 
 ---
 
@@ -188,9 +185,10 @@ Provides a password-protected area for accessing sensitive career-related docume
 | `src/app/globals.css` | Global styles and theme variables |
 | `src/components/` | Reusable UI components |
 | `src/lib/get-dictionary.ts` | i18n helper for loading translations |
-| `src/lib/utils.ts` | Shared utilities including `cn()` |
+| `src/lib/dictionary.ts` | **Central TypeScript interface for all localized strings** |
 | `src/dictionaries/` | Translation files (`en.json`, `de.json`) |
-| `src/app/[lang]/vault/page.tsx` | Secure document vault page |
+| `src/app/[lang]/vault/page.tsx` | Enhanced secure document vault page |
+| `docs/` | Structured Markdown files for identity, portfolio, and skills |
 
 ---
 

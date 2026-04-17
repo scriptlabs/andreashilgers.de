@@ -57,6 +57,7 @@ Every contribution should reinforce the portfolio as a **reference implementatio
 - Store all translations in:
     - `src/dictionaries/en.json`
     - `src/dictionaries/de.json`
+- **Crucial:** Always update the `Dictionary` interface in `src/lib/dictionary.ts` when adding new fields to translation files. Avoid using `any` for dictionary objects; leverage the central interface to ensure full type safety across components.
 - Retrieve translations exclusively via `getDictionary(lang)`.
 - Ensure all new routes and metadata are **fully localized**.
 - Maintain **SEO-friendly localized paths** (e.g., `/en`, `/de`).
@@ -107,11 +108,10 @@ The portfolio should communicate **professionalism, clarity, and technical excel
 |------|---------|
 | `src/app/globals.css` | Source of truth for global styles and Tailwind theme variables |
 | `src/lib/utils.ts` | Contains shared utilities such as the `cn()` class-merging helper |
-| `src/lib/i18n.ts` | Internationalization utilities including `getDictionary(lang)` |
-| `src/components/navbar.tsx` | Main navigation including language and theme switching |
-| `src/app/[lang]/layout.tsx` | Root localized layout and metadata configuration |
-| `src/app/[lang]/page.tsx` | Localized landing pages |
-| `src/app/[lang]/vault/page.tsx` | Secure document vault logic |
+| `src/lib/dictionary.ts` | **Central TypeScript interface for all localized strings** |
+| `src/components/navbar.tsx` | Main navigation including direct language toggle (flag icons) |
+| `src/app/[lang]/vault/page.tsx` | Enhanced secure document vault with contact data and session lock |
+| `docs/` | Source of truth for identity, portfolio, and detailed skill data |
 | `src/dictionaries/*.json` | Translation files for all supported languages |
 
 ---

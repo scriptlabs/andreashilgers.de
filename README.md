@@ -34,13 +34,12 @@ This portfolio highlights professional experience, technical skills, and selecte
 ## ✨ Key Features
 
 * **🌍 Internationalization (i18n):** Seamless bilingual support (English and German) with static generation for optimal SEO and performance.
-* **🔐 Secure Document Vault:** Password-protected access to sensitive documents such as resumes and certifications.
-* **📱 Fully Responsive Design:** Optimized for all device sizes with a mobile-first approach.
+* **🔐 Enhanced Secure Vault:** Password-protected access to sensitive documents, now featuring direct contact information and secure session management.
+* **📄 Automated CV Generation:** Integrated pipeline for generating professional Word (DOCX) resumes based on structured portfolio data.
+* **📱 Fully Responsive Design:** Optimized for all device sizes with a mobile-first approach and device-specific optimizations (e.g., adaptive PDF previews).
+* **✨ Premium Animations:** High-end user experience with staggered entry sequences, shimmer effects, and interactive micro-interactions powered by Framer Motion.
 * **♿ Accessibility:** Built following WCAG standards using Radix UI primitives.
 * **⚡ Performance Optimization:** Leveraging Server Components, static rendering, and efficient asset delivery.
-* **🎨 Premium User Experience:** Glassmorphism aesthetics, refined typography, and smooth micro-interactions.
-* **🧩 Modular Architecture:** Clean separation of concerns for scalability and maintainability.
-* **💻 Code Showcase:** Integrated code snippets to demonstrate technical proficiency and development practices.
 
 ---
 
@@ -54,6 +53,7 @@ src/
 ├── dictionaries/      # Translation files for internationalization
 ├── lib/               # Shared utilities and helper functions
 └── styles/            # Global styles and Tailwind configuration
+docs/                  # Structured identity, portfolio, and skills documentation (Markdown)
 ```
 
 ---
