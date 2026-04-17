@@ -137,7 +137,7 @@ export function Navbar({ dict, lang }: NavbarProps) {
               {/* Vault Link */}
               <Link
                 href={`/${lang}/vault`}
-                className="p-2.5 rounded-md hover:bg-[var(--background)] transition-colors text-[var(--secondary)] hover:text-[var(--primary)]"
+                className="p-2.5 rounded-md bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition-all active:scale-95 flex items-center justify-center border border-red-500/20"
                 aria-label={dict.nav.vault}
               >
                 <RiLockPasswordLine size={18} />
