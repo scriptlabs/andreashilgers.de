@@ -125,16 +125,6 @@
         "type": "work"
       },
       {
-        "id": "cert-scrum",
-        "company": "Scrum Alliance",
-        "companyUrl": "https://www.scrumalliance.org",
-        "position": "Certified Scrum Developer",
-        "period": "2016",
-        "description": "Erfolgreicher Abschluss des Online-Kurses zu Methodiken des agilen Software-Development-Managements. Vertiefung in Scrum-Prozesse, agile Planung und effiziente Team-Kollaboration.",
-        "technologies": ["Agile", "Scrum", "TDD", "Extreme Programming (XP)", "Pair Programming", "Continuous Integration"],
-        "type": "cert"
-      },
-      {
         "id": "exp-zenguard",
         "company": "ZenGuard",
         "companyUrl": "https://zenguard.org",
@@ -143,6 +133,16 @@
         "description": "Tochterfirma von Kape Technologies PLC — Mutterkonzern der Marken CyberGhostVPN, ExpressVPN und Private Internet Access (PIA). Verantwortung für Webtechnologien und globale Software-Infrastrukturen innerhalb des Kape Technologies Ökosystems.",
         "technologies": ["Webtechnologien", "Software-Infrastruktur", "Scaling", "APIs", "Cloud", "Payments", "Marketing", "Tracking", "Security"],
         "type": "work"
+      },
+      {
+        "id": "cert-scrum",
+        "company": "Scrum Alliance",
+        "companyUrl": "https://www.scrumalliance.org",
+        "position": "Certified Scrum Developer",
+        "period": "2016",
+        "description": "Erfolgreicher Abschluss des Online-Kurses zu Methodiken des agilen Software-Development-Managements. Vertiefung in Scrum-Prozesse, agile Planung und effiziente Team-Kollaboration.",
+        "technologies": ["Agile", "Scrum", "TDD", "Extreme Programming (XP)", "Pair Programming", "Continuous Integration"],
+        "type": "cert"
       },
       {
         "id": "cert-msm",

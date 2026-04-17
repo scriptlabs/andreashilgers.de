@@ -125,16 +125,6 @@
         "type": "work"
       },
       {
-        "id": "cert-scrum",
-        "company": "Scrum Alliance",
-        "companyUrl": "https://www.scrumalliance.org",
-        "position": "Certified Scrum Developer",
-        "period": "2016",
-        "description": "Completed an intensive online course on agile software development management methodologies. Specialized in Scrum processes, agile planning, and high-performance team collaboration.",
-        "technologies": ["Agile", "Scrum", "TDD", "Extreme Programming (XP)", "Pair Programming", "Continuous Integration"],
-        "type": "cert"
-      },
-      {
         "id": "exp-zenguard",
         "company": "ZenGuard",
         "companyUrl": "https://zenguard.org",
@@ -143,6 +133,16 @@
         "description": "Subsidiary of Kape Technologies PLC — home to brands such as CyberGhostVPN, ExpressVPN, and Private Internet Access (PIA). Responsibility for web technologies and global software infrastructures within the Kape Technologies ecosystem.",
         "technologies": ["Web Technologies", "Software Infrastructure", "Scaling", "APIs", "Cloud", "Payments", "Marketing", "Tracking", "Security"],
         "type": "work"
+      },
+      {
+        "id": "cert-scrum",
+        "company": "Scrum Alliance",
+        "companyUrl": "https://www.scrumalliance.org",
+        "position": "Certified Scrum Developer",
+        "period": "2016",
+        "description": "Completed an intensive online course on agile software development management methodologies. Specialized in Scrum processes, agile planning, and high-performance team collaboration.",
+        "technologies": ["Agile", "Scrum", "TDD", "Extreme Programming (XP)", "Pair Programming", "Continuous Integration"],
+        "type": "cert"
       },
       {
         "id": "cert-msm",
