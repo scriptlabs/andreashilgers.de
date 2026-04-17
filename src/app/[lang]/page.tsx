@@ -49,16 +49,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
           {/* Role */}
           <FadeIn direction="down" delay={0.5}>
-            <div className="text-[10px] sm:text-xs md:text-sm text-[var(--secondary)] font-bold uppercase tracking-[0.2em] sm:tracking-[0.28em] mb-5 mx-auto leading-relaxed flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-0">
-              {dict.hero.role.split(" // ").map((part, index, array) => (
-                <React.Fragment key={part}>
-                  <span>{part}</span>
-                  {index < array.length - 1 && (
-                    <span className="hidden sm:inline mx-4 opacity-40">{"//"}</span>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
+            <p className="text-[10px] sm:text-xs md:text-sm text-[var(--secondary)] font-bold uppercase tracking-[0.2em] sm:tracking-[0.28em] mb-5 mx-auto leading-relaxed">
+              {dict.hero.role}
+            </p>
           </FadeIn>
 
           {/* Typing animation */}
