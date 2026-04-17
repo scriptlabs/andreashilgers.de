@@ -24,6 +24,9 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import { Dictionary } from "@/lib/dictionary";
 
+// Cache busting version for documents
+const DOCS_VERSION = "1.0.1";
+
 interface VaultClientProps {
   dict: Dictionary;
   lang: string;
@@ -140,7 +143,7 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
       providerUrl: `/${lang}`,
       degree: vaultDict.documents.cv.degree,
       type: vaultDict.documents.cv.type,
-      file: "/documents/cv.pdf",
+      file: `/documents/cv.pdf?v=${DOCS_VERSION}`,
       size: "87 KB",
       icon: <RiFileUserLine />, 
       color: "bg-slate-500/10 text-slate-500" 
@@ -152,7 +155,7 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
       providerUrl: "https://www.ihk.de/aachen/",
       degree: vaultDict.documents.ihk.degree,
       type: vaultDict.documents.ihk.type,
-      file: "/documents/ihk-certificate.pdf",
+      file: `/documents/ihk-certificate.pdf?v=${DOCS_VERSION}`,
       size: "16 MB",
       icon: <RiGraduationCapLine />, 
       color: "bg-blue-500/10 text-blue-500" 
@@ -164,7 +167,7 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
       providerUrl: "https://www.msm.nl/",
       degree: vaultDict.documents.msm.degree,
       type: vaultDict.documents.msm.type,
-      file: "/documents/msm-project-management.pdf",
+      file: `/documents/msm-project-management.pdf?v=${DOCS_VERSION}`,
       size: "321 KB",
       icon: <RiTaskLine />, 
       color: "bg-emerald-500/10 text-emerald-500" 
@@ -176,7 +179,7 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
       providerUrl: "https://www.scrumalliance.org/",
       degree: vaultDict.documents.scrum.degree,
       type: vaultDict.documents.scrum.type,
-      file: "/documents/scrum-developer-certificate.pdf",
+      file: `/documents/scrum-developer-certificate.pdf?v=${DOCS_VERSION}`,
       size: "346 KB",
       icon: <RiAwardLine />, 
       color: "bg-purple-500/10 text-purple-500" 
