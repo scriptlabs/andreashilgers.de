@@ -3,6 +3,7 @@ import * as React from "react";
 import {
   RiArrowRightLine,
   RiCalendarLine,
+  RiLinkedinBoxFill,
 } from "react-icons/ri";
 import { FadeIn, TypingText, PulseCircle } from "@/components/animated-text";
 import { getDictionary } from "@/lib/get-dictionary";
@@ -84,6 +85,16 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 <RiCalendarLine size={18} />
                 {dict.hero.cta_secondary}
               </Link>
+              <a
+                href="https://linkedin.com/in/andreashilgers"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline px-7 py-3.5 sm:py-3 text-base rounded-md font-bold flex items-center justify-center gap-2"
+                title="LinkedIn Profile"
+              >
+                <RiLinkedinBoxFill size={20} className="text-[#0a66c2]" />
+                <span className="sm:hidden">LinkedIn</span>
+              </a>
             </div>
           </FadeIn>
 
