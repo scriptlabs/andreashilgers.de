@@ -17,7 +17,7 @@ import {
   RiCloseLine,
   RiMailLine,
   RiPhoneLine,
-  RiHome4Line
+  RiHome4Line,
 } from "react-icons/ri";
 import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -120,56 +120,64 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
     );
   }
 
-  const documents = [
+  const documents: Array<{
+    id: string;
+    title: string;
+    provider: string;
+    providerUrl: string;
+    degree: string;
+    type: string;
+    file: string;
+    wordFile?: string;
+    size: string;
+    icon: React.ReactNode;
+    color: string;
+  }> = [
     { 
       id: "cv", 
       title: vaultDict.documents.cv.title, 
-      location: vaultDict.documents.cv.location,
       provider: vaultDict.documents.cv.provider,
       providerUrl: `/${lang}`,
       degree: vaultDict.documents.cv.degree,
       type: vaultDict.documents.cv.type,
       file: "/documents/cv.pdf",
-      size: "124 KB",
+      size: "87 KB",
       icon: <RiFileUserLine />, 
       color: "bg-slate-500/10 text-slate-500" 
     },
     { 
       id: "ihk", 
       title: vaultDict.documents.ihk.title, 
-      location: vaultDict.documents.ihk.location,
       provider: vaultDict.documents.ihk.provider,
       providerUrl: "https://www.ihk.de/aachen/",
       degree: vaultDict.documents.ihk.degree,
       type: vaultDict.documents.ihk.type,
       file: "/documents/ihk-certificate.pdf",
-      size: "15.3 MB",
+      size: "16 MB",
       icon: <RiGraduationCapLine />, 
       color: "bg-blue-500/10 text-blue-500" 
     },
     { 
       id: "msm", 
       title: vaultDict.documents.msm.title, 
-      location: vaultDict.documents.msm.location,
       provider: vaultDict.documents.msm.provider,
       providerUrl: "https://www.msm.nl/",
       degree: vaultDict.documents.msm.degree,
       type: vaultDict.documents.msm.type,
       file: "/documents/msm-project-management.pdf",
-      size: "313 KB",
+      size: "321 KB",
       icon: <RiTaskLine />, 
       color: "bg-emerald-500/10 text-emerald-500" 
     },
     { 
       id: "scrum", 
       title: vaultDict.documents.scrum.title, 
-      location: vaultDict.documents.scrum.location,
       provider: vaultDict.documents.scrum.provider,
       providerUrl: "https://www.scrumalliance.org/",
       degree: vaultDict.documents.scrum.degree,
       type: vaultDict.documents.scrum.type,
       file: "/documents/scrum-developer-certificate.pdf",
-      size: "338 KB",
+      size: "346 KB",
       icon: <RiAwardLine />, 
       color: "bg-purple-500/10 text-purple-500" 
     },
@@ -275,60 +283,73 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
         </div>
       </FadeIn>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
         {documents.map((doc, index) => (
           <StaggerItem key={doc.id} index={index}>
-            <div className="card group p-6 rounded-md border-transparent hover:border-[var(--primary)]/20 transition-all">
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                <div className="flex items-start gap-6">
-                  <div className={`w-16 h-16 rounded-md flex items-center justify-center text-4xl shrink-0 ${doc.color}`}>
+            <div className="card group p-5 rounded-md border-transparent hover:border-[var(--primary)]/20 transition-all hover:shadow-lg">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+                <div className="flex items-start gap-5">
+                  <div className={`w-14 h-14 rounded-md flex items-center justify-center text-3xl shrink-0 ${doc.color} group-hover:scale-105 transition-transform`}>
                     {doc.icon}
                   </div>
                   <div className="space-y-1">
-                    <h3 className="text-xl font-bold text-[var(--foreground)]">{doc.title}</h3>
-                    <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-[var(--secondary)]">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-bold text-[var(--foreground)]">{doc.title}</h3>
+                      <span className="text-[10px] font-mono text-[var(--secondary)] opacity-60">({doc.size})</span>
+                    </div>
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-[var(--secondary)]">
                       <a 
                         href={doc.providerUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 hover:text-[var(--primary)] transition-colors"
                       >
-                        <RiBankLine size={14} className="text-[var(--primary)]" />
+                        <RiBankLine size={12} className="text-[var(--primary)]" />
                         <span className="underline decoration-[var(--primary)]/30 underline-offset-4">{doc.provider}</span>
                       </a>
                     </div>
-                    <div className="pt-2 flex flex-wrap gap-2">
-                      <span className="px-2.5 py-0.5 rounded-sm bg-[var(--primary)]/5 text-[var(--primary)] text-xs font-semibold border border-[var(--primary)]/10">
+                    <div className="pt-1.5 flex flex-wrap gap-2">
+                      <span className="px-2 py-0.5 rounded-sm bg-[var(--primary)]/5 text-[var(--primary)] text-[10px] font-bold border border-[var(--primary)]/10 uppercase tracking-wider">
                         {doc.degree}
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-sm bg-[var(--accent)]/5 text-[var(--accent)] text-xs font-semibold border border-[var(--accent)]/10">
+                      <span className="px-2 py-0.5 rounded-sm bg-[var(--accent)]/5 text-[var(--accent)] text-[10px] font-bold border border-[var(--accent)]/10 uppercase tracking-wider">
                         {doc.type}
                       </span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="flex flex-wrap items-center gap-3 ml-22 lg:ml-0">
-                  <button
-                    onClick={() => setPreviewFile({ url: doc.file, title: doc.title })}
-                    className="hidden sm:flex px-5 py-2.5 rounded-md bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all items-center justify-center gap-2 text-sm font-bold"
-                  >
-                    <RiEyeLine size={18} />
-                    <span>{dict.vault.preview}</span>
-                  </button>
-                  
-                  <div className="flex items-center gap-2 w-full sm:w-auto">
-                    <a 
-                      href={doc.file} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 sm:flex-none px-5 py-2.5 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-sm font-bold"
+                  <div className="flex flex-wrap items-center gap-2 ml-19 lg:ml-0">
+                    <button
+                      onClick={() => setPreviewFile({ url: doc.file, title: doc.title })}
+                      className="hidden sm:flex px-4 py-2 rounded-md bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all items-center justify-center gap-2 text-xs font-bold"
                     >
-                      <RiDownloadLine size={18} />
-                      <span>{dict.vault.download_pdf}</span>
-                    </a>
+                      <RiEyeLine size={16} />
+                      <span>{dict.vault.preview}</span>
+                    </button>
+                    
+                    <div className="flex items-center gap-2 w-full sm:w-auto">
+                      <a 
+                        href={doc.file} 
+                        download
+                        className="flex-1 sm:flex-none px-4 py-2 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-xs font-bold border border-[var(--border)]"
+                      >
+                        <RiDownloadLine size={16} />
+                        <span>{dict.vault.download_pdf}</span>
+                      </a>
+
+                      {doc.wordFile && (
+                        <a 
+                          href={doc.wordFile} 
+                          download
+                          className="flex-1 sm:flex-none px-4 py-2 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-xs font-bold border border-[var(--border)]"
+                        >
+                          <RiFileUserLine size={16} />
+                          <span>{dict.vault.download_word}</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
               </div>
             </div>
           </StaggerItem>
