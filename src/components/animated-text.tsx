@@ -275,3 +275,24 @@ export function ShineCard({ children, className = "" }: ShineCardProps) {
     </motion.div>
   );
 }
+
+// Pulsing circle for availability status
+export function PulseCircle() {
+  return (
+    <span className="relative flex h-2.5 w-2.5">
+      <motion.span 
+        className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"
+        animate={{ 
+          scale: [1, 1.8, 1],
+          opacity: [0.75, 0, 0.75] 
+        }}
+        transition={{ 
+          duration: 2, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
+      />
+      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+    </span>
+  );
+}

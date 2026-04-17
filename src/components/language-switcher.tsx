@@ -3,11 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Languages } from "lucide-react";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 export default function LanguageSwitcher({ currentLang }: { currentLang: string }) {
   const pathname = usePathname();
+  const targetLang = currentLang === "de" ? "en" : "de";
 
   const redirectedPathname = (locale: string) => {
     if (!pathname) return "/";
@@ -17,28 +16,30 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
   };
 
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
-        <button className="flex items-center gap-2 px-3 py-1.5 border rounded-full hover:bg-[var(--card)] transition-colors text-sm font-medium uppercase">
-          <Languages size={18} />
-          {currentLang}
-        </button>
-      </DropdownMenu.Trigger>
-
-      <DropdownMenu.Portal>
-        <DropdownMenu.Content className="bg-[var(--card)] p-2 rounded-lg border shadow-lg min-w-[120px] z-50 animate-in fade-in zoom-in duration-200">
-          <DropdownMenu.Item asChild className="outline-none">
-            <Link href={redirectedPathname("de")} className="flex items-center gap-2 p-2 cursor-pointer hover:bg-[var(--primary)] hover:text-white rounded">
-              Deutsch
-            </Link>
-          </DropdownMenu.Item>
-          <DropdownMenu.Item asChild className="outline-none">
-            <Link href={redirectedPathname("en")} className="flex items-center gap-2 p-2 cursor-pointer hover:bg-[var(--primary)] hover:text-white rounded">
-              English
-            </Link>
-          </DropdownMenu.Item>
-        </DropdownMenu.Content>
-      </DropdownMenu.Portal>
-    </DropdownMenu.Root>
+    <Link 
+      href={redirectedPathname(targetLang)} 
+      className="flex items-center justify-center w-10 h-10 border border-[var(--border)] rounded-md hover:bg-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-all group overflow-hidden"
+      title={targetLang === "de" ? "Zu Deutsch wechseln" : "Switch to English"}
+    >
+      <div className="relative w-7 h-5 overflow-hidden rounded-[2px] shadow-sm border border-black/5">
+        {targetLang === "de" ? (
+          // German Flag (Simple CSS/SVG)
+          <svg viewBox="0 0 5 3" className="w-full h-full">
+            <rect width="5" height="3" y="0" fill="#000"/>
+            <rect width="5" height="2" y="1" fill="#D00"/>
+            <rect width="5" height="1" y="2" fill="#FFCE00"/>
+          </svg>
+        ) : (
+          // UK Flag (Simple CSS/SVG)
+          <svg viewBox="0 0 60 30" className="w-full h-full">
+            <rect width="60" height="30" fill="#012169"/>
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6"/>
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4"/>
+            <path d="M30,0 L30,30 M0,15 L60,15" stroke="#fff" strokeWidth="10"/>
+            <path d="M30,0 L30,30 M0,15 L60,15" stroke="#C8102E" strokeWidth="6"/>
+          </svg>
+        )}
+      </div>
+    </Link>
   );
 }

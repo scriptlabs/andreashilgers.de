@@ -26,6 +26,8 @@ export interface Dictionary {
     cta_primary: string;
     cta_secondary: string;
     typing_texts: string[];
+    badge: string;
+    stats: Array<{ value: string; label: string }>;
   };
   about: {
     title: string;
@@ -39,9 +41,17 @@ export interface Dictionary {
       specialization: string;
       email: string;
       languages: string;
+      age?: string;
+      family?: string;
+      hobbies?: string;
+      memberships?: string;
     };
     stats: Record<string, string>;
     quote: string;
+    looking_for: {
+      title: string;
+      content: string;
+    };
     download_cv: string;
   };
   experience: {
@@ -51,6 +61,7 @@ export interface Dictionary {
     items: Array<{
       id: string;
       company: string;
+      companyUrl?: string;
       position: string;
       period: string;
       description: string;
@@ -67,25 +78,44 @@ export interface Dictionary {
       title: string;
       category: string;
       description: string;
+      details?: string;
+      features?: string[];
       tech: string[];
       link: string;
+      githubLink?: string;
+      logo?: string;
+      images?: string[];
     }>;
   };
   skills: {
     title: string;
     subtitle: string;
     description: string;
+    stats: Array<{ value: string; label: string }>;
     categories: Array<{
       name: string;
+      icon: string;
+      description: string;
       items: string[];
     }>;
+    cta: {
+      title: string;
+      subtitle: string;
+      button: string;
+    };
   };
   contact: {
     title: string;
     subtitle: string;
     description: string;
     info_title: string;
+    documents_title: string;
+    documents_description: string;
+    vault_card_title: string;
+    vault_card_subtitle: string;
     form: {
+      title: string;
+      subtitle: string;
       name: string;
       email: string;
       subject: string;
@@ -105,6 +135,16 @@ export interface Dictionary {
     hint: string;
     locked_title: string;
     unlocked_title: string;
+    contact_info: {
+      name: string;
+      address: string;
+      email: string;
+      phone: string;
+      logout: string;
+      logout_confirm: string;
+      logout_cancel: string;
+      logout_message: string;
+    };
     documents: {
       cv: DocumentDetails;
       ihk: DocumentDetails;
@@ -112,6 +152,12 @@ export interface Dictionary {
       scrum: DocumentDetails;
     };
     back_to_site: string;
+    preview: string;
+    download: string;
+    download_pdf: string;
+    download_word: string;
+    confidential_notice: string;
+    contact_questions: string;
   };
   error: {
     "404": {

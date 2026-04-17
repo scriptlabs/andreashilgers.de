@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { 
-  RiBriefcase4Line, 
-  RiCodeSSlashLine, 
-  RiMailLine, 
-  RiGithubFill, 
-  RiLinkedinBoxFill 
+import {
+  RiArrowRightLine,
+  RiCalendarLine,
 } from "react-icons/ri";
-import { FadeIn, TypingText } from "@/components/animated-text";
+import { FadeIn, TypingText, PulseCircle } from "@/components/animated-text";
+import { getDictionary } from "@/lib/get-dictionary";
+import { Dictionary } from "@/lib/dictionary";
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "de" }];
@@ -14,116 +13,96 @@ export async function generateStaticParams() {
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const isEn = lang === "en";
-
-  const enDict = {
-    nav: { home: "Home", about: "About", experience: "Experience", projects: "Projects", skills: "Skills", contact: "Contact", vault: "Vault" },
-    hero: {
-      greeting: "Hi there,",
-      name: "Andreas Hilgers",
-      role: "Senior Full-Stack Developer & Architect",
-      description: "I design and build scalable, high-performance web applications with a focus on exceptional user experience, accessibility, and modern architecture.",
-      subdescription: "Passionate about transforming complex problems into elegant, maintainable solutions.",
-      cta_primary: "View My Work",
-      cta_secondary: "Get In Touch",
-      typing_texts: ["Full-Stack Developer", "Next.js Expert", "TypeScript Enthusiast", "UI/UX Architect", "Cloud Specialist"]
-    },
-    about: { subtitle: "Who I am and what I do" },
-    experience: { subtitle: "My journey through the tech industry" },
-    projects: { subtitle: "My work and achievements" },
-    skills: { subtitle: "My technical expertise" },
-    contact: { subtitle: "Get in touch with me" }
-  };
-  const deDict = {
-    nav: { home: "Start", about: "Über mich", experience: "Erfahrung", projects: "Projekte", skills: "Fähigkeiten", contact: "Kontakt", vault: "Tresor" },
-    hero: {
-      greeting: "Hallo,",
-      name: "Andreas Hilgers",
-      role: "Senior Full-Stack Entwickler & Architekt",
-      description: "Ich entwerfe und entwickelte skalierbare, hochperformante Webanwendungen mit Fokus auf herausragende Benutzererfahrung, Barrierefreiheit und moderne Architektur.",
-      subdescription: "Leidenschaftlich dabei, komplexe Probleme in elegante, wartbare Lösungen zu verwandeln.",
-      cta_primary: "Meine Arbeit",
-      cta_secondary: "Kontakt aufnehmen",
-      typing_texts: ["Full-Stack Entwickler", "Next.js Experte", "TypeScript Enthusiast", "UI/UX Architekt", "Cloud Spezialist"]
-    },
-    about: { subtitle: "Wer ich bin und was ich mache" },
-    experience: { subtitle: "Mein Weg durch die Tech-Branche" },
-    projects: { subtitle: "Meine Arbeiten und Erfolge" },
-    skills: { subtitle: "Meine technischen Fähigkeiten" },
-    contact: { subtitle: "Kontaktieren Sie mich" }
-  };
-  const dict = isEn ? enDict : deDict;
+  const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
 
   return (
-    <main className="h-[calc(100vh-64px)] overflow-hidden">
-      {/* Hero Section */}
-      <section className="h-full flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--background)] via-[var(--primary)]/5 to-[var(--background)] -z-10" />
-        
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <FadeIn direction="down" delay={0.2}>
-            <p className="text-[var(--primary)] font-mono font-medium text-lg mb-6">
-              {dict.hero.greeting}
-            </p>
+    <main className="h-[calc(100vh-64px)] overflow-hidden relative">
+      {/* Animated background orbs */}
+      <div className="bg-orb bg-orb-primary absolute -top-40 -left-40" />
+      <div className="bg-orb bg-orb-accent  absolute -bottom-20 -right-40" />
+      <div className="bg-orb bg-orb-mid    absolute top-1/2 right-1/4" />
+
+      {/* Subtle dot-grid texture */}
+      <div className="absolute inset-0 bg-dot-grid opacity-[0.35] pointer-events-none -z-10" />
+
+      {/* Hero */}
+      <section className="h-full flex items-center justify-center relative z-10">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+
+          {/* Availability badge */}
+          <FadeIn direction="down" delay={0.1}>
+            <div className="inline-flex items-center gap-2.5 px-0 py-1.5 text-[var(--primary)] text-sm font-medium mb-6 select-none">
+              <PulseCircle />
+              {dict.hero.badge}
+            </div>
           </FadeIn>
-          
-          <FadeIn direction="down" delay={0.4}>
-            <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-[1.15] pb-2">
-              <span className="hero-gradient">Andreas Hilgers</span>
+
+          {/* Name */}
+          <FadeIn direction="down" delay={0.3}>
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-normal leading-[1.2] pb-4 mb-3 px-6">
+              <span className="hero-gradient inline-block pr-4">{dict.hero.name}</span>
             </h1>
           </FadeIn>
-          
-          <FadeIn direction="down" delay={0.6}>
-            <div className="text-2xl md:text-3xl font-bold text-[var(--foreground)] mb-4">
+
+          {/* Role */}
+          <FadeIn direction="down" delay={0.5}>
+            <p className="text-xs sm:text-sm text-[var(--secondary)] font-bold uppercase tracking-[0.28em] mb-5">
               {dict.hero.role}
-            </div>
-          </FadeIn>
-          
-          <FadeIn direction="down" delay={0.8}>
-            <TypingText
-              texts={dict.hero.typing_texts}
-              speed={80}
-              pauseDuration={2500}
-              deleteSpeed={40}
-              className="text-xl md:text-2xl font-medium text-[var(--primary)] mb-8"
-            />
-          </FadeIn>
-          
-          <FadeIn direction="down" delay={1}>
-            <p className="text-lg md:text-xl text-[var(--secondary)]/80 leading-relaxed max-w-2xl mx-auto mb-10">
-              {dict.hero.description}
             </p>
           </FadeIn>
-          
+
+          {/* Typing animation */}
+          <FadeIn direction="down" delay={0.7}>
+            <div className="h-8 md:h-10 mb-7">
+              <TypingText
+                texts={dict.hero.typing_texts}
+                speed={80}
+                pauseDuration={2500}
+                deleteSpeed={40}
+                className="text-xl md:text-2xl font-bold"
+              />
+            </div>
+          </FadeIn>
+
           {/* CTA Buttons */}
-          <FadeIn direction="up" delay={1.2}>
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <Link href={`/${lang}/about`} className="btn-primary px-8 py-3 text-lg rounded-md font-bold">
-                <span>{dict.nav.about}</span>
+          <FadeIn direction="up" delay={0.9}>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <Link
+                href={`/${lang}/about`}
+                className="btn-primary px-7 py-3 text-base rounded-md font-bold flex items-center gap-2"
+              >
+                {dict.hero.cta_primary}
+                <RiArrowRightLine size={18} />
               </Link>
-              <Link href={`/${lang}/projects`} className="btn-outline px-8 py-3 text-lg rounded-md font-bold">
-                <RiBriefcase4Line size={20} /> {dict.nav.projects}
-              </Link>
-            </div>
-          </FadeIn>
-          
-          {/* Social Links */}
-          <FadeIn direction="up" delay={1.4}>
-            <div className="flex justify-center gap-6">
-              <a href="https://github.com/scriptlabs" target="_blank" rel="noopener noreferrer" className="p-3 border border-[var(--border)] rounded-sm hover:border-[var(--primary)] hover:scale-110 transition-all group">
-                <RiGithubFill size={24} className="text-[var(--secondary)] group-hover:text-[var(--primary)]" />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a href="https://linkedin.com/in/andreashilgers" target="_blank" rel="noopener noreferrer" className="p-3 border border-[var(--border)] rounded-sm hover:border-[var(--primary)] hover:scale-110 transition-all group">
-                <RiLinkedinBoxFill size={24} className="text-[var(--secondary)] group-hover:text-[var(--primary)]" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <Link href={`/${lang}/contact`} className="p-3 border border-[var(--border)] rounded-sm hover:border-[var(--primary)] hover:scale-110 transition-all group">
-                <RiMailLine size={24} className="text-[var(--secondary)] group-hover:text-[var(--primary)]" />
-                <span className="sr-only">Contact</span>
+              <Link
+                href={`/${lang}/contact`}
+                className="btn-outline px-7 py-3 text-base rounded-md font-bold flex items-center gap-2"
+              >
+                <RiCalendarLine size={18} />
+                {dict.hero.cta_secondary}
               </Link>
             </div>
           </FadeIn>
+
+          {/* Stats row */}
+          <FadeIn direction="up" delay={1.1}>
+            <div className="flex justify-center items-stretch mb-8">
+              {dict.hero.stats.map((stat, idx) => (
+                <div
+                  key={stat.label}
+                  className={`px-7 md:px-12 text-center ${idx > 0 ? "border-l border-[var(--border)]" : ""}`}
+                >
+                  <p className="text-2xl md:text-3xl font-black hero-gradient leading-tight">
+                    {stat.value}
+                  </p>
+                  <p className="text-[10px] md:text-xs uppercase tracking-[0.18em] text-[var(--secondary)] font-semibold mt-0.5 whitespace-nowrap">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
         </div>
       </section>
     </main>

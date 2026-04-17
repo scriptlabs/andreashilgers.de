@@ -1,13 +1,19 @@
 import { getDictionary } from "@/lib/get-dictionary";
 import { FadeIn, StaggerItem } from "@/components/animated-text";
-import { 
-  RiUser3Line, 
-  RiMapPinLine, 
+import Link from "next/link";
+import {
+  RiUser3Line,
+  RiMapPinLine,
   RiGlobalLine,
   RiFocus3Line,
   RiDoubleQuotesL,
+  RiShieldUserLine,
+  RiLinkedinBoxFill,
+  RiArrowRightLine,
+  RiCalendarLine,
+  RiGamepadLine,
+  RiGroupLine,
   RiMailLine,
-  RiShieldUserLine
 } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
 
@@ -16,17 +22,19 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-20 lg:py-32">
+    <main className="max-w-7xl mx-auto px-6 py-20">
       {/* Header Section */}
-      <div className="max-w-3xl mb-20 lg:mb-32">
+      <div className="max-w-3xl mb-16">
         <FadeIn direction="down">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold mb-6 uppercase tracking-widest">
-            <RiShieldUserLine size={14} /> {lang === 'de' ? 'Hintergrund' : 'Background'}
+          <div className="flex flex-col items-start gap-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold uppercase tracking-widest">
+              <RiShieldUserLine size={14} /> {lang === 'de' ? 'Hintergrund' : 'Background'}
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black hero-gradient leading-[1.15] pb-2">
+              {dict.about.title}
+            </h1>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-6 hero-gradient leading-[1.15] pb-2">
-            {dict.about.title}
-          </h1>
-          <p className="text-xl md:text-2xl text-[var(--secondary)] leading-relaxed">
+          <p className="text-xl md:text-2xl text-[var(--secondary)] leading-relaxed mt-6">
             {dict.about.subtitle}
           </p>
         </FadeIn>
@@ -57,12 +65,27 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {Object.entries(dict.about.stats).map(([key, value], index) => (
               <StaggerItem key={key} index={index}>
-                <div className="p-8 rounded-md bg-[var(--muted)]/50 border border-[var(--border)] hover:border-[var(--primary)]/30 transition-colors group text-center flex flex-col justify-center">
+                <div className="p-8 rounded-md bg-[var(--muted)]/50 border border-[var(--border)] hover:border-[var(--primary)]/30 transition-colors group text-center flex flex-col justify-center h-full">
                   <p className="text-3xl font-black hero-gradient mb-2 group-hover:scale-105 transition-transform origin-center">{value}</p>
                   <p className="text-xs uppercase tracking-[0.2em] text-[var(--secondary)] font-bold">{key}</p>
                 </div>
               </StaggerItem>
             ))}
+            
+            {/* Looking For Card - Spans full width of the grid */}
+            <StaggerItem index={4} className="sm:col-span-2">
+              <div className="p-8 rounded-md bg-[var(--primary)]/5 border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-all group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--primary)]/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:scale-150 transition-transform duration-1000" />
+                
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3 text-[var(--primary)]">
+                  <RiFocus3Line size={24} />
+                  {dict.about.looking_for.title}
+                </h3>
+                <p className="text-[var(--foreground)] opacity-80 leading-relaxed italic">
+                  &ldquo;{dict.about.looking_for.content}&rdquo;
+                </p>
+              </div>
+            </StaggerItem>
           </div>
         </div>
 
@@ -78,37 +101,55 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               <div className="space-y-6">
                 {[
                   { label: lang === 'de' ? 'Name' : 'Name', value: dict.about.details.name, icon: RiUser3Line },
+                  { label: lang === 'de' ? 'Alter' : 'Age', value: dict.about.details.age, icon: RiCalendarLine },
                   { label: lang === 'de' ? 'Standort' : 'Location', value: dict.about.details.location, icon: RiMapPinLine },
                   { label: lang === 'de' ? 'Fokus' : 'Specialization', value: dict.about.details.specialization, icon: RiFocus3Line },
                   { label: lang === 'de' ? 'Sprachen' : 'Languages', value: dict.about.details.languages, icon: RiGlobalLine },
-                  { label: 'E-Mail', value: dict.about.details.email, icon: RiMailLine, isLink: true }
-                ].map((detail, idx) => (
-                  <div key={idx} className="flex items-start gap-4 p-4 rounded-lg hover:bg-[var(--primary)]/5 transition-colors border border-transparent hover:border-[var(--primary)]/10">
+                  { label: lang === 'de' ? 'Hobbies' : 'Hobbies', value: dict.about.details.hobbies, icon: RiGamepadLine },
+                  { label: lang === 'de' ? 'Mitgliedschaft' : 'Membership', value: dict.about.details.memberships, icon: RiGroupLine }
+                ].filter(d => d.value).map((detail, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 rounded-sm hover:bg-[var(--primary)]/5 transition-colors border border-transparent hover:border-[var(--primary)]/10">
                     <div className="p-2.5 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)]">
                       <detail.icon size={18} />
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-widest text-[var(--secondary)] font-bold mb-0.5">{detail.label}</p>
-                      {detail.isLink ? (
-                        <a href={`mailto:${detail.value}`} className="font-semibold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors whitespace-pre-line text-sm">
-                          {detail.value}
-                        </a>
-                      ) : (
-                        <p className="font-semibold text-[var(--foreground)] whitespace-pre-line text-sm">{detail.value}</p>
-                      )}
+                      <p className="font-semibold text-[var(--foreground)] whitespace-pre-line text-sm">{detail.value}</p>
                     </div>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-10">
-                <a 
-                  href={`/${lang}/vault`}
-                  className="w-full btn-primary py-4 rounded-md flex items-center justify-center gap-3 shadow-lg shadow-[var(--primary)]/20 hover:scale-[1.02] active:scale-[0.98] transition-all font-bold"
+              <div className="mt-8 relative z-10">
+                <Link
+                  href={`/${lang}/contact`}
+                  className="w-full btn-outline py-4 rounded-md flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all font-bold text-sm"
                 >
-                  <RiShieldUserLine size={20} />
-                  <span>{dict.about.download_cv}</span>
+                  <RiMailLine size={20} />
+                  <span>{lang === 'de' ? 'Kontakt aufnehmen' : 'Get in touch'}</span>
+                </Link>
+              </div>
+
+              <div className="mt-4">
+                <a
+                  href="https://linkedin.com/in/andreashilgers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full btn-outline py-3 rounded-md flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all text-sm font-bold"
+                >
+                  <RiLinkedinBoxFill size={20} className="text-[#0a66c2]" />
+                  <span>LinkedIn Profile</span>
                 </a>
+              </div>
+
+              <div className="mt-4">
+                <Link
+                  href={`/${lang}/experience`}
+                  className="w-full btn-primary py-3 rounded-md flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all text-sm font-bold"
+                >
+                  <span>{lang === 'de' ? 'Meine Erfahrung' : 'My Experience'}</span>
+                  <RiArrowRightLine size={18} />
+                </Link>
               </div>
             </div>
           </FadeIn>

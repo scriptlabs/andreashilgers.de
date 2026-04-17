@@ -8,13 +8,13 @@ import {
   RiMoonLine, 
   RiSunLine, 
   RiTreeLine, 
-  RiGlobalLine, 
   RiLockPasswordLine, 
   RiMenuLine, 
   RiCloseLine 
 } from "react-icons/ri";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Dictionary } from "@/lib/dictionary";
+import LanguageSwitcher from "./language-switcher";
 
 interface NavbarProps {
   dict: Dictionary;
@@ -100,36 +100,7 @@ export function Navbar({ dict, lang }: NavbarProps) {
 
               {/* Language Switcher - Desktop */}
               <div className="hidden md:block">
-                <DropdownMenu.Root>
-                  <DropdownMenu.Trigger asChild>
-                    <button
-                      className="p-2.5 rounded-md hover:bg-[var(--background)] transition-colors"
-                      aria-label="Change language"
-                    >
-                      <RiGlobalLine size={20} />
-                    </button>
-                  </DropdownMenu.Trigger>
-                  <DropdownMenu.Portal>
-                    <DropdownMenu.Content
-                      className="bg-[var(--card)] p-2 rounded-md border border-[var(--border)] shadow-lg min-w-[140px] z-50"
-                      align="end"
-                      sideOffset={5}
-                    >
-                      <DropdownMenu.Item asChild className="flex items-center gap-3 p-2.5 cursor-pointer hover:bg-[var(--primary)]/5 rounded-md transition-colors text-sm">
-                        <Link href={pathname.replace(`/${lang}`, "/de")}>
-                          <span>🇩🇪</span>
-                          <span className="ml-2">Deutsch</span>
-                        </Link>
-                      </DropdownMenu.Item>
-                      <DropdownMenu.Item asChild className="flex items-center gap-3 p-2.5 cursor-pointer hover:bg-[var(--primary)]/5 rounded-md transition-colors text-sm">
-                        <Link href={pathname.replace(`/${lang}`, "/en")}>
-                          <span>🇬🇧</span>
-                          <span className="ml-2">English</span>
-                        </Link>
-                      </DropdownMenu.Item>
-                    </DropdownMenu.Content>
-                  </DropdownMenu.Portal>
-                </DropdownMenu.Root>
+                <LanguageSwitcher currentLang={lang} />
               </div>
 
               {/* Theme Switcher - Desktop */}
@@ -221,32 +192,32 @@ export function Navbar({ dict, lang }: NavbarProps) {
               })}
 
               <div className="mt-6 pt-6 border-t border-[var(--border)]">
-                <DropdownMenu.Root>
-                  <DropdownMenu.Trigger asChild>
-                    <button className="w-full flex items-center justify-between px-5 py-3 rounded-md text-lg font-medium text-[var(--foreground)] hover:bg-[var(--primary)]/5 transition-colors">
-                      <span className="flex items-center gap-3">
-                        <span>{lang === 'de' ? '🇩🇪' : '🇬🇧'}</span>
-                        Language
-                      </span>
-                    </button>
-                  </DropdownMenu.Trigger>
-                  <DropdownMenu.Portal>
-                    <DropdownMenu.Content className="bg-[var(--card)] p-2 rounded-md border border-[var(--border)] shadow-lg min-w-[140px] z-50" align="start">
-                      <DropdownMenu.Item asChild className="flex items-center gap-3 p-2.5 cursor-pointer hover:bg-[var(--primary)]/5 rounded-md transition-colors">
-                        <Link href={pathname.replace(`/${lang}`, "/de")} onClick={() => setMobileMenuOpen(false)}>
-                          <span>🇩🇪</span>
-                          <span className="ml-2">Deutsch</span>
-                        </Link>
-                      </DropdownMenu.Item>
-                      <DropdownMenu.Item asChild className="flex items-center gap-3 p-2.5 cursor-pointer hover:bg-[var(--primary)]/5 rounded-md transition-colors">
-                        <Link href={pathname.replace(`/${lang}`, "/en")} onClick={() => setMobileMenuOpen(false)}>
-                          <span>🇬🇧</span>
-                          <span className="ml-2">English</span>
-                        </Link>
-                      </DropdownMenu.Item>
-                    </DropdownMenu.Content>
-                  </DropdownMenu.Portal>
-                </DropdownMenu.Root>
+                <Link 
+                  href={pathname.replace(`/${lang}`, lang === "de" ? "/en" : "/de")}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full flex items-center justify-between px-5 py-3 rounded-md text-lg font-medium text-[var(--foreground)] hover:bg-[var(--primary)]/5 transition-colors"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="w-7 h-5 overflow-hidden rounded-[2px] shadow-sm flex items-center border border-black/5">
+                      {lang === "de" ? (
+                        <svg viewBox="0 0 60 30" className="w-full h-full">
+                          <rect width="60" height="30" fill="#012169"/>
+                          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6"/>
+                          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4"/>
+                          <path d="M30,0 L30,30 M0,15 L60,15" stroke="#fff" strokeWidth="10"/>
+                          <path d="M30,0 L30,30 M0,15 L60,15" stroke="#C8102E" strokeWidth="6"/>
+                        </svg>
+                      ) : (
+                        <svg viewBox="0 0 5 3" className="w-full h-full">
+                          <rect width="5" height="3" y="0" fill="#000"/>
+                          <rect width="5" height="2" y="1" fill="#D00"/>
+                          <rect width="5" height="1" y="2" fill="#FFCE00"/>
+                        </svg>
+                      )}
+                    </span>
+                    {lang === 'de' ? 'English' : 'Deutsch'}
+                  </span>
+                </Link>
 
                 <DropdownMenu.Root>
                   <DropdownMenu.Trigger asChild>

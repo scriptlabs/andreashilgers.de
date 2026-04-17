@@ -14,13 +14,16 @@ import {
   RiTaskLine,
   RiGraduationCapLine,
   RiAwardLine,
-  RiMapPinLine,
   RiBankLine,
   RiFileUserLine,
-  RiCloseLine
+  RiCloseLine,
+  RiMailLine,
+  RiPhoneLine,
+  RiHome4Line
 } from "react-icons/ri";
 import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
+import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import { Dictionary } from "@/lib/dictionary";
 
 export default function VaultPage() {
@@ -44,7 +47,7 @@ export default function VaultPage() {
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault();
-    if (accessCode === "2026") {
+    if (accessCode === "4242") {
       setIsUnlocked(true);
       setError(false);
       sessionStorage.setItem("vault_unlocked", "true");
@@ -52,6 +55,12 @@ export default function VaultPage() {
       setError(true);
       setAccessCode("");
     }
+  };
+
+  const handleLogout = () => {
+    setIsUnlocked(false);
+    setAccessCode("");
+    sessionStorage.removeItem("vault_unlocked");
   };
 
   React.useEffect(() => {
@@ -62,9 +71,11 @@ export default function VaultPage() {
   }, []);
 
   if (isLoading || !dict) {
-    return <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--primary)]"></div>
-    </div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--primary)]"></div>
+      </div>
+    );
   }
 
   const vaultDict = dict.vault;
@@ -197,6 +208,91 @@ export default function VaultPage() {
         </FadeIn>
       </div>
 
+      {/* Contact Info Section */}
+      <FadeIn direction="up" delay={0.2} className="mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 w-full">
+          {/* Address Card */}
+          <a 
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(vaultDict.contact_info.address)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:col-span-5 flex items-center gap-3 p-4 rounded-md bg-[var(--muted)]/50 border border-[var(--border)] hover:border-[var(--primary)]/30 hover:bg-[var(--primary)]/5 transition-all group"
+          >
+            <div className="w-10 h-10 rounded-md bg-[var(--primary)]/10 text-[var(--primary)] flex items-center justify-center shrink-0 group-hover:bg-[var(--primary)] group-hover:text-white transition-colors">
+              <RiHome4Line size={20} />
+            </div>
+            <div>
+              <p className="text-xs text-[var(--secondary)] uppercase font-bold tracking-wider mb-0.5 group-hover:text-[var(--primary)] transition-colors">{vaultDict.contact_info.name}</p>
+              <p className="text-sm font-medium group-hover:text-[var(--foreground)] transition-colors">{vaultDict.contact_info.address}</p>
+            </div>
+          </a>
+          
+          {/* Contact Stack */}
+          <div className="md:col-span-5 flex flex-col gap-2">
+            <a 
+              href={`mailto:${vaultDict.contact_info.email}`}
+              className="flex items-center gap-3 p-3 rounded-md bg-[var(--muted)]/50 border border-[var(--border)] hover:border-[var(--primary)]/30 hover:bg-[var(--primary)]/5 transition-all group"
+            >
+              <div className="w-8 h-8 rounded-md bg-[var(--primary)]/10 text-[var(--primary)] flex items-center justify-center shrink-0 group-hover:bg-[var(--primary)] group-hover:text-white transition-colors">
+                <RiMailLine size={16} />
+              </div>
+              <span className="text-sm font-medium">{vaultDict.contact_info.email}</span>
+            </a>
+            
+            <a 
+              href={`tel:${vaultDict.contact_info.phone.replace(/\s/g, '')}`}
+              className="flex items-center gap-3 p-3 rounded-md bg-[var(--muted)]/50 border border-[var(--border)] hover:border-[var(--primary)]/30 hover:bg-[var(--primary)]/5 transition-all group"
+            >
+              <div className="w-8 h-8 rounded-md bg-[var(--primary)]/10 text-[var(--primary)] flex items-center justify-center shrink-0 group-hover:bg-[var(--primary)] group-hover:text-white transition-colors">
+                <RiPhoneLine size={16} />
+              </div>
+              <span className="text-sm font-medium">{vaultDict.contact_info.phone}</span>
+            </a>
+          </div>
+
+          {/* Logout Card */}
+          <AlertDialog.Root>
+            <AlertDialog.Trigger asChild>
+              <button
+                className="md:col-span-2 flex flex-col items-center justify-center gap-2 p-4 rounded-md bg-red-500/5 border border-red-500/10 hover:bg-red-500 hover:text-white transition-all group"
+                title={vaultDict.contact_info.logout}
+              >
+                <RiLockPasswordLine size={24} className="text-red-500 group-hover:text-white transition-colors" />
+                <span className="text-[10px] uppercase font-bold tracking-widest text-red-500 group-hover:text-white transition-colors text-center">
+                  {vaultDict.contact_info.logout}
+                </span>
+              </button>
+            </AlertDialog.Trigger>
+            <AlertDialog.Portal>
+              <AlertDialog.Overlay className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[110] animate-in fade-in duration-300" />
+              <AlertDialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-md bg-[var(--card)] p-8 rounded-md shadow-2xl z-[111] border border-[var(--border)] animate-in zoom-in-95 duration-300 focus:outline-none">
+                <AlertDialog.Title className="text-xl font-bold mb-4">
+                  {vaultDict.contact_info.logout}
+                </AlertDialog.Title>
+                <AlertDialog.Description className="text-[var(--secondary)] text-sm mb-8 leading-relaxed">
+                  {vaultDict.contact_info.logout_message}
+                </AlertDialog.Description>
+                <div className="flex justify-end gap-4">
+                  <AlertDialog.Cancel asChild>
+                    <button className="px-6 py-2.5 rounded-sm text-sm font-bold border border-[var(--border)] hover:bg-[var(--muted)] transition-colors">
+                      {vaultDict.contact_info.logout_cancel}
+                    </button>
+                  </AlertDialog.Cancel>
+                  <AlertDialog.Action asChild>
+                    <button 
+                      onClick={handleLogout}
+                      className="px-6 py-2.5 rounded-sm text-sm font-bold bg-red-600 text-white hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20"
+                    >
+                      {vaultDict.contact_info.logout_confirm}
+                    </button>
+                  </AlertDialog.Action>
+                </div>
+              </AlertDialog.Content>
+            </AlertDialog.Portal>
+          </AlertDialog.Root>
+        </div>
+      </FadeIn>
+
       <div className="flex flex-col gap-6">
         {documents.map((doc, index) => (
           <StaggerItem key={doc.id} index={index}>
@@ -218,10 +314,6 @@ export default function VaultPage() {
                         <RiBankLine size={14} className="text-[var(--primary)]" />
                         <span className="underline decoration-[var(--primary)]/30 underline-offset-4">{doc.provider}</span>
                       </a>
-                      <div className="flex items-center gap-1.5">
-                        <RiMapPinLine size={14} className="text-[var(--primary)]" />
-                        {doc.location}
-                      </div>
                     </div>
                     <div className="pt-2 flex flex-wrap gap-2">
                       <span className="px-2.5 py-0.5 rounded-sm bg-[var(--primary)]/5 text-[var(--primary)] text-xs font-semibold border border-[var(--primary)]/10">
@@ -234,22 +326,25 @@ export default function VaultPage() {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3 ml-22 lg:ml-0">
+                <div className="flex flex-wrap items-center gap-3 ml-22 lg:ml-0">
                   <button
                     onClick={() => setPreviewFile({ url: doc.file, title: doc.title })}
-                    className="flex-1 sm:flex-none px-5 py-2.5 rounded-md bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-sm font-bold"
+                    className="hidden sm:flex px-5 py-2.5 rounded-md bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all items-center justify-center gap-2 text-sm font-bold"
                   >
                     <RiEyeLine size={18} />
-                    <span>Vorschau</span>
+                    <span>{dict.vault.preview}</span>
                   </button>
-                  <a 
-                    href={doc.file} 
-                    download 
-                    className="flex-1 sm:flex-none px-5 py-2.5 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-sm font-bold"
-                  >
-                    <RiDownloadLine size={18} />
-                    <span>PDF</span>
-                  </a>
+                  
+                  <div className="flex items-center gap-2 w-full sm:w-auto">
+                    <a 
+                      href={doc.file} 
+                      download 
+                      className="flex-1 sm:flex-none px-5 py-2.5 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-sm font-bold"
+                    >
+                      <RiDownloadLine size={18} />
+                      <span>{dict.vault.download_pdf}</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -260,10 +355,10 @@ export default function VaultPage() {
       <FadeIn direction="up" delay={0.6} className="mt-20">
         <div className="p-8 glass rounded-md border border-[var(--primary)]/10 text-center">
           <p className="text-[var(--secondary)] mb-6 text-sm">
-            Diese Dokumente sind vertraulich. Bitte behandeln Sie diese mit Diskretion.
+            {dict.vault.confidential_notice}
           </p>
-          <Link href={`/${lang}/contact`} className="btn-outline px-8 py-3 rounded-md text-sm">
-            Fragen zu den Dokumenten?
+          <Link href={`/${lang}/contact`} className="btn-outline px-8 py-3 rounded-md text-sm font-bold">
+            {dict.vault.contact_questions}
           </Link>
         </div>
       </FadeIn>
@@ -298,9 +393,9 @@ export default function VaultPage() {
                <a 
                   href={previewFile?.url} 
                   download 
-                  className="btn-primary px-6 py-2 text-sm rounded-sm"
+                  className="btn-primary px-6 py-2 text-sm rounded-md font-bold flex items-center gap-2"
                 >
-                  <RiDownloadLine size={18} /> Download PDF
+                  <RiDownloadLine size={18} /> {dict.vault.download} PDF
                 </a>
             </div>
           </Dialog.Content>

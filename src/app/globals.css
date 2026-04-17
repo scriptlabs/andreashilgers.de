@@ -360,3 +360,104 @@ body {
     padding: 3rem 1rem;
   }
 }
+
+/* ─── Animated Background Orbs ─── */
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  25%       { transform: translate(60px, -50px) scale(1.08); }
+  50%       { transform: translate(-30px, 70px) scale(0.94); }
+  75%       { transform: translate(-55px, -25px) scale(1.04); }
+}
+
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(-60px, 55px) scale(1.06); }
+  66%       { transform: translate(45px, -65px) scale(0.92); }
+}
+
+@keyframes orb-float-3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50%       { transform: translate(35px, -40px) scale(1.05); }
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-orb-primary {
+  width: 550px;
+  height: 550px;
+  background: var(--primary);
+  opacity: 0.10;
+  animation: orb-float-1 22s ease-in-out infinite;
+}
+
+.bg-orb-accent {
+  width: 400px;
+  height: 400px;
+  background: var(--accent);
+  opacity: 0.08;
+  animation: orb-float-2 17s ease-in-out infinite;
+}
+
+.bg-orb-mid {
+  width: 280px;
+  height: 280px;
+  background: var(--primary);
+  opacity: 0.07;
+  animation: orb-float-3 13s ease-in-out infinite;
+}
+
+/* Dot-grid background texture */
+.bg-dot-grid {
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Pulsing available indicator */
+@keyframes ping {
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
+.ping {
+  animation: ping 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Scroll-down indicator */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0px); opacity: 0.6; }
+  50%       { transform: translateY(6px);  opacity: 1; }
+}
+
+.scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* Gradient border glow on cards */
+.card-glow:hover {
+  box-shadow: 0 0 0 1px var(--primary), 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* Shimmer effect for skill / project cards */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--foreground) 0%,
+    var(--primary) 50%,
+    var(--foreground) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}

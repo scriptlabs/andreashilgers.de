@@ -18,13 +18,14 @@
     "vault": "Dokumente"
   },
   "hero": {
+    "badge": "Bereit für neue Herausforderungen",
     "greeting": "Senior Full-Stack Entwickler & Engineering Leader",
     "name": "Andreas Hilgers",
-    "role": "Engineering Manager // Tech-Lead",
+    "role": "Full-Stack Engineer // Tech-Lead // Teamplayer",
     "description": "Über 20 Jahre Erfahrung in Design, Entwicklung und Skalierung digitaler Plattformen, APIs und hochfrequentierter SaaS-Anwendungen. Experte in der Leitung cross-funktionaler Teams und der Steuerung end-to-end digitaler Transformationen.",
     "subdescription": "Schnittstelle zwischen Geschäftssteuerung und technischer Exzellenz – für skalierbare, sichere und wartbare Lösungen.",
-    "cta_primary": "Berufsweg ansehen",
-    "cta_secondary": "Kontakt aufnehmen",
+    "cta_primary": "Über mich",
+    "cta_secondary": "Kontakt",
     "typing_texts": [
       "Engineering Management",
       "Technische Leitung",
@@ -32,6 +33,11 @@
       "Digitale Transformation",
       "KI & Agentic Development",
       "Full-Stack Exzellenz"
+    ],
+    "stats": [
+      { "label": "Erfahrung", "value": "20+ Jahre" },
+      { "label": "Zeilen Code", "value": "1Mio+" },
+      { "label": "Liter Kaffee", "value": "1000+" }
     ]
   },
   "about": {
@@ -45,7 +51,11 @@
       "experience": "20+ Jahre",
       "specialization": "Leadership & Architektur",
       "email": "andreas_hilgers@icloud.com",
-      "languages": "Deutsch (Muttersprache)\nEnglisch (Verhandlungssicher)"
+      "languages": "Deutsch (Muttersprache)\nEnglisch (Verhandlungssicher)",
+      "age": "42 Jahre",
+      "family": "Verheiratet · Vater",
+      "hobbies": "Tischtennis · Snowboarden · Longboarden",
+      "memberships": "Chaos Computer Club (CCC)"
     },
     "stats": {
       "experience": "20+ Jahre Erfahrung",
@@ -54,6 +64,10 @@
       "transformation": "Digitale Transformation"
     },
     "quote": "Exzellenz entsteht an der Schnittstelle zwischen Unternehmensstrategie und skalierbarer Software-Architektur.",
+    "looking_for": {
+      "title": "Was ich suche",
+      "content": "Ich suche neue Herausforderungen in einem Umfeld, das Wert auf technische Exzellenz, spannende Technologien und einen starken Teamgeist legt. Ich brenne für Chancen, bei denen ich meine Erfahrung einbringen und gemeinsam mit visionären Teams wachsen kann."
+    },
     "download_cv": "Lebenslauf herunterladen"
   },
   "experience": {
@@ -62,44 +76,89 @@
     "current_role": "Engineering Leader",
     "items": [
       {
+        "id": "exp-research",
+        "company": "Research",
+        "companyUrl": "https://andreashilgers.de",
+        "position": "AI Research & Agentic Development",
+        "period": "2026 – Heute",
+        "description": "Spezialisierung auf Agent-Driven Development, LLMs und KI-gestützte Workflow-Automatisierung. Erforschung und Implementierung von KI-Systemen für den produktiven Einsatz in skalierbaren Umgebungen.",
+        "technologies": ["Agent-Driven Development", "LLMs", "AI Generation", "Prompt Engineering", "RAG", "AI Agents", "Python"],
+        "type": "work"
+      },
+      {
         "id": "exp-btcecho",
         "company": "BTC-ECHO",
-        "position": "Leiter der Entwicklung (Head of Development)",
+        "companyUrl": "https://www.btc-echo.de",
+        "position": "Head of Development",
         "period": "2025 – 2026",
         "description": "Strategische Weiterentwicklung der Engineering-Organisation. Leitung der technologischen Ausrichtung mit Fokus auf Skalierbarkeit und Innovation.",
-        "technologies": ["Cloud-Computing", "Künstliche Intelligenz (KI)", "Leadership", "Technology Strategy", "Web3", "OKR"],
+        "technologies": ["Cloud-Computing", "Künstliche Intelligenz (KI)", "Leadership", "Technology Strategy", "Web3", "OKR", "Agent-Driven Development", "Budgetierung", "Analyse"],
         "type": "work"
+      },
+      {
+        "id": "cert-okr",
+        "company": "MURAKAMY",
+        "companyUrl": "https://www.murakamy.com",
+        "position": "OKR Workshop",
+        "period": "2025",
+        "description": "Erfolgreicher Abschluss des Online-Kurses zu den Grundlagen von Objectives and Key Results (OKR). Fokus auf strategische Zielsetzung und Alignment in agilen Organisationen.",
+        "technologies": ["OKR", "Leadership", "Goal Setting", "Agile", "Vision", "Objective"],
+        "type": "cert"
       },
       {
         "id": "exp-ocd",
         "company": "OCD Online Cargo GmbH",
-        "position": "Staff Full-Stack Developer",
+        "companyUrl": "https://www.online-cargo.de",
+        "position": "Lead Full-Stack Developer",
         "period": "2022 – 2025",
-        "description": "Leitung der Digitalisierungsprojekte und technologische Führung des Entwicklungsteams in einer Hybrid-Umgebung.",
-        "technologies": ["Cloud-Computing", "Technology Leadership", "Architecture", "Node.js", "React Native", "CI/CD"],
+        "description": "Leitung der Digitalisierungsprojekte und technologische Führung des Entwicklungsteams im europäischen Schienengüterverkehr. Entwicklung des Online Cargo Planner als Whitelabel-Lösung in einer Hybrid-Umgebung.",
+        "technologies": ["Cloud-Computing", "Technology Leadership", "Architecture", "Node.js", "React Native", "Online Cargo Planner", "Whitelabel", "Künstliche Intelligenz (KI)", "Vision", "Budgetierung", "CI/CD"],
         "type": "work"
       },
       {
         "id": "cert-scrum",
         "company": "Scrum Alliance",
+        "companyUrl": "https://www.scrumalliance.org",
         "position": "Certified Scrum Developer",
         "period": "2021",
-        "description": "Zertifizierung mit Fokus auf agile Methodiken und effiziente Team-Kollaboration.",
-        "technologies": ["Agile", "Scrum", "TDD"],
+        "description": "Erfolgreicher Abschluss des Online-Kurses zu Methodiken des agilen Software-Development-Managements. Vertiefung in Scrum-Prozesse, agile Planung und effiziente Team-Kollaboration.",
+        "technologies": ["Agile", "Scrum", "TDD", "Extreme Programming (XP)", "Pair Programming", "Continuous Integration"],
         "type": "cert"
+      },
+      {
+        "id": "exp-zenguard",
+        "company": "ZenGuard",
+        "companyUrl": "https://zenguard.org",
+        "position": "Lead Full-Stack Developer",
+        "period": "2019 – 2021",
+        "description": "Tochterfirma von Kape Technologies PLC — Mutterkonzern der Marken CyberGhostVPN, ExpressVPN und Private Internet Access (PIA). Verantwortung für Webtechnologien und globale Software-Infrastrukturen innerhalb des Kape Technologies Ökosystems.",
+        "technologies": ["Webtechnologien", "Software-Infrastruktur", "Scaling", "APIs", "Cloud", "Payments", "Marketing", "Tracking", "Security"],
+        "type": "work"
       },
       {
         "id": "cert-msm",
         "company": "Maastricht School of Management",
-        "position": "Project Management\nDesigning and Managing Projects",
+        "companyUrl": "https://www.msm.nl",
+        "position": "Project Management",
         "period": "2020",
-        "description": "Vertiefung strategischer Management-Kompetenzen für internationale IT-Projekte.",
-        "technologies": ["Projektmanagement", "Strategie"],
+        "description": "Erfolgreicher Abschluss des Lehrgangs 'Designing and Managing Projects'. Vertiefung strategischer Management-Kompetenzen für internationale IT-Projekte.",
+        "technologies": ["Projektmanagement", "Strategie", "Agile", "Strategisches Management", "IT Governance"],
         "type": "cert"
+      },
+      {
+        "id": "exp-scriptlabs",
+        "company": "Scriptlabs",
+        "companyUrl": "https://scriptlabs.de",
+        "position": "Full-Stack Developer (Founder)",
+        "period": "2013 – 2018",
+        "description": "Gründung und Skalierung einer spezialisierten Software-Agentur für hochperformante B2B-Ökosysteme. Steuerung des gesamten Projekt-Lifecycles für internationale Kunden.",
+        "technologies": ["Cloud-Computing", "App-Entwicklung", "Entrepreneurship", "B2B"],
+        "type": "work"
       },
       {
         "id": "edu-ihk",
         "company": "IHK Aachen",
+        "companyUrl": "https://www.ihk.de/aachen/",
         "position": "Fachinformatiker\nAnwendungsentwicklung",
         "period": "2017",
         "description": "Staatlich anerkannte Ausbildung mit Schwerpunkt auf Software-Engineering und Architektur.",
@@ -107,96 +166,295 @@
         "type": "edu"
       },
       {
-        "id": "exp-zenguard",
-        "company": "ZenGuard",
-        "position": "Senior Full-Stack Developer",
-        "period": "2015 – 2021",
-        "description": "Langjährige Verantwortung für Webtechnologien und globale Software-Infrastrukturen in einem vollständig remote arbeitenden Team.",
-        "technologies": ["Webtechnologien", "Software-Infrastruktur", "Scaling", "APIs", "Cloud"],
+        "id": "exp-mobileconcepts",
+        "company": "mobile concepts",
+        "companyUrl": "https://www.mobile-concepts.com",
+        "position": "Full-Stack Developer",
+        "period": "2009 – 2012",
+        "description": "Entwicklung von Desktop-Software, Webservices, Apps und der Computerbild Cloud. Gründer von CyberGhost VPN; das Unternehmen wurde später zu ZenGuard.",
+        "technologies": ["Desktop Software", "Webservices", "Cloud Storage", "Apps"],
         "type": "work"
       },
       {
-        "id": "exp-scriptlabs",
-        "company": "Scriptlabs",
-        "position": "Founder",
-        "period": "2008 – 2014",
-        "description": "Gründung und Aufbau einer Agentur für individuelle B2B-Lösungen mit Schwerpunkt auf Cloud und Mobile.",
-        "technologies": ["Cloud-Computing", "App-Entwicklung", "Entrepreneurship", "B2B"],
+        "id": "exp-bundeswehr",
+        "company": "Bundesministerium der Verteidigung",
+        "companyUrl": "https://www.bmvg.de",
+        "position": "Stabsdienst (IT)",
+        "period": "2006 – 2008",
+        "description": "Entwicklung datenbankgestützter Anwendungen und interner Tools in einem hochsicheren Behördenumfeld.",
+        "technologies": ["Sicherheit", "Datenbanken", "Interne Tools", "Zuverlässigkeit"],
         "type": "work"
       },
       {
         "id": "exp-aixhibit",
         "company": "AIXhibit AG",
+        "companyUrl": "https://www.aixhibit.de",
         "position": "Junior Developer",
-        "period": "2005 – 2008",
-        "description": "Einstieg in die professionelle Softwareentwicklung mit Fokus auf datenbankgestützte Webanwendungen.",
-        "technologies": ["Cloud-Computing", "Webentwicklung", "SQL", "PHP"],
+        "period": "2004 – 2006",
+        "description": "Junior Developer mit Einstieg in die professionelle Softwareentwicklung. Entwicklung eines Zeitschriften-Abonnementsystems sowie digitaler Kundenlösungen für webbasierte Anwendungen.",
+        "technologies": ["Webentwicklung", "SQL", "PHP", "JavaScript", "Payments"],
         "type": "work"
       },
       {
         "id": "edu-ita",
-        "company": "Berufskolleg Alsdorf",
+        "company": "Berufskolleg",
+        "companyUrl": "https://www.berufskolleg-alsdorf.de",
         "position": "Informationstechnischer Assistent",
-        "period": "2002 – 2006",
-        "description": "Fundierte technische Grundausbildung inklusive Fachhochschulreife.",
-        "technologies": ["Netzwerktechnik", "Programmierung"],
+        "period": "2001 – 2004",
+        "description": "Staatlich geprüfter Informationstechnischer Assistent inklusive Fachhochschulreife. Fundierte Ausbildung in Hardware-naher Programmierung, Netzwerkarchitekturen und elektrotechnischen Grundlagen.",
+        "technologies": ["Netzwerktechnik", "Programmierung", "Wirtschaft", "Mikroprozessortechnik", "Elektrotechnik"],
+        "type": "edu"
+      },
+      {
+        "id": "exp-freelance-webdesign",
+        "company": "Freelance",
+        "position": "Web Designer & Grafikdesigner",
+        "period": "1999 – 2002",
+        "description": "Selbstständig als Webdesigner für lokale Unternehmen tätig. Erstellung von Flash-Intros mit ActionScript, handgecodetem HTML/CSS sowie Logo- und Flyerdesign für Print und Digital.",
+        "technologies": ["Flash", "ActionScript", "HTML", "CSS", "Logo Design", "Print Design", "Flyer Design"],
+        "type": "work"
+      },
+      {
+        "id": "edu-realschule",
+        "company": "Realschule",
+        "position": "Sekundarabschluss I",
+        "period": "1994 – 2000",
+        "description": "Erfolgreicher Abschluss der Realschule mit Fokus auf naturwissenschaftliche und technische Grundlagen.",
+        "technologies": ["Schulabschluss", "Grundlagen", "Naturwissenschaften"],
         "type": "edu"
       }
     ]
   },
   "projects": {
-    "title": "Strategische Initiativen",
-    "subtitle": "Ausgewählte Projekte mit hoher Hebelwirkung",
-    "description": "Eine Auswahl skalierbarer Plattformen und Projekte zur digitalen Transformation, die über die Jahre realisiert wurden.",
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Meilensteine aus über 20 Jahren Entwicklung",
+    "description": "Eine Auswahl strategischer Projekte und Plattformen, die maßgeblich zur digitalen Transformation beigetragen haben.",
     "items": [
       {
         "id": "p1",
-        "title": "Enterprise Logistics OS",
-        "category": "Digitale Transformation",
-        "description": "End-to-End Digitalisierung papierbasierter Prozesse für einen europaweiten Schienengüterverkehrsanbieter.",
-        "tech": ["React Native", "Node.js", "AWS"],
+        "title": "Firepire",
+        "logo": "/projects/firepire.png",
+        "category": "Web3 & AI News",
+        "description": "Hochperformante, modulare Full-Stack-Plattform für Krypto-News und Marktdaten. Kombiniert Microservice-Orchestrierung mit skalierbarem Frontend und automatisierten Daten-Workern — konzipiert als Source of Truth für Web3-Informationen.",
+        "details": "Lead Architect und Entwickler des gesamten Ökosystems — von Infrastruktur-Blueprints (Docker Compose/Terraform) bis zu spezialisierten Services und Workern. Für extreme Erweiterbarkeit ausgelegt: jeder Service ist unabhängig deploybar. Striktes snake_case API-Konzept für Konsistenz über alle Servicegrenzen. Batteries included: Auto-Seeding von 45+ Blockchain-Netzwerken und 55+ Kryptowährungen.",
+        "features": [
+          "Account Service: Identitätsmanagement mit Web3-Login (Ethereum/Solana) und MFA",
+          "Content Service: KI-gestütztes CMS für News und Guides mit automatischer Anreicherung via Perplexity AI",
+          "Crypto Service: kanonisches Register für Netzwerke, Coins und globale Marktstatistiken (CoinGecko, DefiLlama)",
+          "Advertisement Service: integrierte Ad-Kampagnen (Binance/Changelly)",
+          "Data Aggregation Pipeline: BullMQ-Worker zur Konsolidierung und Synchronisation von Multi-Source-Marktdaten",
+          "Security-first: API-Key-Hardening, Rollenmanagement, Schutz vor UID-Exposure",
+          "Multi-Cloud-Deployment via Terraform (GCP Cloud Run, AWS ECS Fargate, Azure Container Apps)"
+        ],
+        "tech": ["NestJS", "Next.js", "Python", "BullMQ", "PostgreSQL", "Redis", "MinIO", "Terraform", "GCP", "AWS", "Azure", "Traefik", "Docker", "CI/CD", "Testing", "Containerized", "Serverless", "Web3", "LLM", "Blockchain", "Smart Contract", "EVM", "Perplexity AI"],
         "link": "#"
       },
       {
         "id": "p2",
-        "title": "Global VPN Infrastructure",
-        "category": "High-Traffic SaaS",
-        "description": "Architektur und Skalierung von API-Endpunkten für Millionen Nutzer weltweit.",
-        "tech": ["PHP", "Laravel", "WebSocket"],
+        "title": "MemoryMesh AI",
+        "logo": "/projects/memorymesh.png",
+        "category": "AI Infrastructure",
+        "description": "\"The AI that remembers you\" — eine Plattform für persistente, personalisierte KI-Interaktionen. Löst das Zustandslosigkeitsproblem herkömmlicher KI-Assistenten durch ein intelligentes zweischichtiges Gedächtnissystem.",
+        "details": "Co-Founder und Lead Architect: von der Vision bis zur Implementierung. Gebaut auf einem Planning-First-Workflow (ADRs, Blueprints) mit produktionsreifem Monorepo (Turborepo), deployed via Docker/Traefik. Die Architektur setzt auf Context Injection statt naivem Retrieval, um Latenz und LLM-Token-Kosten zu minimieren. Eine asynchrone Compression Pipeline verdichtet Gespräche im Hintergrund zu einem persönlichen Wissensgraphen via Vector Embeddings und semantischer Suche (pgvector). Eine modulare Tool-Architektur ermöglicht skalierbares Function Calling mit Echtzeit-Updates via SSE.",
+        "features": [
+          "Two-Layer Memory: Langzeitgedächtnis (PostgreSQL + pgvector) und Session-Cache zur Optimierung des Kontextfensters",
+          "Compression Pipeline: asynchrone Hintergrundverarbeitung, die Gespräche in einen persönlichen Wissensgraphen webt",
+          "KI-Personas (z.B. Dr. Mente, Lex) mit eigenem Charakter, Wissensdomänen und persistenter Nutzerbeziehung",
+          "Tool-Mediated Chat: Reminders, Dokumentenverwaltung und Web-Suche als native KI-Tools",
+          "Social Memory Graph: nutzerübergreifende Beziehungs- und Interaktionsanalysen",
+          "Echtzeit-Streaming via SSE und Vercel AI SDK",
+          "Authentifizierung via Better Auth; Hintergrundjobs via Redis & BullMQ"
+        ],
+        "tech": ["Next.js", "NestJS", "Turborepo", "PostgreSQL", "pgvector", "Drizzle ORM", "Redis", "BullMQ", "Vercel AI SDK", "Docker", "CI/CD", "Testing", "Containerized", "Serverless", "SSE"],
+        "link": "#"
+      },
+      {
+        "id": "p3",
+        "title": "Online Cargo Planner",
+        "logo": "/projects/online-cargo-planner.png",
+        "category": "Full-Service Plattform",
+        "description": "Durchgängige Logistikplattform für den Schienengüterverkehr — von der Auftragsbestellung und Angebotserstellung über die Abarbeitung bis zum Abschluss. Kunden (EVUs) verwalten Aufträge, Dokumente, Zertifikate und Compliance an einem Ort.",
+        "details": "Dienstleister erhalten ein vollständiges Back-Office: Disposition, Buchhaltung, Teamverwaltung, Personal, digitale Dokumentenablage, Rechnungsstellung und Zahlungsabwicklung, CRM, Zeiterfassung, Urlaubsplanung, Lager- und Materialverwaltung sowie Fahrzeugflottenmanagement — alles in einer Plattform.",
+        "features": [
+          "Auftragsverwaltung: Bestellung, Angebotserstellung, Abarbeitung und Abschluss",
+          "Auftragsbezogene Dokumentenerstellung und -verwaltung",
+          "Mobile App für Dienstleister im Außendienst",
+          "Kundenportal für EVUs: Aufträge, Dokumente, Zertifikate und Compliance",
+          "Disposition, Buchhaltung und Teamverwaltung für Dienstleister",
+          "Rechnungsstellung, Zahlungsabwicklung und CRM",
+          "Zeiterfassung und Urlaubsplanung",
+          "Lager-, Material- und Fahrzeugflottenmanagement",
+          "Whitelabel-Architektur für mandantenfähigen Betrieb"
+        ],
+        "tech": ["Node.js", "PHP", "Laravel", "Livewire", "Vue.js", "Alpine.js", "Bootstrap", "React Native", "MariaDB", "PostgreSQL", "Redis", "Socket.io", "Firebase", "Google Vision", "Google Gemini", "Google Cloud", "Simple Storage Service", "REST API", "Whitelabel", "CI/CD", "KI"],
+        "link": "#"
+      },
+      {
+        "id": "p4",
+        "title": "HUNCHster",
+        "logo": "/projects/hunchster.png",
+        "category": "Open Innovation",
+        "description": "Open-Innovation-SaaS-Plattform für Unternehmen — kollaborative Ideenfindung mit tiefer Social-Integration (Facebook, LinkedIn, XING), CRM-Anbindung und nativer iOS-App. Als Lead Developer und Projektmanager von der Idee bis zum Launch verantwortet.",
+        "details": "Vollständige Verantwortung von der Konzeption bis zur Auslieferung: Idee, Planung, Budgetierung, Meilensteinplanung, Anwerben und Steuern externer Agenturen, Designer und eines verteilten Freelancer-Teams. Technische Architektur und Projektmanagement in Personalunion — verantwortlich für Scope, Timelines und Stakeholder-Kommunikation. Die Plattform wurde containerisiert auf Cloud-Infrastruktur betrieben mit CI/CD-Pipelines und einem strukturierten Testing-Prozess.",
+        "features": [
+          "Kollaborative Ideenfindungsplattform mit Echtzeit-Updates via Socket.io",
+          "Tiefe Social-Integration: Facebook, LinkedIn, XING und weitere Netzwerke",
+          "CRM-Integrationen für Enterprise-Anbindung",
+          "Native iOS-App als API-Consumer (REST/JSON)",
+          "Angular-SPA-Frontend mit PHP/Laminas + Node.js/Express Backend",
+          "Cloud-gehostet, containerisiert mit CI/CD und automatisiertem Testing",
+          "Vollständiges Projekt-Ownership: Idee, Budgetierung, Meilensteinplanung, Agentur- und Freelancer-Management"
+        ],
+        "tech": ["PHP", "Laminas", "Node.js", "Express", "Angular", "REST API", "JSON", "Socket.io", "Redis", "MySQL", "iOS", "Docker", "CI/CD", "Testing", "Cloud", "Social APIs"],
+        "link": "#"
+      },
+      {
+        "id": "p5",
+        "title": "Outbox AG",
+        "logo": "/projects/outbox.png",
+        "category": "Telekommunikation",
+        "description": "Full-Stack-Entwicklung für einen VoIP/SIP-Telekommunikationsanbieter. Tiefe Backend-Integration mit Telekommunikations-Schnittstellen via SOAP, XML und REST-API — Auslesen und Verarbeitung von Verbindungsdaten aus Live-Carrier-Systemen.",
+        "details": "Frontend mit einem jQuery-basierten Custom-Framework und Backbone.js als responsive Endkunden-Plattform. Backend-Schwerpunkt in PHP und Python: Verarbeitung von CDRs (Call Detail Records) und Rohdaten aus Carrier-APIs, Normalisierung von Telko-Daten in strukturierte Formate und Bereitstellung über saubere REST-Schnittstellen.",
+        "features": [
+          "Endkunden-Portal: Gesprächsnachweise, Kontoauswertungen und downloadbare Berichte",
+          "SOAP- & XML-Integration mit Telekommunikations-Carrier-Schnittstellen für Live-Verbindungsdaten",
+          "Zahlungsabwicklung und Kontoverwaltung für VoIP/SIP-Kunden",
+          "Custom jQuery/Backbone.js SPA-Framework für dynamische UI ohne Seitenreload",
+          "PHP & Python Backend: CDR-Ingestion, Normalisierung und Billing-Logik",
+          "REST-API-Schicht für Frontend und Drittanbieter-Zugriff",
+          "Abrechnungsportal mit Rechnungsgenerierung und Zahlungshistorie"
+        ],
+        "tech": ["PHP", "Python", "SOAP", "XML", "REST API", "jQuery", "Backbone.js", "VoIP", "SIP", "CDR", "Payments"],
+        "link": "#"
+      },
+      {
+        "id": "p6",
+        "title": "Computerbild Cloud",
+        "logo": "/projects/computerbild.png",
+        "category": "Cloud Storage Platform",
+        "description": "\"Made in Germany\" Dropbox-Alternative für das Millionenpublikum von COMPUTER BILD. Full-Stack-Verantwortung: Angular-Frontend mit Dropbox-artigem Dateimanager, integriertem Media-Viewer und Online-Office-Suite (Dokumente, Tabellen, etc.) — plus Multi-Consumer-REST-API für Web, Apps und Drittanbieter.",
+        "details": "Lead Frontend & API Developer. Die Angular-SPA lieferte eine nahtlose Dateiverwaltung mit Drag-and-Drop-Uploads, Inline-Medienwiedergabe und eingebettetem Dokumenten-Editor. Die duale API-Schicht (PHP/php-fpm für die Kernspeicherlogik, Node.js für Echtzeit- und Event-driven-Workloads) wurde für externe Consumer konzipiert — Mobile Apps, Partner-Integrationen und Drittanbieter — mit versionierten Endpunkten und konsistenten Response-Contracts.",
+        "features": [
+          "Angular SPA mit Dropbox-inspiriertem Dateimanager: Ordnerstruktur, Drag-and-Drop, Massenaktionen",
+          "Integrierter Media-Viewer: Bildgalerien, Video- und Audiowiedergabe inline",
+          "Online-Office-Integration: Dokumente, Tabellen und Präsentationen direkt im Browser bearbeiten",
+          "Dualer REST-API-Stack: PHP/php-fpm (Speicher-Core) und Node.js (Echtzeit, Events)",
+          "Multi-Consumer-API-Design: Web-Frontend, Mobile Apps und externe Drittanbieter",
+          "Versionierte API mit konsistenten Contracts über alle Consumer-Typen",
+          "Skaliert für Millionen Nutzer in enger Zusammenarbeit mit COMPUTER BILD"
+        ],
+        "tech": ["Angular", "PHP", "php-fpm", "Symfony", "Zend Framework", "Cloudflare", "Node.js", "REST API", "Cloud Storage", "Media Streaming", "Online Office"],
+        "link": "#"
+      },
+      {
+        "id": "p7",
+        "title": "SystemUp",
+        "category": "Desktop Software",
+        "description": "Windows-System-Tuning- und Wartungssuite für den Retail-Markt — kombiniert Low-Level-System-Tools (Registry Cleaner, Defrag, Undelete, Speed Booster) mit einem wegweisenden Ansatz: UI/UX auf Basis von Web-Technologien (HTML/CSS/JavaScript), gerendert in einer eigenen Desktop-Parser-Engine.",
+        "details": "Entwicklung des Registry Cleaners und weiterer System-Tools in Delphi mit direktem Zugriff auf Windows-Interna, Registry-Hives und Systemdienste. Gleichzeitig verantwortlich für Design und Umsetzung der Anwendungsoberfläche mit HTML, CSS und JavaScript — gerendert durch einen proprietären Desktop-Parser. Damit wurde Web-basiertes UI/UX-Development in native Windows-Software gebracht, lange bevor Electron diesen Ansatz massentauglich machte.",
+        "features": [
+          "Registry Cleaner: tiefes Windows-Registry-Scanning, Analyse und sichere Bereinigung (Delphi)",
+          "Defragmentierungs-Tool zur Dateisystem-Optimierung",
+          "Undelete: Dateiwiederherstellung von NTFS/FAT-Dateisystemen",
+          "Windows Speed Booster: Autostart-, Dienst- und Performance-Optimierungen",
+          "Custom Web-UI: HTML/CSS/JavaScript gerendert via proprietärem Desktop-Parser",
+          "Systemdienste-Interface: Windows-Dienste aktivieren, deaktivieren und konfigurieren",
+          "Retail-fertige Verpackung für den Massenmarkt"
+        ],
+        "tech": ["Delphi", "JavaScript", "HTML", "CSS", "Windows API", "Registry", "NTFS", "System Services", "Desktop UI", "Retail"],
+        "link": "#"
+      },
+      {
+        "id": "p8",
+        "title": "CyberGhost VPN",
+        "logo": "/projects/cyberghost.png",
+        "category": "Security SaaS",
+        "description": "Full-Stack-Entwicklung der globalen CyberGhost-VPN-Web-Präsenz und Account-Plattform für Millionen Nutzer — Webseite, Account-Management-Webapp, REST-API, Payment-Integrationen und Marketing-/Tracking-Infrastruktur, gebaut auf PHP/Zend Framework und Angular.",
+        "details": "Verantwortlich für die öffentliche Webseite (PHP/Zend Framework, Bootstrap, jQuery) und die Angular-basierte Account-Management-Webapp. Entwicklung und Betrieb der REST-API (Zend Framework, JSON) für Web-, Desktop- und Mobile-Clients. Integration von Payment-Providern, Marketing-Tracking-Systemen sowie Betrieb der Live-Services in Produktion.",
+        "features": [
+          "Globale Marketing-Webseite in PHP/Zend Framework mit Bootstrap und jQuery",
+          "Angular-SPA für Account-Verwaltung: Abonnements, Geräte, Abrechnung und Profil",
+          "REST-API in Zend Framework/JSON für Web-, Desktop- und Mobile-Consumer",
+          "Payment-Provider-Integrationen für eine globale Multi-Currency-Nutzerbasis",
+          "Marketing- und Tracking-Integrationen: Analytics, Attribution und Kampagnen-Tools",
+          "Produktionsbetrieb und Service-Stabilität für eine Plattform mit Millionen Nutzern"
+        ],
+        "tech": ["PHP", "Zend Framework", "Angular", "Bootstrap", "jQuery", "REST API", "JSON", "Payments", "Marketing", "Tracking"],
         "link": "#"
       }
     ]
   },
   "skills": {
-    "title": "Kernkompetenzen",
-    "subtitle": "Expertise im gesamten Technologie-Stack",
-    "description": "Ein umfassendes Spektrum an Fähigkeiten, entwickelt in zwei Jahrzehnten professioneller Praxis.",
+    "title": "Skills & Technologien",
+    "subtitle": "Zwei Jahrzehnte praktische Erfahrung im gesamten Stack — von pixelgenauen UIs bis zu verteilten Cloud-Systemen und KI-getriebenen Produkten.",
+    "description": "Ein umfassendes Kompetenzprofil, aufgebaut über 20+ Jahre professionelle Praxis in Startups, Agenturen, Enterprise-Plattformen und internationalen SaaS-Produkten.",
+    "stats": [
+      { "value": "20+", "label": "Jahre Erfahrung" },
+      { "value": "50+", "label": "Technologien" },
+      { "value": "15+", "label": "Frameworks" },
+      { "value": "6", "label": "Domänen" }
+    ],
     "categories": [
       {
-        "name": "Führung & Strategie",
-        "items": ["Engineering Management", "Technische Leitung", "Agile Methoden", "Stakeholder-Management", "Digitale Transformation"]
+        "name": "Frontend-Entwicklung",
+        "icon": "frontend",
+        "description": "Performante, barrierefreie und visuell raffinierte User Interfaces mit modernen Frameworks.",
+        "items": ["HTML5", "CSS3 / SASS", "JavaScript (ES2024)", "TypeScript", "React", "Next.js", "React Native", "Angular", "Vue.js", "Alpine.js", "Backbone.js", "Zustand", "Redux", "React Query", "Tailwind CSS", "Bootstrap", "jQuery", "Framer Motion", "Webpack / Vite", "Flash / ActionScript"]
       },
       {
-        "name": "Architektur & Cloud",
-        "items": ["Systemdesign", "Microservices", "API-Design", "AWS", "Infrastructure-as-Code", "Docker/K8s"]
+        "name": "Backend & APIs",
+        "icon": "backend",
+        "description": "Robuste serverseitige Logik, RESTful APIs, Echtzeitsysteme und Service-Integrationen.",
+        "items": ["PHP", "Node.js", "Python", "Laravel", "Symfony", "Zend Framework", "Laminas", "FastAPI", "Livewire", "REST APIs", "OpenAPI / Swagger", "RPC", "SOAP / XML", "WebSockets / Socket.io", "JSON / JWT", "OAuth 2.0", "BetterAuth", "GraphQL"]
       },
       {
-        "name": "Entwicklung & KI",
-        "items": ["TypeScript/Node.js", "React/Next.js", "Python (FastAPI)", "KI-Integration", "LangChain/Agents", "Automatisiertes Testen"]
+        "name": "Datenbanken & Storage",
+        "icon": "database",
+        "description": "Entwurf und Betrieb relationaler, dokumentenbasierter und Cache-Datenschichten für Skalierbarkeit.",
+        "items": ["MySQL / MariaDB", "PostgreSQL", "MongoDB", "Redis", "Firebase / Firestore", "Supabase", "Amazon S3", "Elasticsearch", "Vektordatenbanken", "Embeddings", "GraphQL", "Volltextsuche", "Datenbankmigrationen", "Query-Optimierung"]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "icon": "cloud",
+        "description": "Deployment und Betrieb resilienter Cloud-Infrastruktur mit modernen CI/CD- und Container-Tools.",
+        "items": ["AWS", "Google Cloud", "Microsoft Azure", "Hetzner", "Vercel", "Cloudflare", "Docker", "Kubernetes", "CI/CD Pipelines", "GitHub Actions", "Terraform", "Ansible", "Infrastructure-as-Code", "Serverless / Functions", "Linux", "Nginx / Apache", "Bash / Shell Scripting", "Prometheus", "Grafana", "Datadog", "Sentry", "ELK Stack", "Postman"]
+      },
+      {
+        "name": "KI & Web3",
+        "icon": "ai",
+        "description": "Integration von Large Language Models, agentischen Workflows und dezentralen Blockchain-Protokollen.",
+        "items": ["LLM-Integration", "LangChain / LangGraph", "KI-Agenten", "RAG / Vektorsuche", "OpenAI API", "Anthropic Claude", "Mistral AI", "Google Gemini", "Google Vision API", "Vercel AI SDK", "Google Vertex AI", "Self-Hosted LLMs", "Blockchain / Smart Contracts", "EVM", "Solidity", "Python KI / ML"]
+      },
+      {
+        "name": "Führung & Prozesse",
+        "icon": "leadership",
+        "description": "Leitung interdisziplinärer Teams, technische Strategie und Steuerung digitaler Transformationsprojekte.",
+        "items": ["Engineering Management", "Technische Führung", "Agile / Scrum", "OKR", "Projektmanagement (MSM)", "Stakeholder-Management", "Teamaufbau & Mentoring", "Digitale Transformation", "Systemdesign & Architektur", "Code-Reviews & Qualitätssicherung", "Recruiting & Onboarding"]
       }
-    ]
+    ],
+    "cta": {
+      "title": "Bereit für den nächsten Schritt?",
+      "subtitle": "Ich bin offen für neue Herausforderungen. Lassen Sie uns besprechen, wie ich Ihr Team verstärken kann.",
+      "button": "Kontakt aufnehmen"
+    }
   },
   "contact": {
-    "title": "Kontakt",
-    "subtitle": "Lassen Sie uns besprechen, wie ich Ihre technische Vision vorantreiben kann",
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Lassen Sie uns gemeinsam herausfinden, wie ich Ihr Team und Ihre Projekte mit meiner langjährigen Erfahrung in technischer Führung und Architektur unterstützen kann.",
     "description": "Verfügbar für strategische Rollen, technische Leitung oder Engineering-Beratung mit hoher Hebelwirkung.",
     "info_title": "Kontaktdaten",
+    "documents_title": "Dokumente & Persönliche Daten",
+    "documents_description": "Greifen Sie auf meinen Lebenslauf, Zertifikate und Kontaktdaten im gesicherten Bereich zu.",
+    "vault_card_title": "Sicherer Dokumenten-Tresor",
+    "vault_card_subtitle": "Lebenslauf & Zertifikate",
     "form": {
+      "title": "Nachricht senden",
+      "subtitle": "Hinterlassen Sie mir eine Nachricht und ich werde mich so schnell wie möglich bei Ihnen melden.",
       "name": "Name",
       "email": "E-Mail",
       "subject": "Betreff",
       "message": "Nachricht",
-      "submit": "Anfrage senden",
+      "submit": "Nachricht senden",
       "placeholder_name": "Vollständiger Name",
       "placeholder_email": "email@beispiel.de",
       "placeholder_message": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Vision..."
@@ -211,6 +469,16 @@
     "hint": "Hinweis: Kontaktieren Sie mich für den Zugangscode.",
     "locked_title": "Tresor ist gesperrt",
     "unlocked_title": "Tresor freigeschaltet",
+    "contact_info": {
+      "name": "Andreas Hilgers",
+      "address": "Vinn 16, 52525 Heinsberg",
+      "email": "andreas_hilgers@icloud.com",
+      "phone": "+49 1515 5410 8238",
+      "logout": "Tresor sperren",
+      "logout_confirm": "Sperren",
+      "logout_cancel": "Abbrechen",
+      "logout_message": "Möchten Sie den Tresor wirklich sperren? Sie müssen den Zugangscode erneut eingeben, um ihn wieder zu öffnen."
+    },
     "documents": {
       "cv": {
         "title": "Lebenslauf (PDF)",
@@ -237,11 +505,17 @@
         "title": "Scrum Developer",
         "location": "Online",
         "provider": "Scrum Alliance",
-        "degree": "Zertifizierter Entwickler",
+        "certified": "Zertifizierter Entwickler",
         "type": "Lehrgang"
       }
     },
-    "back_to_site": "Zurück zur Website"
+    "back_to_site": "Zurück zur Website",
+    "preview": "Vorschau",
+    "download": "Herunterladen",
+    "download_pdf": "PDF",
+    "download_word": "Word (DOCX)",
+    "confidential_notice": "Diese Dokumente sind vertraulich. Bitte behandeln Sie diese mit Diskretion.",
+    "contact_questions": "Fragen zu den Dokumenten?"
   },
   "error": {
     "404": {
