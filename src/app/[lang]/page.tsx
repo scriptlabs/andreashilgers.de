@@ -16,17 +16,19 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
 
   return (
-    <main className="min-h-[calc(100vh-64px)] overflow-y-auto relative py-12 sm:py-0">
-      {/* Animated background orbs */}
-      <div className="bg-orb bg-orb-primary absolute -top-40 -left-40" />
-      <div className="bg-orb bg-orb-accent  absolute -bottom-20 -right-40" />
-      <div className="bg-orb bg-orb-mid    absolute top-1/2 right-1/4" />
-
-      {/* Subtle dot-grid texture */}
-      <div className="absolute inset-0 bg-dot-grid opacity-[0.35] pointer-events-none -z-10" />
+    <main className="min-h-[calc(100vh-64px)] overflow-x-hidden relative py-12 sm:py-0 flex items-center justify-center">
+      {/* Background Container to prevent unwanted scroll */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div className="bg-orb bg-orb-primary absolute -top-40 -left-40" />
+        <div className="bg-orb bg-orb-accent  absolute -bottom-20 -right-40" />
+        <div className="bg-orb bg-orb-mid    absolute top-1/2 right-1/4" />
+        
+        {/* Subtle dot-grid texture */}
+        <div className="absolute inset-0 bg-dot-grid opacity-[0.35]" />
+      </div>
 
       {/* Hero */}
-      <section className="h-full flex items-center justify-center relative z-10">
+      <section className="relative z-10 w-full">
         <div className="max-w-4xl mx-auto px-6 text-center">
 
           {/* Availability badge */}
