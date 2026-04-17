@@ -86,16 +86,16 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
           {/* Stats row */}
           <FadeIn direction="up" delay={1.1}>
-            <div className="flex flex-wrap justify-center items-center gap-y-6 sm:gap-y-0 sm:items-stretch mb-8">
+            <div className="flex justify-center items-center sm:items-stretch mb-8 overflow-x-auto no-scrollbar">
               {dict.hero.stats.map((stat, idx) => (
                 <div
                   key={stat.label}
-                  className={`px-4 sm:px-8 md:px-12 text-center ${idx > 0 ? "sm:border-l border-[var(--border)]" : ""} ${idx === 1 ? "border-x border-[var(--border)] sm:border-x-0" : ""}`}
+                  className={`px-2.5 sm:px-8 md:px-12 text-center ${idx > 0 ? "border-l border-[var(--border)]" : ""}`}
                 >
-                  <p className="text-xl sm:text-2xl md:text-3xl font-black hero-gradient leading-tight">
+                  <p className="text-lg sm:text-2xl md:text-3xl font-black hero-gradient leading-tight">
                     {stat.value}
                   </p>
-                  <p className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.15em] sm:tracking-[0.18em] text-[var(--secondary)] font-semibold mt-1 sm:mt-0.5 whitespace-nowrap">
+                  <p className="text-[8px] sm:text-[10px] md:text-xs uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[var(--secondary)] font-semibold mt-1 sm:mt-0.5 whitespace-nowrap">
                     {stat.label}
                   </p>
                 </div>
