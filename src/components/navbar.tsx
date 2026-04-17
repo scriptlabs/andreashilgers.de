@@ -137,18 +137,10 @@ export function Navbar({ dict, lang }: NavbarProps) {
               {/* Vault Link */}
               <Link
                 href={`/${lang}/vault`}
-                className="p-2.5 rounded-md bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition-all active:scale-95 flex items-center justify-center border border-red-500/20"
+                className="p-2.5 rounded-md bg-[var(--primary)]/10 text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all active:scale-95 flex items-center justify-center border border-[var(--primary)]/20"
                 aria-label={dict.nav.vault}
               >
                 <RiLockPasswordLine size={18} />
-              </Link>
-
-              {/* Hire Me Badge */}
-              <Link
-                href={`/${lang}/contact`}
-                className="hidden lg:block bg-[var(--primary)] text-white px-5 py-2 rounded-md text-sm font-bold hover:bg-[var(--primary-hover)] transition-all hover:scale-[1.02] active:scale-[0.98]"
-              >
-                {dict.nav.hire_me}
               </Link>
             </div>
           </div>
