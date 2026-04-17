@@ -58,7 +58,7 @@ Engineering Leader and Senior Full-Stack Developer with over two decades of expe
 
 ## Education & Certifications
 - **2025:** OKR Workshop (MURAKAMY)
-- **2021:** Certified Scrum Developer (Scrum Alliance)
+- **2016:** Certified Scrum Developer (Scrum Alliance)
 - **2020:** Project Management (Maastricht School of Management)
 - **2017:** Computer Science Expert - Software Development (IHK Aachen)
 - **2001 – 2004:** Information Technology Assistant (Berufskolleg Alsdorf)

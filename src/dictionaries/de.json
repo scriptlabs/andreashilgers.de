@@ -129,7 +129,7 @@
         "company": "Scrum Alliance",
         "companyUrl": "https://www.scrumalliance.org",
         "position": "Certified Scrum Developer",
-        "period": "2021",
+        "period": "2016",
         "description": "Erfolgreicher Abschluss des Online-Kurses zu Methodiken des agilen Software-Development-Managements. Vertiefung in Scrum-Prozesse, agile Planung und effiziente Team-Kollaboration.",
         "technologies": ["Agile", "Scrum", "TDD", "Extreme Programming (XP)", "Pair Programming", "Continuous Integration"],
         "type": "cert"
