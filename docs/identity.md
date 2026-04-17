@@ -35,7 +35,7 @@ Engineering Leader and Senior Full-Stack Developer with over two decades of expe
 - **Tech:** Node.js, React Native, AI, Cloud-Computing.
 
 ### 2019 – 2021: ZenGuard (Kape Technologies)
-- **Role:** Lead Full-Stack Developer
+- **Role:** Senior Full-Stack Developer
 - **Focus:** Responsible for web technologies and global software infrastructures for brands like CyberGhost VPN, ExpressVPN, and PIA.
 - **Tech:** Scaling, APIs, Cloud, Payments, Security.
 
