@@ -32,7 +32,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ lan
         </p>
       </FadeIn>
 
-      <ExperienceTimeline items={dict.experience.items} />
+      <ExperienceTimeline items={dict.experience.items} lang={lang} />
 
       <FadeIn direction="up" delay={0.4} className="mt-20 text-center">
         <div className="inline-block">
