@@ -135,16 +135,6 @@
         "type": "work"
       },
       {
-        "id": "cert-scrum",
-        "company": "Scrum Alliance",
-        "companyUrl": "https://www.scrumalliance.org",
-        "position": "Certified Scrum Developer",
-        "period": "2016",
-        "description": "Erfolgreicher Abschluss des Online-Kurses zu Methodiken des agilen Software-Development-Managements. Vertiefung in Scrum-Prozesse, agile Planung und effiziente Team-Kollaboration.",
-        "technologies": ["Agile", "Scrum", "TDD", "Extreme Programming (XP)", "Pair Programming", "Continuous Integration"],
-        "type": "cert"
-      },
-      {
         "id": "cert-msm",
         "company": "Maastricht School of Management",
         "companyUrl": "https://www.msm.nl",
@@ -173,6 +163,16 @@
         "description": "Staatlich anerkannte Ausbildung mit Schwerpunkt auf Software-Engineering und Architektur.",
         "technologies": ["Software-Design", "Datenbanken", "IHK Abschluss"],
         "type": "edu"
+      },
+      {
+        "id": "cert-scrum",
+        "company": "Scrum Alliance",
+        "companyUrl": "https://www.scrumalliance.org",
+        "position": "Certified Scrum Developer",
+        "period": "2016",
+        "description": "Erfolgreicher Abschluss des Online-Kurses zu Methodiken des agilen Software-Development-Managements. Vertiefung in Scrum-Prozesse, agile Planung und effiziente Team-Kollaboration.",
+        "technologies": ["Agile", "Scrum", "TDD", "Extreme Programming (XP)", "Pair Programming", "Continuous Integration"],
+        "type": "cert"
       },
       {
         "id": "exp-mobileconcepts",
