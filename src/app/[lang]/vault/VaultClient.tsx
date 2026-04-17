@@ -320,7 +320,8 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
                   <div className="flex items-center gap-2 w-full sm:w-auto">
                     <a 
                       href={doc.file} 
-                      download 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 sm:flex-none px-5 py-2.5 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-sm font-bold"
                     >
                       <RiDownloadLine size={18} />
@@ -374,7 +375,8 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
             <div className="p-4 bg-[var(--card)] border-t border-[var(--border)] flex justify-center sm:justify-end gap-4">
                <a 
                   href={previewFile?.url} 
-                  download 
+                  target="_blank"
+                  rel="noopener noreferrer" 
                   className="btn-primary px-6 py-2 text-sm rounded-md font-bold flex items-center gap-2"
                 >
                   <RiDownloadLine size={18} /> {dict.vault.download} PDF
