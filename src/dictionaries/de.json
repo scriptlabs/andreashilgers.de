@@ -5,7 +5,15 @@
     "ogTitle": "Andreas Hilgers | Engineering Management & Tech Leadership",
     "ogDescription": "Skalierung digitaler Plattformen und Leitung hochperformanter Engineering-Teams mit über 20 Jahren Expertise.",
     "ogImage": "/og-image.png",
-    "keywords": ["Engineering Manager", "Tech Lead", "Full-Stack Entwickler", "Software-Architekt", "Digitale Transformation", "KI-Entwicklung", "Next.js", "TypeScript", "Node.js", "DevOps"]
+    "keywords": ["Engineering Manager", "Tech Lead", "Full-Stack Entwickler", "Software-Architekt", "Digitale Transformation", "KI-Entwicklung", "Next.js", "TypeScript", "Node.js", "DevOps"],
+    "titles": {
+      "about": "Über mich",
+      "experience": "Berufsweg",
+      "projects": "Portfolio & Projekte",
+      "skills": "Fähigkeiten & Tech-Stack",
+      "contact": "Kontakt aufnehmen",
+      "vault": "Sicherer Dokumenten-Tresor"
+    }
   },
   "nav": {
     "home": "Startseite",

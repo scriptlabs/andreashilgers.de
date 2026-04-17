@@ -1,11 +1,45 @@
 /* TEAM */
     Developer: Andreas Hilgers
-    LinkedIn: https://linkedin.com/in/andreashilgers
-    Twitter: @andreashilgers
-    Location: Germany
+    Site: https://andreashilgers.de
+    Twitter: @scriptlabs
+    Location: Heinsberg, Germany
 
 /* SITE */
-    Last update: 2024/04/15
-    Standards: HTML5, CSS3, TypeScript
-    Components: Radix UI, Lucide Icons
-    Software: Next.js, Tailwind CSS
+    Last update: 2026/04/17
+    Standards: HTML5, CSS3, TypeScript, Next.js
+    Components: Radix UI, Framer Motion
+    Software: VS Code, Warp, Coffee (lots of it)
+
+/* NERD STUFF */
+    OS: macOS / Linux
+    Shell: zsh
+    Editor: Vim (but I use VS Code because I'm not that masochistic today)
+    Coffee Consumption: Overflowing
+    ASCII Art:
+
+      _________________________________________________
+     /                                                 \
+    |    _________________________________________      |
+    |   |                                         |     |
+    |   |    01001000 01100101 01101100 01101100  |     |
+    |   |    01101111 00101100 00100000 01010111  |     |
+    |   |    01101111 01110010 01101100 01100100  |     |
+    |   |_________________________________________|     |
+    |                                                   |
+    |            _________________________              |
+    |           |  _____________________  |             |
+    |           | |                     | |             |
+    |           | |      ANDREAS        | |             |
+    |           | |      HILGERS        | |             |
+    |           | |_____________________| |             |
+    |           |_________________________|             |
+    |                                                   |
+     \_________________________________________________/
+            \___________________________________/
+         ___________________________________________
+      _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  `-_
+    _-'      .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.      `-_
+  _-'___________________________________________________`-_
+ |_________________________________________________________|
+
+    "One does not simply walk into Mordor... without a proper SSH key."

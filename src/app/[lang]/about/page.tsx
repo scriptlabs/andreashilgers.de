@@ -16,6 +16,13 @@ import {
   RiMailLine,
 } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
+  return { title: dict.metadata.titles.about };
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

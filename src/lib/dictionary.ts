@@ -6,6 +6,14 @@ export interface Dictionary {
     ogDescription: string;
     ogImage: string;
     keywords: string[];
+    titles: {
+      about: string;
+      experience: string;
+      projects: string;
+      skills: string;
+      contact: string;
+      vault: string;
+    };
   };
   nav: {
     home: string;

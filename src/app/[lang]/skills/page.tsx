@@ -13,6 +13,13 @@ import {
   RiArrowRightLine,
 } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
+  return { title: dict.metadata.titles.skills };
+}
 
 type CategoryConfig = {
   icon: React.ReactNode;

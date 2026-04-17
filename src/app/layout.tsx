@@ -16,14 +16,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Andreas Hilgers - Senior Full-Stack Developer & Architect",
-  description: "Portfolio of Andreas Hilgers, Senior Full-Stack Developer with 10+ years of experience",
-  keywords: ["Full-Stack Developer", "Next.js", "TypeScript", "React", "Node.js"],
+  metadataBase: new URL('https://andreashilgers.de'),
+  title: {
+    default: "Andreas Hilgers - Engineering Manager & Senior Full-Stack Developer",
+    template: "%s | Andreas Hilgers",
+  },
+  description: "Portfolio of Andreas Hilgers, Engineering Leader and Senior Full-Stack Developer with 20+ years of experience.",
+  keywords: ["Engineering Manager", "Tech Lead", "Full-Stack Developer", "Software Architect", "AI Development"],
   authors: [{ name: "Andreas Hilgers" }],
   creator: "Andreas Hilgers",
   publisher: "Andreas Hilgers",
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: "/favicon.ico",
+  },
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en',
+      'de-DE': '/de',
+    },
   },
 };
 
@@ -34,6 +49,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" suppressHydrationWarning data-scroll-behavior="smooth">
+      <head>
+        <link rel="author" href="/humans.txt" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden max-w-[100vw]`} suppressHydrationWarning>
         <ThemeProvider>
           {children}

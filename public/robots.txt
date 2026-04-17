@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /en/vault
+Disallow: /de/vault
+Disallow: /docs/
 
 Sitemap: https://andreashilgers.de/sitemap.xml
