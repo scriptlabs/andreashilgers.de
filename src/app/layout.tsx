@@ -54,6 +54,7 @@ export default function RootLayout({
         <link rel="author" href="/humans.txt" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden max-w-[100vw]`} suppressHydrationWarning>
+        <ConsoleLogger />
         <ThemeProvider>
           {children}
         </ThemeProvider>
