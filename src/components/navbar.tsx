@@ -98,11 +98,6 @@ export function Navbar({ dict, lang }: NavbarProps) {
                 {mobileMenuOpen ? <RiCloseLine size={20} /> : <RiMenuLine size={20} />}
               </button>
 
-              {/* Language Switcher - Desktop */}
-              <div className="hidden md:block">
-                <LanguageSwitcher currentLang={lang} />
-              </div>
-
               {/* Theme Switcher - Desktop */}
               <div className="hidden md:block">
                 <DropdownMenu.Root>
@@ -132,6 +127,11 @@ export function Navbar({ dict, lang }: NavbarProps) {
                     </DropdownMenu.Content>
                   </DropdownMenu.Portal>
                 </DropdownMenu.Root>
+              </div>
+
+              {/* Language Switcher - Desktop */}
+              <div className="hidden md:block">
+                <LanguageSwitcher currentLang={lang} />
               </div>
 
               {/* Vault Link */}
