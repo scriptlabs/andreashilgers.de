@@ -147,8 +147,8 @@ export default async function ProjectsPage({ params }: { params: Promise<{ lang:
                     ? "Entdecke den vollständigen Tech-Stack über alle Domänen hinweg."
                     : "Explore the full tech stack across all domains."}
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[var(--primary)] group-hover:gap-3 transition-all">
-                  {lang === "de" ? "Fähigkeiten ansehen" : "View Skills"} <RiArrowRightLine size={14} />
+                <span className="btn-primary w-full py-3 rounded-md font-bold flex items-center justify-center gap-2 group-hover:scale-[1.02] active:scale-[0.98] transition-all text-sm">
+                  {lang === "de" ? "Fähigkeiten ansehen" : "View Skills"} <RiArrowRightLine size={16} />
                 </span>
               </div>
             </Link>
