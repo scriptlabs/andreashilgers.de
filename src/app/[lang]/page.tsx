@@ -34,7 +34,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
           {/* Availability badge */}
           <FadeIn direction="down" delay={0.1}>
-            <div className="inline-flex items-center gap-2.5 px-0 py-1.5 text-[var(--primary)] text-sm font-medium mb-6 select-none">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 text-[var(--primary)] text-xs sm:text-sm font-bold mb-10 select-none border border-[var(--primary)]/20 bg-[var(--primary)]/5 rounded-md">
               <PulseCircle />
               {dict.hero.badge}
             </div>
