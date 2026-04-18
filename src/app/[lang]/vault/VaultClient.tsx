@@ -8,7 +8,6 @@ import {
   RiDownloadLine,
   RiEyeLine,
   RiInformationLine,
-  RiArrowLeftLine,
   RiTaskLine,
   RiGraduationCapLine,
   RiAwardLine,
@@ -108,12 +107,6 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
                 <p>{vaultDict.hint}</p>
               </div>
             </div>
-          </FadeIn>
-
-          <FadeIn direction="up" delay={0.4} className="mt-8 text-center">
-            <Link href={`/${lang}`} className="text-sm text-[var(--secondary)] hover:text-[var(--primary)] transition-colors flex items-center justify-center gap-2">
-              <RiArrowLeftLine /> {vaultDict.back_to_site}
-            </Link>
           </FadeIn>
         </div>
       </main>
