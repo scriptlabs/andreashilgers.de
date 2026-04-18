@@ -29,21 +29,21 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <main className="max-w-7xl mx-auto px-6 py-20">
       {/* ── Header ── */}
-      <header className="mb-16 md:mb-32">
-        <FadeIn direction="down">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-            <RiShieldUserLine size={12} /> {lang === 'de' ? 'Hintergrund' : 'Background'}
+      <FadeIn direction="down">
+        <div className="flex flex-col items-start gap-4 mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold uppercase tracking-widest">
+            <RiShieldUserLine size={14} /> {lang === 'de' ? 'Hintergrund' : 'Background'}
           </div>
-          <h1 className="text-5xl md:text-[100px] font-black hero-gradient leading-[0.9] tracking-tighter mb-10">
+          <h1 className="text-4xl md:text-6xl font-black hero-gradient inline-block leading-[1.15] pb-2">
             {dict.about.title}
           </h1>
-          <p className="text-xl md:text-3xl text-[var(--secondary)] font-light leading-snug max-w-4xl">
-            {dict.about.subtitle}
-          </p>
-        </FadeIn>
-      </header>
+        </div>
+        <p className="text-xl text-[var(--secondary)] mb-16 max-w-3xl leading-relaxed">
+          {dict.about.subtitle}
+        </p>
+      </FadeIn>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
         
