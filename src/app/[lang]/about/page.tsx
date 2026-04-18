@@ -35,13 +35,28 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12 md:py-24">
+      {/* ── Header ── */}
+      <header className="mb-12 md:mb-20">
+        <FadeIn direction="down">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold uppercase tracking-widest mb-6">
+            <RiShieldUserLine size={14} /> {lang === 'de' ? 'Hintergrund' : 'Background'}
+          </div>
+          <h1 className="text-4xl md:text-8xl font-black hero-gradient leading-[1.1] mb-6 tracking-tight">
+            {dict.about.title}
+          </h1>
+          <p className="text-xl md:text-3xl text-[var(--secondary)] font-medium leading-relaxed max-w-4xl">
+            {dict.about.subtitle}
+          </p>
+        </FadeIn>
+      </header>
+
       {/* ── Profile Section ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-center mb-24">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-start">
         
         {/* Left: Image */}
         <div className="lg:col-span-5 relative group">
           <FadeIn direction="right">
-            <div className="relative aspect-[3/4] w-full max-w-md mx-auto">
+            <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:mx-0">
               {/* Decorative Background Elements */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-[var(--primary)]/10 to-transparent rounded-2xl -z-10 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 border border-[var(--primary)]/10 rounded-xl -z-10 translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700" />
@@ -60,30 +75,16 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           </FadeIn>
         </div>
 
-        {/* Right: Intro & Bio */}
-        <div className="lg:col-span-7 space-y-8">
-          <FadeIn direction="left">
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold uppercase tracking-widest">
-                <RiShieldUserLine size={14} /> {lang === 'de' ? 'Hintergrund' : 'Background'}
-              </div>
-              <h1 className="text-4xl md:text-6xl font-black hero-gradient leading-tight">
-                {dict.about.title}
-              </h1>
-              <p className="text-xl md:text-2xl text-[var(--secondary)] font-medium">
-                {dict.about.subtitle}
-              </p>
-            </div>
-          </FadeIn>
-
+        {/* Right: Bio & Details */}
+        <div className="lg:col-span-7 space-y-12">
           <FadeIn direction="up" delay={0.2}>
-            <p className="text-lg leading-relaxed text-[var(--foreground)] opacity-80 max-w-2xl">
+            <p className="text-lg md:text-xl leading-relaxed text-[var(--foreground)] opacity-90 max-w-2xl">
               {dict.about.description}
             </p>
           </FadeIn>
 
           {/* Quick Profile Details Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-[var(--border)]">
             {profileDetails.map((detail, idx) => (
               <StaggerItem key={idx} index={idx}>
                 <div className="flex items-center gap-4 p-4 rounded-lg bg-[var(--muted)]/30 border border-[var(--border)] hover:border-[var(--primary)]/20 transition-colors">
@@ -121,7 +122,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       </div>
 
       {/* ── Stats & Quote ── */}
-      <div className="space-y-24">
+      <div className="space-y-24 mt-24">
         {/* Quote Block */}
         <FadeIn direction="up">
           <div className="relative py-16 px-8 md:px-24 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-xl overflow-hidden text-center">
