@@ -52,6 +52,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               speed={80}
               pauseDuration={2500}
               deleteSpeed={40}
+              startDelay={2000}
               className="text-xl sm:text-2xl md:text-3xl font-bold"
             />
           </div>

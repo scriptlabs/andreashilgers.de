@@ -10,6 +10,7 @@ interface TypingTextProps {
   pauseDuration?: number;
   deleteSpeed?: number;
   className?: string;
+  startDelay?: number;
 }
 
 export function TypingText({
@@ -18,14 +19,23 @@ export function TypingText({
   pauseDuration = 2500,
   deleteSpeed = 40,
   className = "",
+  startDelay = 0,
 }: TypingTextProps) {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(speed);
+  const [hasStarted, setHasStarted] = useState(startDelay === 0);
+
+  useEffect(() => {
+    if (startDelay > 0) {
+      const startTimer = setTimeout(() => setHasStarted(true), startDelay);
+      return () => clearTimeout(startTimer);
+    }
+  }, [startDelay]);
 
   const handleTyping = useCallback(() => {
-    if (texts.length === 0) return;
+    if (texts.length === 0 || !hasStarted) return;
 
     const i = loopNum % texts.length;
     const fullText = texts[i];
@@ -48,12 +58,13 @@ export function TypingText({
       setLoopNum(prev => prev + 1);
       setTypingSpeed(500); // Small pause before next word
     }
-  }, [displayText, isDeleting, loopNum, texts, speed, deleteSpeed, pauseDuration]);
+  }, [displayText, isDeleting, loopNum, texts, speed, deleteSpeed, pauseDuration, hasStarted]);
 
   useEffect(() => {
+    if (!hasStarted) return;
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [handleTyping, typingSpeed]);
+  }, [handleTyping, typingSpeed, hasStarted]);
 
   return (
     <motion.span
