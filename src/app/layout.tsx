@@ -49,11 +49,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang="de" suppressHydrationWarning>
       <head>
         <link rel="author" href="/humans.txt" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden max-w-[100vw]`} suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
         <ConsoleLogger />
         <ThemeProvider>
           {children}

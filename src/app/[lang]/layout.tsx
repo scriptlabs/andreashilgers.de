@@ -49,7 +49,7 @@ export default async function LocalizedLayout({
   return (
     <>
       <Navbar dict={dict} lang={lang} />
-      <div className="pt-16 min-h-screen">{children}</div>
+      <div className="pt-16">{children}</div>
     </>
   );
 }

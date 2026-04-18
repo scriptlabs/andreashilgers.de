@@ -133,6 +133,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* Gradient Text */
@@ -440,6 +441,30 @@ body {
 /* Gradient border glow on cards */
 .card-glow:hover {
   box-shadow: 0 0 0 1px var(--primary), 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* Button glow effect */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, transparent 50%, rgba(37, 99, 235, 0.05) 100%);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.btn-glow:hover::before {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, transparent 50%, rgba(37, 99, 235, 0.1) 100%);
+}
+
+.btn-glow > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Shimmer effect for skill / project cards */
