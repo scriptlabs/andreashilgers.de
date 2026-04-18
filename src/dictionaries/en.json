@@ -462,12 +462,23 @@
       "subtitle": "Drop me a line and I'll get back to you as soon as possible.",
       "name": "Name",
       "email": "Email",
-      "subject": "Subject",
+      "phone": "Phone",
+      "company": "Company",
       "message": "Message",
+      "optional": "(optional)",
+      "required": "(required)",
       "submit": "Send Inquiry",
       "placeholder_name": "Full Name",
       "placeholder_email": "email@example.com",
-      "placeholder_message": "Tell me about your project or vision..."
+      "placeholder_phone": "+49 123 456789",
+      "placeholder_company": "Your Company",
+      "placeholder_message": "Tell me about your project or vision...",
+      "char_limit": "Max. 2000 characters",
+      "success_title": "Message Sent!",
+      "success_message": "Thank you for your message. I have received it and will get back to you shortly.",
+      "error_message": "Something went wrong. Please try again later.",
+      "captcha_label": "Security question: What is {a} + {b}?",
+      "captcha_error": "Please solve the security question correctly."
     }
   },
   "vault": {

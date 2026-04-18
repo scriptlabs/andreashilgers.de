@@ -127,12 +127,23 @@ export interface Dictionary {
       subtitle: string;
       name: string;
       email: string;
-      subject: string;
+      phone: string;
+      company: string;
       message: string;
+      optional: string;
+      required: string;
       submit: string;
       placeholder_name: string;
       placeholder_email: string;
+      placeholder_phone: string;
+      placeholder_company: string;
       placeholder_message: string;
+      char_limit: string;
+      success_title: string;
+      success_message: string;
+      error_message: string;
+      captcha_label: string;
+      captcha_error: string;
     };
   };
   vault: {

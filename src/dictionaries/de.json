@@ -459,15 +459,26 @@
     "vault_card_subtitle": "Lebenslauf & Zertifikate",
     "form": {
       "title": "Nachricht senden",
-      "subtitle": "Hinterlassen Sie mir eine Nachricht und ich werde mich so schnell wie möglich bei Ihnen melden.",
+      "subtitle": "Schreiben Sie mir und ich werde mich so schnell wie möglich bei Ihnen melden.",
       "name": "Name",
       "email": "E-Mail",
-      "subject": "Betreff",
+      "phone": "Telefon",
+      "company": "Unternehmen",
       "message": "Nachricht",
-      "submit": "Nachricht senden",
-      "placeholder_name": "Vollständiger Name",
+      "optional": "(optional)",
+      "required": "(erforderlich)",
+      "submit": "Anfrage senden",
+      "placeholder_name": "Ihr Name",
       "placeholder_email": "email@beispiel.de",
-      "placeholder_message": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Vision..."
+      "placeholder_phone": "+49 123 456789",
+      "placeholder_company": "Ihr Unternehmen",
+      "placeholder_message": "Erzählen Sie mir von Ihrem Projekt oder Ihrer Vision...",
+      "char_limit": "Max. 2000 Zeichen",
+      "success_title": "Nachricht gesendet!",
+      "success_message": "Vielen Dank für Ihre Nachricht. Ich habe sie erhalten und werde mich in Kürze bei Ihnen melden.",
+      "error_message": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
+      "captcha_label": "Sicherheitsfrage: Was ist {a} + {b}?",
+      "captcha_error": "Bitte lösen Sie die Sicherheitsfrage korrekt."
     }
   },
   "vault": {

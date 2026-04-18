@@ -2,7 +2,6 @@ import { getDictionary } from "@/lib/get-dictionary";
 import { FadeIn, StaggerItem } from "@/components/animated-text";
 import { 
   RiChat3Line, 
-  RiSendPlaneLine, 
   RiGithubFill, 
   RiLinkedinBoxFill, 
   RiContactsLine,
@@ -13,6 +12,7 @@ import {
 import Link from "next/link";
 import { Metadata } from "next";
 import { Dictionary } from "@/lib/dictionary";
+import { ContactForm } from "@/components/contact-form";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -156,52 +156,9 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                 </StaggerItem>
               </div>
 
-              <form className="space-y-6 relative z-10 flex-grow flex flex-col">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <StaggerItem index={6} className="space-y-2">
-                    <label className="text-sm font-medium ml-1">{dict.contact.form.name}</label>
-                    <input 
-                      type="text" 
-                      placeholder={dict.contact.form.placeholder_name}
-                      className="w-full px-5 py-4 bg-[var(--muted)] border border-[var(--border)] rounded-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/20 focus:border-[var(--primary)] transition-all"
-                    />
-                  </StaggerItem>
-                  <StaggerItem index={7} className="space-y-2">
-                    <label className="text-sm font-medium ml-1">{dict.contact.form.email}</label>
-                    <input 
-                      type="email" 
-                      placeholder={dict.contact.form.placeholder_email}
-                      className="w-full px-5 py-4 bg-[var(--muted)] border border-[var(--border)] rounded-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/20 focus:border-[var(--primary)] transition-all"
-                    />
-                  </StaggerItem>
-                </div>
-
-                <StaggerItem index={8} className="space-y-2">
-                  <label className="text-sm font-medium ml-1">{dict.contact.form.subject}</label>
-                  <input 
-                    type="text" 
-                    placeholder={dict.contact.form.subject}
-                    className="w-full px-5 py-4 bg-[var(--muted)] border border-[var(--border)] rounded-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/20 focus:border-[var(--primary)] transition-all"
-                  />
-                </StaggerItem>
-
-                <StaggerItem index={9} className="space-y-2 flex-grow flex flex-col">
-                  <label className="text-sm font-medium ml-1">{dict.contact.form.message}</label>
-                  <textarea 
-                    placeholder={dict.contact.form.placeholder_message}
-                    className="w-full flex-grow px-5 py-4 bg-[var(--muted)] border border-[var(--border)] rounded-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/20 focus:border-[var(--primary)] transition-all resize-none text-sm min-h-[150px]"
-                  />
-                </StaggerItem>
-
-                <StaggerItem index={10} className="mt-auto">
-                  <button className="btn-primary w-full py-4 rounded-sm flex justify-center text-lg shadow-lg shadow-[var(--primary)]/20 font-bold mt-4 transition-all hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group/btn" type="button">
-                    {/* Shimmer effect on button hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite] transition-transform" />
-                    <RiSendPlaneLine size={20} className="mr-2 relative z-10" />
-                    <span className="relative z-10">{dict.contact.form.submit}</span>
-                  </button>
-                </StaggerItem>
-              </form>
+              <div className="relative z-10 flex-grow flex flex-col">
+                <ContactForm labels={dict.contact.form} />
+              </div>
             </div>
           </FadeIn>
         </div>
