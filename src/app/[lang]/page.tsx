@@ -1,10 +1,9 @@
-import Link from "next/link";
 import * as React from "react";
-import { RiArrowRightLine, RiLinkedinBoxFill } from "react-icons/ri";
 import { FadeIn, TypingText } from "@/components/animated-text";
 import { getDictionary } from "@/lib/get-dictionary";
 import { Dictionary } from "@/lib/dictionary";
 import { FloatingComic } from "@/components/floating-comic";
+import { HomeClient } from "@/components/home-client";
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "de" }];
@@ -58,27 +57,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </div>
         </FadeIn>
 
-        {/* CTA Buttons */}
-        <FadeIn direction="up" delay={0.9}>
-          <div className="flex flex-row justify-center items-center gap-3 sm:gap-4 mb-16">
-            <Link
-              href={`/${lang}/about`}
-              className="btn-primary px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-md font-bold flex items-center justify-center gap-2 shadow-xl shadow-[var(--primary)]/20 whitespace-nowrap"
-            >
-              {dict.hero.cta_primary}
-              <RiArrowRightLine size={18} />
-            </Link>
-            <a
-              href="https://linkedin.com/in/andreashilgers"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline px-4 sm:px-5 py-3 sm:py-4 rounded-md font-bold flex items-center justify-center transition-all hover:bg-[#0a66c2]/5 shrink-0"
-              title="LinkedIn Profile"
-            >
-              <RiLinkedinBoxFill size={24} className="text-[#0a66c2]" />
-            </a>
-          </div>
-        </FadeIn>
+        {/* Interactive Client Section (CTA Buttons + Easter Egg) */}
+        <HomeClient lang={lang} cta_primary={dict.hero.cta_primary} />
       </section>
     </main>
   );
