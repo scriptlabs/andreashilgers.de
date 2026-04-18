@@ -8,6 +8,12 @@ import {
   RiLinkedinBoxFill,
   RiArrowRightLine,
   RiMailLine,
+  RiUser3Line,
+  RiMapPinLine,
+  RiCalendarLine,
+  RiFocus3Line,
+  RiGamepadLine,
+  RiGroupLine,
 } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
 import { Metadata } from "next";
@@ -117,6 +123,36 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               </div>
             ))}
           </div>
+
+          {/* Profile Facts (Steckbrief) */}
+          <FadeIn direction="up" delay={0.2}>
+            <div className="card p-8 rounded-md border-transparent hover:border-[var(--primary)]/10 transition-all">
+              <h2 className="text-sm font-black uppercase tracking-[0.2em] text-[var(--primary)] mb-6 flex items-center gap-2">
+                <RiUser3Line size={18} /> {lang === 'de' ? 'Steckbrief' : 'Profile Facts'}
+              </h2>
+              
+              <div className="space-y-5">
+                {[
+                  { label: lang === 'de' ? 'Name' : 'Name', value: dict.about.details.name, icon: RiUser3Line },
+                  { label: lang === 'de' ? 'Alter' : 'Age', value: dict.about.details.age, icon: RiCalendarLine },
+                  { label: lang === 'de' ? 'Standort' : 'Location', value: dict.about.details.location, icon: RiMapPinLine },
+                  { label: lang === 'de' ? 'Fokus' : 'Focus', value: dict.about.details.specialization, icon: RiFocus3Line },
+                  { label: lang === 'de' ? 'Hobbys' : 'Hobbies', value: dict.about.details.hobbies, icon: RiGamepadLine },
+                  { label: lang === 'de' ? 'Mitglied' : 'Member', value: dict.about.details.memberships, icon: RiGroupLine },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 group">
+                    <div className="shrink-0 text-[var(--secondary)] group-hover:text-[var(--primary)] transition-colors mt-0.5">
+                      <item.icon size={16} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase font-bold text-[var(--secondary)] opacity-50 tracking-wider">{item.label}</p>
+                      <p className="text-sm font-bold text-[var(--foreground)] leading-tight">{item.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
         </aside>
       </div>
 
