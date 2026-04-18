@@ -11,7 +11,6 @@ import {
   RiLinkedinBoxFill,
   RiArrowRightLine,
   RiCalendarLine,
-  RiFolderLine,
 } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
 import { Metadata } from "next";
@@ -170,27 +169,6 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         </FadeIn>
       </div>
 
-      {/* ── CTA ── */}
-      <FadeIn direction="up" className="mt-32">
-        <div className="p-10 rounded-2xl border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] flex flex-col sm:flex-row items-center justify-between gap-8 shadow-2xl">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-black text-[var(--foreground)] mb-2">
-              {lang === 'de' ? 'Bereit für das nächste Level?' : 'Ready for the next level?'}
-            </h2>
-            <p className="text-[var(--secondary)] text-base">
-              {lang === 'de' ? 'Sehen Sie sich die Projekte an, die ich über die Jahre realisiert habe.' : 'Take a look at the projects I have realized over the years.'}
-            </p>
-          </div>
-          <Link
-            href={`/${lang}/projects`}
-            className="btn-primary px-10 py-4 rounded-md font-bold flex items-center gap-3 shadow-xl shadow-[var(--primary)]/20 hover:scale-[1.02] active:scale-[0.98] transition-all whitespace-nowrap"
-          >
-            <RiFolderLine size={20} />
-            <span>{lang === 'de' ? 'Projekte ansehen' : 'View Projects'}</span>
-            <RiArrowRightLine size={20} />
-          </Link>
-        </div>
-      </FadeIn>
     </main>
   );
 }
