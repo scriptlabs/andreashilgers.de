@@ -1,16 +1,13 @@
 import { getDictionary } from "@/lib/get-dictionary";
-import { FadeIn, StaggerItem } from "@/components/animated-text";
+import { FadeIn } from "@/components/animated-text";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  RiMapPinLine,
-  RiGlobalLine,
   RiFocus3Line,
   RiDoubleQuotesL,
   RiShieldUserLine,
   RiLinkedinBoxFill,
   RiArrowRightLine,
-  RiCalendarLine,
   RiMailLine,
 } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
@@ -25,13 +22,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
-
-  const profileDetails = [
-    { label: lang === 'de' ? 'Standort' : 'Location', value: dict.about.details.location, icon: RiMapPinLine },
-    { label: lang === 'de' ? 'Erfahrung' : 'Experience', value: dict.about.details.experience, icon: RiCalendarLine },
-    { label: lang === 'de' ? 'Fokus' : 'Specialization', value: dict.about.details.specialization, icon: RiFocus3Line },
-    { label: lang === 'de' ? 'Sprachen' : 'Languages', value: dict.about.details.languages, icon: RiGlobalLine },
-  ];
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-20">
@@ -64,22 +54,22 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             </div>
           </FadeIn>
 
-          {/* Quick Profile Details Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {profileDetails.map((detail, idx) => (
-              <StaggerItem key={idx} index={idx}>
-                <div className="flex items-center gap-4 p-5 rounded-md card border-transparent hover:border-[var(--primary)]/10 transition-all">
-                  <div className="p-2.5 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] shrink-0">
-                    <detail.icon size={22} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest text-[var(--secondary)] font-bold mb-0.5">{detail.label}</p>
-                    <p className="font-bold text-sm text-[var(--foreground)] leading-tight whitespace-pre-line">{detail.value}</p>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </div>
+          {/* Looking For (Moved here) */}
+          <FadeIn direction="up" delay={0.2}>
+            <div className="p-8 rounded-md border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] flex flex-col md:flex-row items-center gap-8 shadow-xl">
+              <div className="p-4 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] shrink-0 shadow-inner">
+                <RiFocus3Line size={32} />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-xl font-black uppercase tracking-tight text-[var(--primary)]">
+                  {dict.about.looking_for.title}
+                </h3>
+                <p className="text-lg text-[var(--secondary)] leading-relaxed italic">
+                  &ldquo;{dict.about.looking_for.content}&rdquo;
+                </p>
+              </div>
+            </div>
+          </FadeIn>
 
           <FadeIn direction="up" delay={0.4} className="flex flex-wrap gap-4 pt-4">
             <Link
@@ -122,15 +112,13 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
           {/* Stats Bar */}
           <div className="grid grid-cols-2 gap-4">
-            {Object.entries(dict.about.stats).map(([key, value], index) => (
-              <StaggerItem key={key} index={index}>
-                <div className="card p-5 rounded-md border-transparent text-center">
-                  <p className="text-[10px] uppercase tracking-widest text-[var(--secondary)] font-bold mb-1 opacity-60">
-                    {key}
-                  </p>
-                  <p className="text-sm font-black text-[var(--foreground)]">{value}</p>
-                </div>
-              </StaggerItem>
+            {Object.entries(dict.about.stats).map(([key, value]) => (
+              <div key={key} className="card p-5 rounded-md border-transparent text-center">
+                <p className="text-[10px] uppercase tracking-widest text-[var(--secondary)] font-bold mb-1 opacity-60">
+                  {key}
+                </p>
+                <p className="text-sm font-black text-[var(--foreground)]">{value}</p>
+              </div>
             ))}
           </div>
         </aside>
@@ -144,23 +132,6 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             {dict.about.quote}
           </p>
           <RiDoubleQuotesL className="absolute bottom-6 right-6 text-6xl text-[var(--primary)] opacity-[0.05] rotate-180" />
-        </div>
-      </FadeIn>
-
-      {/* ── Looking For ── */}
-      <FadeIn direction="up" delay={0.7} className="mt-8">
-        <div className="p-10 rounded-xl border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] flex flex-col md:flex-row items-center gap-8 shadow-xl">
-          <div className="p-4 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] shrink-0 shadow-inner">
-            <RiFocus3Line size={32} />
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-xl font-black uppercase tracking-tight text-[var(--primary)]">
-              {dict.about.looking_for.title}
-            </h3>
-            <p className="text-lg text-[var(--secondary)] leading-relaxed italic">
-              &ldquo;{dict.about.looking_for.content}&rdquo;
-            </p>
-          </div>
         </div>
       </FadeIn>
 
