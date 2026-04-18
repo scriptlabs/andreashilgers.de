@@ -78,22 +78,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </a>
           </div>
         </FadeIn>
-
-        {/* Stats row */}
-        <FadeIn direction="up" delay={1.1}>
-          <div className="flex justify-center items-center gap-x-8 sm:gap-x-12 md:gap-x-16 border-t border-[var(--border)] pt-10">
-            {dict.hero.stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-2xl sm:text-3xl font-black hero-gradient leading-tight">
-                  {stat.value}
-                </p>
-                <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[var(--secondary)] font-bold mt-1">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
       </section>
     </main>
   );
