@@ -11,6 +11,7 @@ import {
   RiLinkedinBoxFill,
   RiArrowRightLine,
   RiCalendarLine,
+  RiMailLine,
 } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
 import { Metadata } from "next";
@@ -33,66 +34,47 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   ];
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <main className="max-w-7xl mx-auto px-6 py-20">
       {/* ── Header ── */}
-      <header className="mb-12 md:mb-20">
-        <FadeIn direction="down">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold uppercase tracking-widest mb-6">
+      <FadeIn direction="down">
+        <div className="flex flex-col items-start gap-4 mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold uppercase tracking-widest">
             <RiShieldUserLine size={14} /> {lang === 'de' ? 'Hintergrund' : 'Background'}
           </div>
-          <h1 className="text-4xl md:text-8xl font-black hero-gradient leading-[1.1] mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-black hero-gradient inline-block leading-[1.15] pb-2">
             {dict.about.title}
           </h1>
-          <p className="text-xl md:text-3xl text-[var(--secondary)] font-medium leading-relaxed max-w-4xl">
-            {dict.about.subtitle}
-          </p>
-        </FadeIn>
-      </header>
-
-      {/* ── Profile Section ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-start">
-        
-        {/* Left: Image */}
-        <div className="lg:col-span-5 relative group">
-          <FadeIn direction="right">
-            <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:mx-0">
-              {/* Decorative Background Elements */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-[var(--primary)]/10 to-transparent rounded-2xl -z-10 group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 border border-[var(--primary)]/10 rounded-xl -z-10 translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700" />
-              
-              <div className="h-full w-full relative rounded-xl overflow-hidden shadow-2xl shadow-black/20">
-                <Image
-                  src="/images/me.png"
-                  alt={dict.about.details.name}
-                  fill
-                  priority
-                  className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                />
-              </div>
-            </div>
-          </FadeIn>
         </div>
+        <p className="text-xl text-[var(--secondary)] mb-16 max-w-3xl leading-relaxed">
+          {dict.about.subtitle}
+        </p>
+      </FadeIn>
 
-        {/* Right: Bio & Details */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        
+        {/* ── Left Side: Content ── */}
         <div className="lg:col-span-7 space-y-12">
-          <FadeIn direction="up" delay={0.2}>
-            <p className="text-lg md:text-xl leading-relaxed text-[var(--foreground)] opacity-90 max-w-2xl">
-              {dict.about.description}
-            </p>
+          
+          {/* Biography */}
+          <FadeIn direction="up">
+            <div className="card p-8 md:p-10 rounded-md border-transparent hover:border-[var(--primary)]/10 transition-all">
+              <p className="text-lg md:text-xl leading-relaxed text-[var(--foreground)] opacity-90">
+                {dict.about.description}
+              </p>
+            </div>
           </FadeIn>
 
           {/* Quick Profile Details Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-[var(--border)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {profileDetails.map((detail, idx) => (
               <StaggerItem key={idx} index={idx}>
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-[var(--muted)]/30 border border-[var(--border)] hover:border-[var(--primary)]/20 transition-colors">
-                  <div className="p-2 rounded-md bg-[var(--primary)]/10 text-[var(--primary)] shrink-0">
-                    <detail.icon size={20} />
+                <div className="flex items-center gap-4 p-5 rounded-md card border-transparent hover:border-[var(--primary)]/10 transition-all">
+                  <div className="p-2.5 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] shrink-0">
+                    <detail.icon size={22} />
                   </div>
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-[var(--secondary)] font-bold mb-0.5">{detail.label}</p>
-                    <p className="font-semibold text-sm text-[var(--foreground)] leading-tight whitespace-pre-line">{detail.value}</p>
+                    <p className="font-bold text-sm text-[var(--foreground)] leading-tight whitespace-pre-line">{detail.value}</p>
                   </div>
                 </div>
               </StaggerItem>
@@ -102,7 +84,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <FadeIn direction="up" delay={0.4} className="flex flex-wrap gap-4 pt-4">
             <Link
               href={`/${lang}/experience`}
-              className="btn-primary px-8 py-3 rounded-md flex items-center gap-2 font-bold shadow-xl shadow-[var(--primary)]/10"
+              className="btn-primary px-8 py-3 rounded-md flex items-center gap-2 font-bold shadow-lg shadow-[var(--primary)]/10"
             >
               <span>{lang === 'de' ? 'Berufsweg ansehen' : 'View Career'}</span>
               <RiArrowRightLine size={18} />
@@ -111,64 +93,98 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               href="https://linkedin.com/in/andreashilgers"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline px-8 py-3 rounded-md flex items-center gap-2 font-bold hover:bg-[#0a66c2]/5"
+              className="btn-outline px-8 py-3 rounded-md flex items-center gap-2 font-bold hover:bg-[#0a66c2]/5 transition-all"
             >
-              <RiLinkedinBoxFill size={20} className="text-[#0a66c2]" />
+              <RiLinkedinBoxFill size={22} className="text-[#0a66c2]" />
               <span>LinkedIn</span>
             </a>
           </FadeIn>
         </div>
-      </div>
 
-      {/* ── Stats & Quote ── */}
-      <div className="space-y-24 mt-24">
-        {/* Quote Block */}
-        <FadeIn direction="up">
-          <div className="relative py-16 px-8 md:px-24 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-xl overflow-hidden text-center">
-            <RiDoubleQuotesL className="absolute top-4 left-4 text-7xl text-[var(--primary)] opacity-5" />
-            <p className="relative z-10 text-2xl md:text-3xl font-black hero-gradient italic leading-relaxed max-w-4xl mx-auto">
-              {dict.about.quote}
-            </p>
-            <RiDoubleQuotesL className="absolute bottom-4 right-4 text-7xl text-[var(--primary)] opacity-5 rotate-180" />
-          </div>
-        </FadeIn>
-
-        {/* Core Values / Stats Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-          {Object.entries(dict.about.stats).map(([key, value], index) => (
-            <StaggerItem key={key} index={index} className="text-center group">
-              <div className="space-y-2">
-                <p className="text-xs uppercase tracking-[0.2em] text-[var(--secondary)] font-bold opacity-60 group-hover:text-[var(--primary)] group-hover:opacity-100 transition-all">
-                  {key}
-                </p>
-                <div className="h-px w-8 bg-[var(--primary)]/20 mx-auto group-hover:w-16 transition-all duration-500" />
-                <p className="text-xl font-black text-[var(--foreground)] pt-1">{value}</p>
+        {/* ── Right Side: Image & Stats ── */}
+        <aside className="lg:col-span-5 space-y-8">
+          {/* Portrait */}
+          <FadeIn direction="left">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary)]/10 to-transparent rounded-md -z-10 translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500" />
+              <div className="relative aspect-[3/4] w-full rounded-md overflow-hidden shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]">
+                <Image
+                  src="/images/me.png"
+                  alt={dict.about.details.name}
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
               </div>
-            </StaggerItem>
-          ))}
-        </div>
+            </div>
+          </FadeIn>
 
-        {/* Looking For Section */}
-        <FadeIn direction="up">
-          <div className="p-8 md:p-12 rounded-2xl bg-[var(--primary)]/5 border border-[var(--primary)]/10 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/5 rounded-full -mr-32 -mt-32 blur-3xl" />
-            
-            <div className="shrink-0 p-5 rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] shadow-inner">
-              <RiFocus3Line size={48} />
-            </div>
-            
-            <div className="space-y-4 relative z-10 text-center md:text-left">
-              <h3 className="text-2xl font-black text-[var(--primary)] uppercase tracking-tight">
-                {dict.about.looking_for.title}
-              </h3>
-              <p className="text-lg text-[var(--foreground)] opacity-80 leading-relaxed italic max-w-3xl">
-                &ldquo;{dict.about.looking_for.content}&rdquo;
-              </p>
-            </div>
+          {/* Stats Bar */}
+          <div className="grid grid-cols-2 gap-4">
+            {Object.entries(dict.about.stats).map(([key, value], index) => (
+              <StaggerItem key={key} index={index}>
+                <div className="card p-5 rounded-md border-transparent text-center">
+                  <p className="text-[10px] uppercase tracking-widest text-[var(--secondary)] font-bold mb-1 opacity-60">
+                    {key}
+                  </p>
+                  <p className="text-sm font-black text-[var(--foreground)]">{value}</p>
+                </div>
+              </StaggerItem>
+            ))}
           </div>
-        </FadeIn>
+        </aside>
       </div>
 
+      {/* ── Quote Section ── */}
+      <FadeIn direction="up" delay={0.6} className="mt-24">
+        <div className="p-12 md:p-16 rounded-xl border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] text-center shadow-xl relative overflow-hidden">
+          <RiDoubleQuotesL className="absolute top-6 left-6 text-6xl text-[var(--primary)] opacity-[0.05]" />
+          <p className="relative z-10 text-2xl md:text-3xl font-black hero-gradient italic leading-relaxed max-w-4xl mx-auto">
+            {dict.about.quote}
+          </p>
+          <RiDoubleQuotesL className="absolute bottom-6 right-6 text-6xl text-[var(--primary)] opacity-[0.05] rotate-180" />
+        </div>
+      </FadeIn>
+
+      {/* ── Looking For ── */}
+      <FadeIn direction="up" delay={0.7} className="mt-8">
+        <div className="p-10 rounded-xl border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] flex flex-col md:flex-row items-center gap-8 shadow-xl">
+          <div className="p-4 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] shrink-0 shadow-inner">
+            <RiFocus3Line size={32} />
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-xl font-black uppercase tracking-tight text-[var(--primary)]">
+              {dict.about.looking_for.title}
+            </h3>
+            <p className="text-lg text-[var(--secondary)] leading-relaxed italic">
+              &ldquo;{dict.about.looking_for.content}&rdquo;
+            </p>
+          </div>
+        </div>
+      </FadeIn>
+
+      {/* ── CTA ── */}
+      <FadeIn direction="up" delay={0.8} className="mt-8">
+        <div className="p-10 rounded-xl border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div>
+            <h2 className="text-2xl font-black text-[var(--foreground)] mb-1">
+              {lang === 'de' ? 'Interesse an einer Zusammenarbeit?' : 'Interested in working together?'}
+            </h2>
+            <p className="text-[var(--secondary)] text-sm">
+              {lang === 'de' ? 'Lassen Sie uns über Ihr nächstes Projekt sprechen.' : 'Let’s talk about your next project and how I can help.'}
+            </p>
+          </div>
+          <Link
+            href={`/${lang}/contact`}
+            className="btn-primary px-8 py-3 rounded-md font-bold flex items-center gap-2 shrink-0 hover:scale-[1.02] active:scale-[0.98] transition-all"
+          >
+            <RiMailLine size={18} />
+            <span>{lang === 'de' ? 'Kontakt aufnehmen' : 'Get in Touch'}</span>
+            <RiArrowRightLine size={18} />
+          </Link>
+        </div>
+      </FadeIn>
     </main>
   );
 }
