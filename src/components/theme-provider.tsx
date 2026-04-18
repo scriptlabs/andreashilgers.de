@@ -7,21 +7,26 @@ type Theme = "light" | "dark" | "forest" | "pixel" | "system";
 interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
+  isMuted: boolean;
+  setIsMuted: (muted: boolean) => void;
 }
 
 const ThemeContext = React.createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = React.useState<Theme>("system");
+  const [isMuted, setIsMuted] = React.useState(false);
   const [mounted, setMounted] = React.useState(false);
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
 
   React.useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem("theme") as Theme | null;
-    if (saved) {
-      setTheme(saved);
+    const savedTheme = localStorage.getItem("theme") as Theme | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
     }
+    const savedMuted = localStorage.getItem("isMuted") === "true";
+    setIsMuted(savedMuted);
   }, []);
 
   React.useEffect(() => {
@@ -29,16 +34,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const root = window.document.documentElement;
       root.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
+      localStorage.setItem("isMuted", isMuted.toString());
 
       // Handle Pixel Theme Music
-      if (theme === 'pixel') {
+      if (theme === 'pixel' && !isMuted) {
         if (!audioRef.current) {
           audioRef.current = new Audio('/sounds/music.mp3');
           audioRef.current.loop = true;
-          audioRef.current.volume = 0.15; // Subtle background volume
+          audioRef.current.volume = 0.15;
         }
         
-        // Browsers block autoplay until first interaction
         const playMusic = () => {
           audioRef.current?.play().catch(() => console.log("Autoplay blocked, waiting for interaction"));
         };
@@ -49,7 +54,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       } else {
         if (audioRef.current) {
           audioRef.current.pause();
-          audioRef.current.currentTime = 0;
+          if (theme !== 'pixel') {
+            audioRef.current.currentTime = 0;
+          }
         }
       }
     }
@@ -59,9 +66,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         audioRef.current.pause();
       }
     };
-  }, [theme, mounted]);
+  }, [theme, mounted, isMuted]);
 
-  const value = React.useMemo(() => ({ theme, setTheme }), [theme]);
+  const value = React.useMemo(() => ({ 
+    theme, 
+    setTheme, 
+    isMuted, 
+    setIsMuted 
+  }), [theme, isMuted]);
 
   return (
     <ThemeContext.Provider value={value}>

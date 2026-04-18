@@ -29,14 +29,14 @@ interface VaultClientProps {
 }
 
 export default function VaultClient({ dict, lang }: VaultClientProps) {
-  const { theme } = useTheme();
+  const { theme, isMuted } = useTheme();
   const [accessCode, setAccessCode] = React.useState("");
   const [isUnlocked, setIsUnlocked] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [previewFile, setPreviewFile] = React.useState<{ url: string; title: string } | null>(null);
 
   const playSound = (sound: string) => {
-    if (theme === 'pixel') {
+    if (theme === 'pixel' && !isMuted) {
       const audio = new Audio(`/sounds/${sound}.mp3`);
       audio.volume = 0.3;
       audio.play().catch(() => {});

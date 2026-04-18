@@ -11,7 +11,9 @@ import {
   RiLockPasswordLine, 
   RiMenuLine, 
   RiCloseLine,
-  RiGamepadLine
+  RiGamepadLine,
+  RiVolumeUpLine,
+  RiVolumeMuteLine
 } from "react-icons/ri";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Dictionary } from "@/lib/dictionary";
@@ -23,7 +25,7 @@ interface NavbarProps {
 }
 
 export function Navbar({ dict, lang }: NavbarProps) {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, isMuted, setIsMuted } = useTheme();
   const [mounted, setMounted] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const pathname = usePathname();
@@ -100,6 +102,17 @@ export function Navbar({ dict, lang }: NavbarProps) {
               >
                 {mobileMenuOpen ? <RiCloseLine size={20} /> : <RiMenuLine size={20} />}
               </button>
+
+              {/* Mute Button - Only in Pixel Theme */}
+              {theme === 'pixel' && (
+                <button
+                  onClick={() => setIsMuted(!isMuted)}
+                  className="p-2.5 rounded-md hover:bg-[var(--background)] transition-colors text-[var(--secondary)] hover:text-[var(--primary)]"
+                  aria-label={isMuted ? "Unmute" : "Mute"}
+                >
+                  {isMuted ? <RiVolumeMuteLine size={20} /> : <RiVolumeUpLine size={20} />}
+                </button>
+              )}
 
               {/* Theme Switcher - Desktop */}
               <div className="hidden md:block">
