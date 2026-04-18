@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-type Theme = "light" | "dark" | "forest" | "system";
+type Theme = "light" | "dark" | "forest" | "pixel" | "system";
 
 interface ThemeContextType {
   theme: Theme;

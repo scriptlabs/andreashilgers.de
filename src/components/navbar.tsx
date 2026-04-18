@@ -10,7 +10,8 @@ import {
   RiTreeLine, 
   RiLockPasswordLine, 
   RiMenuLine, 
-  RiCloseLine 
+  RiCloseLine,
+  RiGamepadLine
 } from "react-icons/ri";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Dictionary } from "@/lib/dictionary";
@@ -47,6 +48,8 @@ export function Navbar({ dict, lang }: NavbarProps) {
         return <RiMoonLine size={20} />;
       case 'forest':
         return <RiTreeLine size={20} />;
+      case 'pixel':
+        return <RiGamepadLine size={20} />;
       default:
         return <RiSunLine size={20} />;
     }
@@ -123,6 +126,9 @@ export function Navbar({ dict, lang }: NavbarProps) {
                       </DropdownMenu.Item>
                       <DropdownMenu.Item onClick={() => setTheme('forest')} className="flex items-center gap-3 p-2.5 cursor-pointer hover:bg-[var(--primary)]/5 rounded-md transition-colors text-sm">
                         <RiTreeLine size={16} /> Forest
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item onClick={() => setTheme('pixel')} className="flex items-center gap-3 p-2.5 cursor-pointer hover:bg-[var(--primary)]/5 rounded-md transition-colors text-sm font-mono">
+                        <RiGamepadLine size={16} /> Pixel (8-Bit)
                       </DropdownMenu.Item>
                     </DropdownMenu.Content>
                   </DropdownMenu.Portal>
@@ -230,6 +236,9 @@ export function Navbar({ dict, lang }: NavbarProps) {
                       </DropdownMenu.Item>
                       <DropdownMenu.Item onClick={() => { setTheme('forest'); setMobileMenuOpen(false); }} className="flex items-center gap-3 p-2.5 cursor-pointer hover:bg-[var(--primary)]/5 rounded-md transition-colors">
                         <RiTreeLine size={16} /> Forest
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item onClick={() => { setTheme('pixel'); setMobileMenuOpen(false); }} className="flex items-center gap-3 p-2.5 cursor-pointer hover:bg-[var(--primary)]/5 rounded-md transition-colors font-mono uppercase text-xs">
+                        <RiGamepadLine size={16} /> Pixel (8-Bit)
                       </DropdownMenu.Item>
                     </DropdownMenu.Content>
                   </DropdownMenu.Portal>
