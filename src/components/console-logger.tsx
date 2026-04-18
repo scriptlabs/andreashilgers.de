@@ -17,13 +17,9 @@ export function ConsoleLogger() {
   
   Stack: Next.js 16, TypeScript, Tailwind CSS v4, Radix UI, Framer Motion.
   
-  "There are 10 types of people in the world: 
-   those who understand binary, and those who don't."
-  
-  Want to work together? 
-  Check out my contact page or reach out at andreas_hilgers@icloud.com
-    `;
-
+  "There are 10 types of people in the world:
+  those who understand binary, and those who don't."
+   `;
     console.log(
       `%c${asciiArt}`,
       "color: #10b981; font-family: monospace; font-weight: bold; text-shadow: 0 0 5px rgba(16, 185, 129, 0.4);"
