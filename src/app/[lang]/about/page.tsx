@@ -7,7 +7,6 @@ import {
   RiShieldUserLine,
   RiLinkedinBoxFill,
   RiArrowRightLine,
-  RiMailLine,
   RiUser3Line,
   RiMapPinLine,
   RiCalendarLine,
@@ -175,18 +174,18 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         <div className="p-12 rounded-2xl border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] flex flex-col sm:flex-row items-center justify-between gap-8 shadow-2xl">
           <div className="text-center sm:text-left">
             <h2 className="text-3xl font-black text-[var(--foreground)] mb-2 tracking-tight">
-              {lang === 'de' ? 'Bereit für Austausch?' : 'Ready to Connect?'}
+              {lang === 'de' ? 'Mein Werdegang' : 'My Career Path'}
             </h2>
             <p className="text-[var(--secondary)] text-lg">
-              {lang === 'de' ? 'Lassen Sie uns gemeinsam über Ihr nächstes Projekt sprechen.' : 'Let’s talk about your next project and how I can help.'}
+              {lang === 'de' ? 'Erfahren Sie mehr über meine beruflichen Stationen und meine technische Entwicklung.' : 'Learn more about my professional milestones and technical evolution.'}
             </p>
           </div>
           <Link
-            href={`/${lang}/contact`}
+            href={`/${lang}/experience`}
             className="btn-primary px-10 py-4 rounded-md font-bold flex items-center gap-3 shrink-0 hover:scale-[1.02] active:scale-[0.98] transition-all text-lg"
           >
-            <RiMailLine size={24} />
-            <span>{lang === 'de' ? 'Kontakt aufnehmen' : 'Get in Touch'}</span>
+            <RiCalendarLine size={24} />
+            <span>{lang === 'de' ? 'Berufsweg ansehen' : 'View Experience'}</span>
             <RiArrowRightLine size={24} />
           </Link>
         </div>
