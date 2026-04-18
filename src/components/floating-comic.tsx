@@ -12,8 +12,8 @@ interface FloatingComicProps {
 export function FloatingComic({ src, alt }: FloatingComicProps) {
   const { theme } = useTheme();
   
-  // Use me_dark.png if Pixel theme is active, otherwise use the passed src (me_comic.png)
-  const activeSrc = theme === 'pixel' ? '/images/me_dark.png' : src;
+  // Use me_dark.png if Pixel or Dark theme is active, otherwise use the passed src (me_comic.png)
+  const activeSrc = (theme === 'pixel' || theme === 'dark') ? '/images/me_dark.png' : src;
 
   return (
     <div className="fixed bottom-0 right-0 w-[180px] sm:w-[240px] md:w-[320px] lg:w-[420px] aspect-square z-20 pointer-events-none select-none">
