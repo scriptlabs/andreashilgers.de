@@ -35,10 +35,10 @@ export const metadata: Metadata = {
   creator: "Andreas Hilgers",
   publisher: "Andreas Hilgers",
   openGraph: {
-    images: [{ url: "/images/me_comic.png", width: 1200, height: 1200 }],
+    images: [{ url: "/images/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
-    images: ["/images/me_comic.png"],
+    images: ["/images/og-image.png"],
   },
   robots: {
     index: true,
