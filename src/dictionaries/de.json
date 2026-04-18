@@ -36,12 +36,13 @@
     "cta_primary": "Über mich",
     "cta_secondary": "Kontakt",
     "typing_texts": [
-      "Engineering Management",
-      "Technische Leitung",
-      "Software-Architektur",
-      "Digitale Transformation",
-      "KI & Agentic Development",
-      "Full-Stack Exzellenz"
+      "Full-Stack Exzellenz",
+      "Next.js & React Spezialist",
+      "Agent-Driven Development",
+      "KI-Integration & LLMs",
+      "Skalierbare System-Architektur",
+      "Technische Projektleitung",
+      "Engineering Management"
     ],
     "stats": [
       { "label": "Erfahrung", "value": "20+ Jahre" },

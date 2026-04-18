@@ -36,12 +36,13 @@
     "cta_primary": "About me",
     "cta_secondary": "Contact",
     "typing_texts": [
-      "Engineering Management",
-      "Technical Leadership",
-      "Software Architecture",
-      "Digital Transformation",
-      "AI & Agentic Development",
-      "Full-Stack Excellence"
+      "Full-Stack Excellence",
+      "Next.js & React Expert",
+      "Agent-Driven Development",
+      "AI Integration & LLMs",
+      "Scalable System Architecture",
+      "Technical Project Leadership",
+      "Engineering Management"
     ],
     "stats": [
       { "label": "Experience", "value": "20+ Years" },
