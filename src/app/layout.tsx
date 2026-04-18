@@ -27,6 +27,12 @@ export const metadata: Metadata = {
   authors: [{ name: "Andreas Hilgers" }],
   creator: "Andreas Hilgers",
   publisher: "Andreas Hilgers",
+  openGraph: {
+    images: [{ url: "/images/me_comic.png", width: 1200, height: 1200 }],
+  },
+  twitter: {
+    images: ["/images/me_comic.png"],
+  },
   robots: {
     index: true,
     follow: true,
