@@ -14,10 +14,10 @@ const ThemeContext = React.createContext<ThemeContextType | undefined>(undefined
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = React.useState<Theme>("system");
   const [mounted, setMounted] = React.useState(false);
+  const audioRef = React.useRef<HTMLAudioElement | null>(null);
 
   React.useEffect(() => {
     setMounted(true);
-    // Read theme from localStorage
     const saved = localStorage.getItem("theme") as Theme | null;
     if (saved) {
       setTheme(saved);
@@ -26,11 +26,39 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   React.useEffect(() => {
     if (mounted) {
-      // Apply theme to document
       const root = window.document.documentElement;
       root.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
+
+      // Handle Pixel Theme Music
+      if (theme === 'pixel') {
+        if (!audioRef.current) {
+          audioRef.current = new Audio('/sounds/music.mp3');
+          audioRef.current.loop = true;
+          audioRef.current.volume = 0.15; // Subtle background volume
+        }
+        
+        // Browsers block autoplay until first interaction
+        const playMusic = () => {
+          audioRef.current?.play().catch(() => console.log("Autoplay blocked, waiting for interaction"));
+        };
+
+        playMusic();
+        window.addEventListener('click', playMusic, { once: true });
+        window.addEventListener('keydown', playMusic, { once: true });
+      } else {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+        }
+      }
     }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
   }, [theme, mounted]);
 
   const value = React.useMemo(() => ({ theme, setTheme }), [theme]);

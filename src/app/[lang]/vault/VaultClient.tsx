@@ -18,6 +18,7 @@ import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import { Dictionary } from "@/lib/dictionary";
+import { useTheme } from "@/components/theme-provider";
 
 // Cache busting version for documents
 const DOCS_VERSION = "1.0.1";
@@ -28,10 +29,19 @@ interface VaultClientProps {
 }
 
 export default function VaultClient({ dict, lang }: VaultClientProps) {
+  const { theme } = useTheme();
   const [accessCode, setAccessCode] = React.useState("");
   const [isUnlocked, setIsUnlocked] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [previewFile, setPreviewFile] = React.useState<{ url: string; title: string } | null>(null);
+
+  const playSound = (sound: string) => {
+    if (theme === 'pixel') {
+      const audio = new Audio(`/sounds/${sound}.mp3`);
+      audio.volume = 0.3;
+      audio.play().catch(() => {});
+    }
+  };
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,9 +49,11 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
       setIsUnlocked(true);
       setError(false);
       sessionStorage.setItem("vault_unlocked", "true");
+      playSound('success');
     } else {
       setError(true);
       setAccessCode("");
+      playSound('failure');
     }
   };
 
