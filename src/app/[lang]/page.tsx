@@ -60,10 +60,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
         {/* CTA Buttons */}
         <FadeIn direction="up" delay={0.9}>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+          <div className="flex flex-row justify-center items-center gap-3 sm:gap-4 mb-16">
             <Link
               href={`/${lang}/about`}
-              className="btn-primary px-8 py-4 text-base rounded-md font-bold flex items-center justify-center gap-2 shadow-xl shadow-[var(--primary)]/20"
+              className="btn-primary px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-md font-bold flex items-center justify-center gap-2 shadow-xl shadow-[var(--primary)]/20 whitespace-nowrap"
             >
               {dict.hero.cta_primary}
               <RiArrowRightLine size={18} />
@@ -72,7 +72,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               href="https://linkedin.com/in/andreashilgers"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline px-5 py-4 rounded-md font-bold flex items-center justify-center transition-all hover:bg-[#0a66c2]/5"
+              className="btn-outline px-4 sm:px-5 py-3 sm:py-4 rounded-md font-bold flex items-center justify-center transition-all hover:bg-[#0a66c2]/5 shrink-0"
               title="LinkedIn Profile"
             >
               <RiLinkedinBoxFill size={24} className="text-[#0a66c2]" />
