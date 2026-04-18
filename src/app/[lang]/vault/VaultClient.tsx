@@ -8,11 +8,7 @@ import {
   RiDownloadLine,
   RiEyeLine,
   RiInformationLine,
-  RiTaskLine,
-  RiGraduationCapLine,
-  RiAwardLine,
   RiBankLine,
-  RiFileUserLine,
   RiCloseLine,
   RiMailLine,
   RiPhoneLine,
@@ -123,8 +119,6 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
     file: string;
     wordFile?: string;
     size: string;
-    icon: React.ReactNode;
-    color: string;
   }> = [
     { 
       id: "cv", 
@@ -135,8 +129,6 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
       type: vaultDict.documents.cv.type,
       file: `/documents/cv.pdf?v=${DOCS_VERSION}`,
       size: "87 KB",
-      icon: <RiFileUserLine />, 
-      color: "bg-slate-500/10 text-slate-500" 
     },
     { 
       id: "ihk", 
@@ -147,8 +139,6 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
       type: vaultDict.documents.ihk.type,
       file: `/documents/ihk-certificate.pdf?v=${DOCS_VERSION}`,
       size: "16 MB",
-      icon: <RiGraduationCapLine />, 
-      color: "bg-blue-500/10 text-blue-500" 
     },
     { 
       id: "msm", 
@@ -159,8 +149,6 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
       type: vaultDict.documents.msm.type,
       file: `/documents/msm-project-management.pdf?v=${DOCS_VERSION}`,
       size: "321 KB",
-      icon: <RiTaskLine />, 
-      color: "bg-emerald-500/10 text-emerald-500" 
     },
     { 
       id: "scrum", 
@@ -171,8 +159,6 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
       type: vaultDict.documents.scrum.type,
       file: `/documents/scrum-developer-certificate.pdf?v=${DOCS_VERSION}`,
       size: "346 KB",
-      icon: <RiAwardLine />, 
-      color: "bg-purple-500/10 text-purple-500" 
     },
   ];
 
@@ -281,68 +267,63 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
           <StaggerItem key={doc.id} index={index}>
             <div className="card group p-5 rounded-md border-transparent hover:border-[var(--primary)]/20 transition-all hover:shadow-lg">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
-                <div className="flex items-start gap-5">
-                  <div className={`w-14 h-14 rounded-md flex items-center justify-center text-3xl shrink-0 ${doc.color} group-hover:scale-105 transition-transform`}>
-                    {doc.icon}
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-bold text-[var(--foreground)]">{doc.title}</h3>
+                    <span className="text-[10px] font-mono text-[var(--secondary)] opacity-60">({doc.size})</span>
                   </div>
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-lg font-bold text-[var(--foreground)]">{doc.title}</h3>
-                      <span className="text-[10px] font-mono text-[var(--secondary)] opacity-60">({doc.size})</span>
-                    </div>
-                    <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-[var(--secondary)]">
-                      <a 
-                        href={doc.providerUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 hover:text-[var(--primary)] transition-colors"
-                      >
-                        <RiBankLine size={12} className="text-[var(--primary)]" />
-                        <span className="underline decoration-[var(--primary)]/30 underline-offset-4">{doc.provider}</span>
-                      </a>
-                    </div>
-                    <div className="pt-1.5 flex flex-wrap gap-2">
-                      <span className="px-2 py-0.5 rounded-sm bg-[var(--primary)]/5 text-[var(--primary)] text-[10px] font-bold border border-[var(--primary)]/10 uppercase tracking-wider">
-                        {doc.degree}
-                      </span>
-                      <span className="px-2 py-0.5 rounded-sm bg-[var(--accent)]/5 text-[var(--accent)] text-[10px] font-bold border border-[var(--accent)]/10 uppercase tracking-wider">
-                        {doc.type}
-                      </span>
-                    </div>
+                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-[var(--secondary)]">
+                    <a 
+                      href={doc.providerUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 hover:text-[var(--primary)] transition-colors"
+                    >
+                      <RiBankLine size={12} className="text-[var(--primary)]" />
+                      <span className="underline decoration-[var(--primary)]/30 underline-offset-4">{doc.provider}</span>
+                    </a>
+                  </div>
+                  <div className="pt-1.5 flex flex-wrap gap-2">
+                    <span className="px-2 py-0.5 rounded-sm bg-[var(--primary)]/5 text-[var(--primary)] text-[10px] font-bold border border-[var(--primary)]/10 uppercase tracking-wider">
+                      {doc.degree}
+                    </span>
+                    <span className="px-2 py-0.5 rounded-sm bg-[var(--accent)]/5 text-[var(--accent)] text-[10px] font-bold border border-[var(--accent)]/10 uppercase tracking-wider">
+                      {doc.type}
+                    </span>
                   </div>
                 </div>
                 
-                  <div className="flex flex-wrap items-center gap-2 ml-19 lg:ml-0">
-                    <button
-                      onClick={() => setPreviewFile({ url: doc.file, title: doc.title })}
-                      className="hidden sm:flex px-4 py-2 rounded-md bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all items-center justify-center gap-2 text-xs font-bold"
+                <div className="flex flex-wrap items-center gap-2 lg:ml-0">
+                  <button
+                    onClick={() => setPreviewFile({ url: doc.file, title: doc.title })}
+                    className="hidden sm:flex px-4 py-2 rounded-md bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all items-center justify-center gap-2 text-xs font-bold"
+                  >
+                    <RiEyeLine size={16} />
+                    <span>{dict.vault.preview}</span>
+                  </button>
+                  
+                  <div className="flex items-center gap-2 w-full sm:w-auto">
+                    <a 
+                      href={doc.file} 
+                      download
+                      className="flex-1 sm:flex-none px-4 py-2 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-xs font-bold border border-[var(--border)]"
                     >
-                      <RiEyeLine size={16} />
-                      <span>{dict.vault.preview}</span>
-                    </button>
-                    
-                    <div className="flex items-center gap-2 w-full sm:w-auto">
+                      <RiDownloadLine size={16} />
+                      <span>{dict.vault.download_pdf}</span>
+                    </a>
+
+                    {doc.wordFile && (
                       <a 
-                        href={doc.file} 
+                        href={doc.wordFile} 
                         download
                         className="flex-1 sm:flex-none px-4 py-2 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-xs font-bold border border-[var(--border)]"
                       >
                         <RiDownloadLine size={16} />
-                        <span>{dict.vault.download_pdf}</span>
+                        <span>{dict.vault.download_word}</span>
                       </a>
-
-                      {doc.wordFile && (
-                        <a 
-                          href={doc.wordFile} 
-                          download
-                          className="flex-1 sm:flex-none px-4 py-2 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-xs font-bold border border-[var(--border)]"
-                        >
-                          <RiFileUserLine size={16} />
-                          <span>{dict.vault.download_word}</span>
-                        </a>
-                      )}
-                    </div>
+                    )}
                   </div>
+                </div>
               </div>
             </div>
           </StaggerItem>
