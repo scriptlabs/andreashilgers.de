@@ -26,7 +26,7 @@ const pixelFont = VT323({
 export const metadata: Metadata = {
   metadataBase: new URL('https://andreashilgers.de'),
   title: {
-    default: "Andreas Hilgers - Engineering Manager & Senior Full-Stack Developer",
+    default: "Andreas Hilgers - Senior Full-Stack Developer & Engineering Manager",
     template: "%s | Andreas Hilgers",
   },
   description: "Portfolio of Andreas Hilgers, Engineering Leader and Senior Full-Stack Developer with 20+ years of experience.",
