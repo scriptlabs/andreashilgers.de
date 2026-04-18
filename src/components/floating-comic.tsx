@@ -26,6 +26,7 @@ export function FloatingComic({ src, alt }: FloatingComicProps) {
           alt={alt}
           fill
           priority
+          sizes="(max-width: 640px) 180px, (max-width: 768px) 240px, (max-width: 1024px) 320px, 420px"
           className="object-contain object-right-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
         />
       </motion.div>
