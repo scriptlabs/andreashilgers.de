@@ -71,9 +71,6 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
         <div className="max-w-md w-full">
           <FadeIn direction="down">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-[var(--primary)]/10 text-[var(--primary)] rounded-md mb-6">
-                <RiLockPasswordLine size={40} />
-              </div>
               <h1 className="text-3xl font-bold mb-3 leading-[1.15] pb-1">{vaultDict.title}</h1>
               <p className="text-[var(--secondary)] text-sm">{vaultDict.description}</p>
             </div>
