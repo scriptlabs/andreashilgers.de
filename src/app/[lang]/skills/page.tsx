@@ -1,6 +1,7 @@
 import { getDictionary } from "@/lib/get-dictionary";
 import { FadeIn } from "@/components/animated-text";
 import Link from "next/link";
+import Image from "next/image";
 import {
   RiStackLine,
   RiLayoutLine,
@@ -106,19 +107,39 @@ export default async function SkillsPage({ params }: { params: Promise<{ lang: s
     <main className="max-w-7xl mx-auto px-6 py-20">
 
       {/* ── Header ── */}
-      <FadeIn direction="down">
-        <div className="flex flex-col items-start gap-4 mb-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold uppercase tracking-widest">
-            <RiStackLine size={14} /> {lang === "de" ? "Kompetenzen" : "Expertise"}
+      <div className="relative mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+          <div className="lg:col-span-8">
+            <FadeIn direction="down">
+              <div className="flex flex-col items-start gap-4 mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold uppercase tracking-widest">
+                  <RiStackLine size={14} /> {lang === "de" ? "Kompetenzen" : "Expertise"}
+                </div>
+                <h1 className="text-4xl md:text-6xl font-black hero-gradient inline-block leading-[1.15] pb-2">
+                  {dict.skills.title}
+                </h1>
+              </div>
+              <p className="text-xl text-[var(--secondary)] max-w-2xl leading-relaxed">
+                {dict.skills.subtitle}
+              </p>
+            </FadeIn>
           </div>
-          <h1 className="text-4xl md:text-6xl font-black hero-gradient inline-block leading-[1.15] pb-2">
-            {dict.skills.title}
-          </h1>
+          
+          <div className="hidden lg:block lg:col-span-4 relative">
+            <FadeIn direction="left" delay={0.2}>
+              <div className="relative w-full aspect-[4/3] -mb-10">
+                <Image
+                  src="/images/macbook.png"
+                  alt="Macbook Pro"
+                  fill
+                  priority
+                  className="object-contain object-right-bottom drop-shadow-2xl"
+                />
+              </div>
+            </FadeIn>
+          </div>
         </div>
-        <p className="text-xl text-[var(--secondary)] mb-16 max-w-3xl">
-          {dict.skills.subtitle}
-        </p>
-      </FadeIn>
+      </div>
 
       {/* ── Stats row ── */}
       <FadeIn delay={0.1}>
