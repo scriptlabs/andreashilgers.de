@@ -3,6 +3,7 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-pixel: var(--font-pixel);
   
   /* Light Theme */
   --background: #ffffff;
@@ -119,11 +120,11 @@
 /* Pixel Theme - Oldschool 8-bit */
 [data-theme='pixel'] {
   --background: #0d0d15; /* Deep cyber navy */
-  --foreground: #ffffff;
+  --foreground: #00f0ff; /* Electric Cyan primary text */
   --card: #161625;
-  --card-foreground: #ffffff;
+  --card-foreground: #00f0ff;
   --popover: #161625;
-  --popover-foreground: #ffffff;
+  --popover-foreground: #00f0ff;
   --primary: #00f0ff; /* Electric Cyan */
   --primary-foreground: #000000;
   --primary-hover: #ffffff;
@@ -152,23 +153,25 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.005), rgba(0, 0, 255, 0.01));
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.03) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.005), rgba(0, 255, 0, 0.002), rgba(0, 0, 255, 0.005));
   z-index: 9999;
-  background-size: 100% 4px, 4px 100%;
+  background-size: 100% 3px, 3px 100%;
   pointer-events: none;
 }
 
 [data-theme='pixel'] * {
   image-rendering: pixelated;
-  font-family: var(--font-mono) !important;
-  text-transform: uppercase; /* More game-like */
-  letter-spacing: 0.05em;
+  font-family: var(--font-pixel) !important;
+  font-size: 1.05rem; /* Pixel font needs a bit more size */
 }
 
-[data-theme='pixel'] p, 
-[data-theme='pixel'] span,
-[data-theme='pixel'] li {
-  text-transform: none; /* Keep body text readable */
+[data-theme='pixel'] h1, 
+[data-theme='pixel'] h2, 
+[data-theme='pixel'] h3,
+[data-theme='pixel'] .btn-primary,
+[data-theme='pixel'] .btn-outline {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 [data-theme='pixel'] .card,
@@ -176,26 +179,27 @@
 [data-theme='pixel'] .btn-outline {
   border-radius: 0 !important;
   border-width: 3px !important;
-  box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.5) !important;
+  border-style: solid !important;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.8) !important;
   transition: none !important;
 }
 
 [data-theme='pixel'] .card:hover {
   transform: none !important;
   border-color: var(--secondary) !important;
-  box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.5) !important;
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.8) !important;
 }
 
 [data-theme='pixel'] .btn-primary:hover,
 [data-theme='pixel'] .btn-outline:hover {
   transform: translate(-2px, -2px) !important;
-  box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.5) !important;
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.8) !important;
 }
 
 [data-theme='pixel'] .btn-primary:active,
 [data-theme='pixel'] .btn-outline:active {
   transform: translate(2px, 2px) !important;
-  box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.5) !important;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.8) !important;
 }
 
 [data-theme='pixel'] .bg-orb {
@@ -203,8 +207,8 @@
 }
 
 [data-theme='pixel'] .bg-dot-grid {
-  background-image: radial-gradient(circle, var(--primary) 1px, transparent 1px) !important;
-  background-size: 16px 16px !important;
+  background-image: radial-gradient(circle, var(--primary) 2px, transparent 2px) !important;
+  background-size: 20px 20px !important;
   opacity: 0.05 !important;
 }
 
