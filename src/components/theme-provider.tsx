@@ -19,67 +19,75 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = React.useState(false);
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
 
+  // Initialize audio object once on mount
   React.useEffect(() => {
     setMounted(true);
+    
     const savedTheme = localStorage.getItem("theme") as Theme | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
+    if (savedTheme) setTheme(savedTheme);
+    
     const savedMuted = localStorage.getItem("isMuted") === "true";
     setIsMuted(savedMuted);
+
+    if (!audioRef.current) {
+      audioRef.current = new Audio('/sounds/music.mp3');
+      audioRef.current.loop = true;
+      audioRef.current.volume = 0.15;
+    }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
   }, []);
 
+  // Sync theme and audio state
   React.useEffect(() => {
-    if (mounted) {
-      const root = window.document.documentElement;
-      root.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
-      localStorage.setItem("isMuted", isMuted.toString());
+    if (!mounted || !audioRef.current) return;
 
-      // Handle Pixel Theme Music
-      if (theme === 'pixel' && !isMuted) {
-        if (!audioRef.current) {
-          audioRef.current = new Audio('/sounds/music.mp3');
-          audioRef.current.loop = true;
-          audioRef.current.volume = 0.15;
-        }
+    const root = window.document.documentElement;
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+    localStorage.setItem("isMuted", isMuted.toString());
 
-        const startPlayback = () => {
-          if (audioRef.current && audioRef.current.paused && theme === 'pixel' && !isMuted) {
-            audioRef.current.play().catch(() => {
-              // Still blocked or failed, wait for next interaction
-            });
-          }
-        };
+    const audio = audioRef.current;
 
-        // Try playing immediately
-        startPlayback();
-
-        // Listen for ANY interaction to kickstart the audio
-        const interactionEvents = ['click', 'keydown', 'touchstart', 'mousedown', 'pointerdown'];
-        interactionEvents.forEach(event => {
-          window.addEventListener(event, startPlayback, { once: true });
+    if (theme === 'pixel' && !isMuted) {
+      const startPlayback = () => {
+        audio.play().catch(() => {
+          // Autoplay blocked: play will be retried on next interaction
         });
+      };
 
-        return () => {
-          interactionEvents.forEach(event => {
-            window.removeEventListener(event, startPlayback);
-          });
-          if (audioRef.current && theme !== 'pixel') {
-            audioRef.current.pause();
-            audioRef.current.currentTime = 0;
-          }
-        };
-      } else {
-        if (audioRef.current) {
-          audioRef.current.pause();
-          if (theme !== 'pixel') {
-            audioRef.current.currentTime = 0;
-          }
-        }
+      startPlayback();
+
+      // Listen for first interaction to satisfy browser policies
+      const interactionEvents = ['mousedown', 'keydown', 'touchstart', 'click'];
+      
+      const handleInteraction = () => {
+        startPlayback();
+        interactionEvents.forEach(evt => window.removeEventListener(evt, handleInteraction));
+      };
+
+      interactionEvents.forEach(event => {
+        window.addEventListener(event, handleInteraction, { once: true });
+      });
+
+      return () => {
+        interactionEvents.forEach(event => {
+          window.removeEventListener(event, handleInteraction);
+        });
+      };
+    } else {
+      audio.pause();
+      // If switching away from theme, reset track
+      if (theme !== 'pixel') {
+        audio.currentTime = 0;
       }
     }
-  }, [theme, mounted, isMuted]);
+  }, [theme, isMuted, mounted]);
 
   const value = React.useMemo(() => ({ 
     theme, 
