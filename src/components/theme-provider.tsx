@@ -43,14 +43,33 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
           audioRef.current.loop = true;
           audioRef.current.volume = 0.15;
         }
-        
-        const playMusic = () => {
-          audioRef.current?.play().catch(() => console.log("Autoplay blocked, waiting for interaction"));
+
+        const startPlayback = () => {
+          if (audioRef.current && audioRef.current.paused && theme === 'pixel' && !isMuted) {
+            audioRef.current.play().catch(() => {
+              // Still blocked or failed, wait for next interaction
+            });
+          }
         };
 
-        playMusic();
-        window.addEventListener('click', playMusic, { once: true });
-        window.addEventListener('keydown', playMusic, { once: true });
+        // Try playing immediately
+        startPlayback();
+
+        // Listen for ANY interaction to kickstart the audio
+        const interactionEvents = ['click', 'keydown', 'touchstart', 'mousedown', 'pointerdown'];
+        interactionEvents.forEach(event => {
+          window.addEventListener(event, startPlayback, { once: true });
+        });
+
+        return () => {
+          interactionEvents.forEach(event => {
+            window.removeEventListener(event, startPlayback);
+          });
+          if (audioRef.current && theme !== 'pixel') {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+          }
+        };
       } else {
         if (audioRef.current) {
           audioRef.current.pause();
@@ -60,12 +79,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         }
       }
     }
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    };
   }, [theme, mounted, isMuted]);
 
   const value = React.useMemo(() => ({ 
