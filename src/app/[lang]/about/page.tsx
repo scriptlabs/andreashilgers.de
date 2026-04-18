@@ -3,7 +3,6 @@ import { FadeIn } from "@/components/animated-text";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  RiFocus3Line,
   RiDoubleQuotesL,
   RiShieldUserLine,
   RiLinkedinBoxFill,
@@ -56,10 +55,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
           {/* Looking For (Moved here) */}
           <FadeIn direction="up" delay={0.2}>
-            <div className="p-8 rounded-md border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] flex flex-col md:flex-row items-center gap-8 shadow-xl">
-              <div className="p-4 rounded-sm bg-[var(--primary)]/10 text-[var(--primary)] shrink-0 shadow-inner">
-                <RiFocus3Line size={32} />
-              </div>
+            <div className="p-8 md:p-10 rounded-md border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] flex flex-col items-start gap-4 shadow-xl">
               <div className="space-y-2">
                 <h3 className="text-xl font-black uppercase tracking-tight text-[var(--primary)]">
                   {dict.about.looking_for.title}
