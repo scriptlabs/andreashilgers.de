@@ -11,7 +11,6 @@ import {
   RiLinkedinBoxFill,
   RiArrowRightLine,
   RiCalendarLine,
-  RiFolderLine,
 } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
 import { Metadata } from "next";
@@ -172,18 +171,20 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         <div className="p-12 md:p-16 rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--background)] flex flex-col lg:flex-row items-center justify-between gap-12 shadow-2xl">
           <div className="text-center lg:text-left">
             <h2 className="text-3xl md:text-5xl font-black text-[var(--foreground)] mb-4">
-              {lang === 'de' ? 'Bereit für das nächste Level?' : 'Ready for the next level?'}
+              {lang === 'de' ? 'Mein Werdegang' : 'My Career Path'}
             </h2>
             <p className="text-[var(--secondary)] text-lg max-w-xl">
-              {lang === 'de' ? 'Sehen Sie sich die Projekte an, die ich über die Jahre realisiert habe.' : 'Take a look at the projects I have realized over the years.'}
+              {lang === 'de' 
+                ? 'Erfahren Sie mehr über meine Stationen, Rollen und die Entwicklung meiner Expertise über zwei Jahrzehnte.' 
+                : 'Learn more about my career milestones, roles, and how my expertise has evolved over two decades.'}
             </p>
           </div>
           <Link
-            href={`/${lang}/projects`}
+            href={`/${lang}/experience`}
             className="btn-primary px-12 py-5 rounded-md font-bold flex items-center gap-3 shadow-2xl shadow-[var(--primary)]/20 hover:scale-[1.02] active:scale-[0.98] transition-all text-lg whitespace-nowrap"
           >
-            <RiFolderLine size={24} />
-            <span>{lang === 'de' ? 'Projekte ansehen' : 'View Projects'}</span>
+            <RiCalendarLine size={24} />
+            <span>{lang === 'de' ? 'Berufsweg ansehen' : 'View Experience'}</span>
             <RiArrowRightLine size={24} />
           </Link>
         </div>
