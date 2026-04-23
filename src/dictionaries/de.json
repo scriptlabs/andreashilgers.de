@@ -265,6 +265,25 @@
     "description": "Eine Auswahl strategischer Projekte und Plattformen, die maßgeblich zur digitalen Transformation beigetragen haben.",
     "items": [
       {
+        "id": "p2",
+        "title": "MemoryMesh AI",
+        "logo": "/projects/memorymesh.png",
+        "category": "AI Infrastructure",
+        "description": "\"The AI that remembers you\" — eine Plattform für persistente, personalisierte KI-Interaktionen. Löst das Zustandslosigkeitsproblem herkömmlicher KI-Assistenten durch ein intelligentes zweischichtiges Gedächtnissystem.",
+        "details": "Co-Founder und Lead Architect: von der Vision bis zur Implementierung. Gebaut auf einem Planning-First-Workflow (ADRs, Blueprints) mit produktionsreifem Monorepo (Turborepo), deployed via Docker/Traefik. Die Architektur setzt auf Context Injection statt naivem Retrieval, um Latenz und LLM-Token-Kosten zu minimieren. Eine asynchrone Compression Pipeline verdichtet Gespräche im Hintergrund zu einem persönlichen Wissensgraphen via Vector Embeddings und semantischer Suche (pgvector). Eine modulare Tool-Architektur ermöglicht skalierbares Function Calling mit Echtzeit-Updates via SSE.",
+        "features": [
+          "Two-Layer Memory: Langzeitgedächtnis (PostgreSQL + pgvector) und Session-Cache zur Optimierung des Kontextfensters",
+          "Compression Pipeline: asynchrone Hintergrundverarbeitung, die Gespräche in einen persönlichen Wissensgraphen webt",
+          "KI-Personas (z.B. Dr. Mente, Lex) mit eigenem Charakter, Wissensdomänen und persistenter Nutzerbeziehung",
+          "Tool-Mediated Chat: Reminders, Dokumentenverwaltung und Web-Suche als native KI-Tools",
+          "Social Memory Graph: nutzerübergreifende Beziehungs- und Interaktionsanalysen",
+          "Echtzeit-Streaming via SSE und Vercel AI SDK",
+          "Authentifizierung via Better Auth; Hintergrundjobs via Redis & BullMQ"
+        ],
+        "tech": ["Next.js", "NestJS", "Turborepo", "PostgreSQL", "pgvector", "Drizzle ORM", "Redis", "BullMQ", "Vercel AI SDK", "Docker", "CI/CD", "Testing", "Containerized", "Serverless", "SSE"],
+        "link": "#"
+      },
+      {
         "id": "p1",
         "title": "Firepire",
         "logo": "/projects/firepire.png",
@@ -284,22 +303,40 @@
         "link": "#"
       },
       {
-        "id": "p2",
-        "title": "MemoryMesh AI",
-        "logo": "/projects/memorymesh.png",
-        "category": "AI Infrastructure",
-        "description": "\"The AI that remembers you\" — eine Plattform für persistente, personalisierte KI-Interaktionen. Löst das Zustandslosigkeitsproblem herkömmlicher KI-Assistenten durch ein intelligentes zweischichtiges Gedächtnissystem.",
-        "details": "Co-Founder und Lead Architect: von der Vision bis zur Implementierung. Gebaut auf einem Planning-First-Workflow (ADRs, Blueprints) mit produktionsreifem Monorepo (Turborepo), deployed via Docker/Traefik. Die Architektur setzt auf Context Injection statt naivem Retrieval, um Latenz und LLM-Token-Kosten zu minimieren. Eine asynchrone Compression Pipeline verdichtet Gespräche im Hintergrund zu einem persönlichen Wissensgraphen via Vector Embeddings und semantischer Suche (pgvector). Eine modulare Tool-Architektur ermöglicht skalierbares Function Calling mit Echtzeit-Updates via SSE.",
+        "id": "p4",
+        "title": "HUNCHster",
+        "logo": "/projects/hunchster.png",
+        "category": "Open Innovation",
+        "description": "Open-Innovation-SaaS-Plattform für Unternehmen — kollaborative Ideenfindung mit tiefer Social-Integration (Facebook, LinkedIn, XING), CRM-Anbindung und nativer iOS-App. Als Lead Developer und Projektmanager von der Idee bis zum Launch verantwortet.",
+        "details": "Vollständige Verantwortung von der Konzeption bis zur Auslieferung: Idee, Planung, Budgetierung, Meilensteinplanung, Anwerben und Steuern externer Agenturen, Designer und eines verteilten Freelancer-Teams. Technische Architektur und Projektmanagement in Personalunion — verantwortlich für Scope, Timelines und Stakeholder-Kommunikation. Die Plattform wurde containerisiert auf Cloud-Infrastruktur betrieben mit CI/CD-Pipelines und einem strukturierten Testing-Prozess.",
         "features": [
-          "Two-Layer Memory: Langzeitgedächtnis (PostgreSQL + pgvector) und Session-Cache zur Optimierung des Kontextfensters",
-          "Compression Pipeline: asynchrone Hintergrundverarbeitung, die Gespräche in einen persönlichen Wissensgraphen webt",
-          "KI-Personas (z.B. Dr. Mente, Lex) mit eigenem Charakter, Wissensdomänen und persistenter Nutzerbeziehung",
-          "Tool-Mediated Chat: Reminders, Dokumentenverwaltung und Web-Suche als native KI-Tools",
-          "Social Memory Graph: nutzerübergreifende Beziehungs- und Interaktionsanalysen",
-          "Echtzeit-Streaming via SSE und Vercel AI SDK",
-          "Authentifizierung via Better Auth; Hintergrundjobs via Redis & BullMQ"
+          "Kollaborative Ideenfindungsplattform mit Echtzeit-Updates via Socket.io",
+          "Tiefe Social-Integration: Facebook, LinkedIn, XING und weitere Netzwerke",
+          "CRM-Integrationen für Enterprise-Anbindung",
+          "Native iOS-App als API-Consumer (REST/JSON)",
+          "Angular-SPA-Frontend mit PHP/Laminas + Node.js/Express Backend",
+          "Cloud-gehostet, containerisiert mit CI/CD und automatisiertem Testing",
+          "Vollständiges Projekt-Ownership: Idee, Budgetierung, Meilensteinplanung, Agentur- und Freelancer-Management"
         ],
-        "tech": ["Next.js", "NestJS", "Turborepo", "PostgreSQL", "pgvector", "Drizzle ORM", "Redis", "BullMQ", "Vercel AI SDK", "Docker", "CI/CD", "Testing", "Containerized", "Serverless", "SSE"],
+        "tech": ["PHP", "Laminas", "Node.js", "Express", "Angular", "REST API", "JSON", "Socket.io", "Redis", "MySQL", "iOS", "Docker", "CI/CD", "Testing", "Cloud", "Social APIs"],
+        "link": "#"
+      },
+      {
+        "id": "p8",
+        "title": "CyberGhost VPN",
+        "logo": "/projects/cyberghost.png",
+        "category": "Security SaaS",
+        "description": "Full-Stack-Entwicklung der globalen CyberGhost-VPN-Web-Präsenz und Account-Plattform für Millionen Nutzer — Webseite, Account-Management-Webapp, REST-API, Payment-Integrationen und Marketing-/Tracking-Infrastruktur, gebaut auf PHP/Zend Framework und Angular.",
+        "details": "Verantwortlich für die öffentliche Webseite (PHP/Zend Framework, Bootstrap, jQuery) und die Angular-basierte Account-Management-Webapp. Entwicklung und Betrieb der REST-API (Zend Framework, JSON) für Web-, Desktop- und Mobile-Clients. Integration von Payment-Providern, Marketing-Tracking-Systemen sowie Betrieb der Live-Services in Produktion.",
+        "features": [
+          "Globale Marketing-Webseite in PHP/Zend Framework mit Bootstrap und jQuery",
+          "Angular-SPA für Account-Verwaltung: Abonnements, Geräte, Abrechnung und Profil",
+          "REST-API in Zend Framework/JSON für Web-, Desktop- und Mobile-Consumer",
+          "Payment-Provider-Integrationen für eine globale Multi-Currency-Nutzerbasis",
+          "Marketing- und Tracking-Integrationen: Analytics, Attribution und Kampagnen-Tools",
+          "Produktionsbetrieb und Service-Stabilität für eine Plattform mit Millionen Nutzern"
+        ],
+        "tech": ["PHP", "Zend Framework", "Angular", "Bootstrap", "jQuery", "REST API", "JSON", "Payments", "Marketing", "Tracking"],
         "link": "#"
       },
       {
@@ -396,24 +433,6 @@
           "Retail-fertige Verpackung für den Massenmarkt"
         ],
         "tech": ["Delphi", "JavaScript", "HTML", "CSS", "Windows API", "Registry", "NTFS", "System Services", "Desktop UI", "Retail"],
-        "link": "#"
-      },
-      {
-        "id": "p8",
-        "title": "CyberGhost VPN",
-        "logo": "/projects/cyberghost.png",
-        "category": "Security SaaS",
-        "description": "Full-Stack-Entwicklung der globalen CyberGhost-VPN-Web-Präsenz und Account-Plattform für Millionen Nutzer — Webseite, Account-Management-Webapp, REST-API, Payment-Integrationen und Marketing-/Tracking-Infrastruktur, gebaut auf PHP/Zend Framework und Angular.",
-        "details": "Verantwortlich für die öffentliche Webseite (PHP/Zend Framework, Bootstrap, jQuery) und die Angular-basierte Account-Management-Webapp. Entwicklung und Betrieb der REST-API (Zend Framework, JSON) für Web-, Desktop- und Mobile-Clients. Integration von Payment-Providern, Marketing-Tracking-Systemen sowie Betrieb der Live-Services in Produktion.",
-        "features": [
-          "Globale Marketing-Webseite in PHP/Zend Framework mit Bootstrap und jQuery",
-          "Angular-SPA für Account-Verwaltung: Abonnements, Geräte, Abrechnung und Profil",
-          "REST-API in Zend Framework/JSON für Web-, Desktop- und Mobile-Consumer",
-          "Payment-Provider-Integrationen für eine globale Multi-Currency-Nutzerbasis",
-          "Marketing- und Tracking-Integrationen: Analytics, Attribution und Kampagnen-Tools",
-          "Produktionsbetrieb und Service-Stabilität für eine Plattform mit Millionen Nutzern"
-        ],
-        "tech": ["PHP", "Zend Framework", "Angular", "Bootstrap", "jQuery", "REST API", "JSON", "Payments", "Marketing", "Tracking"],
         "link": "#"
       }
     ]
