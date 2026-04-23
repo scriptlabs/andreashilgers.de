@@ -12,7 +12,8 @@
       "projects": "Portfolio & Projects",
       "skills": "Skills & Tech Stack",
       "contact": "Contact me",
-      "vault": "Secure Document Vault"
+      "vault": "Secure Document Vault",
+      "imprint": "Imprint"
     }
   },
   "nav": {
@@ -24,7 +25,27 @@
     "education": "Education",
     "contact": "Contact",
     "vault": "Vault",
-    "hire_me": "Hire Me"
+    "hire_me": "Hire Me",
+    "imprint": "Imprint"
+  },
+  "imprint": {
+    "title": "Imprint",
+    "subtitle": "Legal disclosure according to § 5 DDG",
+    "description": "Legally required information about the operator of this website.",
+    "operator_title": "Information according to § 5 DDG",
+    "operator_name": "Andreas Hilgers",
+    "operator_address": "Vinn 16\n52525 Heinsberg\nGermany",
+    "contact_title": "Contact",
+    "contact_description": "Contacting is primarily done via the provided contact form.",
+    "contact_form_link": "Go to contact form",
+    "disclaimer_title": "Disclaimer",
+    "disclaimer_content": "Despite careful content control, we assume no liability for the content of external links. The operators of the linked pages are solely responsible for their content.",
+    "copyright_title": "Copyright",
+    "copyright_content": "The content and works created by the site operators on these pages are subject to German copyright law."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "imprint": "Imprint"
   },
   "hero": {
     "badge": "Available for new opportunities",

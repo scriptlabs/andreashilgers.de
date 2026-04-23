@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import { getDictionary } from "@/lib/get-dictionary";
 import { Dictionary } from "@/lib/dictionary";
 import { Metadata } from "next";
@@ -49,7 +50,8 @@ export default async function LocalizedLayout({
   return (
     <>
       <Navbar dict={dict} lang={lang} />
-      <div className="pt-16">{children}</div>
+      <div className="pt-16 min-h-[calc(100vh-64px)]">{children}</div>
+      <Footer dict={dict} lang={lang} />
     </>
   );
 }

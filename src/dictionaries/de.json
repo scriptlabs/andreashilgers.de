@@ -12,7 +12,8 @@
       "projects": "Portfolio & Projekte",
       "skills": "Fähigkeiten & Tech-Stack",
       "contact": "Kontakt aufnehmen",
-      "vault": "Sicherer Dokumenten-Tresor"
+      "vault": "Sicherer Dokumenten-Tresor",
+      "imprint": "Impressum"
     }
   },
   "nav": {
@@ -24,7 +25,27 @@
     "education": "Ausbildung",
     "contact": "Kontakt",
     "vault": "Dokumente",
-    "hire_me": "Anfragen"
+    "hire_me": "Anfragen",
+    "imprint": "Impressum"
+  },
+  "imprint": {
+    "title": "Impressum",
+    "subtitle": "Anbieterkennzeichnung gemäß § 5 DDG",
+    "description": "Gesetzlich erforderliche Angaben zum Betreiber dieser Website.",
+    "operator_title": "Angaben gemäß § 5 DDG",
+    "operator_name": "Andreas Hilgers",
+    "operator_address": "Vinn 16\n52525 Heinsberg",
+    "contact_title": "Kontakt",
+    "contact_description": "Die Kontaktaufnahme erfolgt primär über das bereitgestellte Kontaktformular.",
+    "contact_form_link": "Zum Kontaktformular",
+    "disclaimer_title": "Haftungsausschluss",
+    "disclaimer_content": "Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.",
+    "copyright_title": "Urheberrecht",
+    "copyright_content": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht."
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "imprint": "Impressum"
   },
   "hero": {
     "badge": "Bereit für neue Herausforderungen",

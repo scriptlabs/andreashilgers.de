@@ -13,6 +13,7 @@ export interface Dictionary {
       skills: string;
       contact: string;
       vault: string;
+      imprint: string;
     };
   };
   nav: {
@@ -25,6 +26,26 @@ export interface Dictionary {
     contact: string;
     vault: string;
     hire_me: string;
+    imprint: string;
+  };
+  imprint: {
+    title: string;
+    subtitle: string;
+    description: string;
+    operator_title: string;
+    operator_name: string;
+    operator_address: string;
+    contact_title: string;
+    contact_description: string;
+    contact_form_link: string;
+    disclaimer_title: string;
+    disclaimer_content: string;
+    copyright_title: string;
+    copyright_content: string;
+  };
+  footer: {
+    rights: string;
+    imprint: string;
   };
   hero: {
     greeting: string;
