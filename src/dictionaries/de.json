@@ -385,17 +385,17 @@
         "logo": "/projects/computerbild.png",
         "category": "Cloud Storage Platform",
         "description": "\"Made in Germany\" Dropbox-Alternative für das Millionenpublikum von COMPUTER BILD. Full-Stack-Verantwortung: Angular-Frontend mit Dropbox-artigem Dateimanager, integriertem Media-Viewer und Online-Office-Suite (Dokumente, Tabellen, etc.) — plus Multi-Consumer-REST-API für Web, Apps und Drittanbieter.",
-        "details": "Lead Frontend & API Developer. Die Angular-SPA lieferte eine nahtlose Dateiverwaltung mit Drag-and-Drop-Uploads, Inline-Medienwiedergabe und eingebettetem Dokumenten-Editor. Die duale API-Schicht (PHP/php-fpm für die Kernspeicherlogik, Node.js für Echtzeit- und Event-driven-Workloads) wurde für externe Consumer konzipiert — Mobile Apps, Partner-Integrationen und Drittanbieter — mit versionierten Endpunkten und konsistenten Response-Contracts.",
+        "details": "Lead Frontend & API Developer. Die Angular-SPA lieferte eine nahtlose Dateiverwaltung mit Drag-and-Drop-Uploads, Inline-Medienwiedergabe und eingebettetem Dokumenten-Editor. Die duale API-Schicht (PHP/PhalconPHP für die Kernspeicherlogik, Node.js für Echtzeit- und Event-driven-Workloads) wurde für externe Consumer konzipiert — Mobile Apps, Partner-Integrationen und Drittanbieter — mit versionierten Endpunkten und konsistenten Response-Contracts.",
         "features": [
           "Angular SPA mit Dropbox-inspiriertem Dateimanager: Ordnerstruktur, Drag-and-Drop, Massenaktionen",
           "Integrierter Media-Viewer: Bildgalerien, Video- und Audiowiedergabe inline",
           "Online-Office-Integration: Dokumente, Tabellen und Präsentationen direkt im Browser bearbeiten",
-          "Dualer REST-API-Stack: PHP/php-fpm (Speicher-Core) und Node.js (Echtzeit, Events)",
+          "Dualer REST-API-Stack: PHP/PhalconPHP (Speicher-Core) und Node.js (Echtzeit, Events)",
           "Multi-Consumer-API-Design: Web-Frontend, Mobile Apps und externe Drittanbieter",
           "Versionierte API mit konsistenten Contracts über alle Consumer-Typen",
           "Skaliert für Millionen Nutzer in enger Zusammenarbeit mit COMPUTER BILD"
         ],
-        "tech": ["Angular", "PHP", "php-fpm", "Symfony", "Zend Framework", "Cloudflare", "Node.js", "REST API", "Cloud Storage", "Media Streaming", "Online Office"],
+        "tech": ["Angular", "PHP", "UI/UX", "PhalconPHP", "Symfony", "Zend Framework", "Cloudflare", "Node.js", "REST API", "Cloud Storage", "Media Streaming", "Online Office"],
         "link": "#"
       },
       {

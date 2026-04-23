@@ -385,17 +385,17 @@
         "logo": "/projects/computerbild.png",
         "category": "Cloud Storage Platform",
         "description": "\"Made in Germany\" Dropbox alternative built for COMPUTER BILD's million-user audience. Full-stack responsibility: Angular frontend with a Dropbox-style file manager, integrated media viewer, and online Office suite (docs, spreadsheets, etc.) — plus a multi-consumer REST API serving web, apps, and third-party clients.",
-        "details": "Lead Frontend & API Developer. The Angular SPA delivered a seamless file management experience with drag-and-drop uploads, inline media playback, and embedded document editing. The dual-stack API layer (PHP/php-fpm for core storage logic, Node.js for real-time and event-driven workloads) was designed for external consumers — mobile apps, partner integrations, and third-party services — with versioned endpoints and consistent response contracts.",
+        "details": "Lead Frontend & API Developer. The Angular SPA delivered a seamless file management experience with drag-and-drop uploads, inline media playback, and embedded document editing. The dual-stack API layer (PHP/PhalconPHP for core storage logic, Node.js for real-time and event-driven workloads) was designed for external consumers — mobile apps, partner integrations, and third-party services — with versioned endpoints and consistent response contracts.",
         "features": [
           "Angular SPA with Dropbox-inspired file manager: folder hierarchy, drag-and-drop, bulk actions",
           "Integrated media viewer: image galleries, video and audio playback inline",
           "Online Office integration: document, spreadsheet, and presentation editing in-browser",
-          "Dual-stack REST API: PHP/php-fpm (storage core) and Node.js (real-time, events)",
+          "Dual-stack REST API: PHP/PhalconPHP (storage core) and Node.js (real-time, events)",
           "Multi-consumer API design: web frontend, mobile apps, and external third-party clients",
           "Versioned API with consistent contracts across all consumer types",
           "Scaled for millions of users in cooperation with COMPUTER BILD"
         ],
-        "tech": ["Angular", "PHP", "php-fpm", "Symfony", "Zend Framework", "Cloudflare", "Node.js", "REST API", "Cloud Storage", "Media Streaming", "Online Office"],
+        "tech": ["Angular", "PHP", "UI/UX", "PhalconPHP", "Symfony", "Zend Framework", "Cloudflare", "Node.js", "REST API", "Cloud Storage", "Media Streaming", "Online Office"],
         "link": "#"
       },
       {
