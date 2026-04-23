@@ -142,6 +142,7 @@ function TimelineEntry({
     <div
       ref={ref}
       className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+      data-experience-id={item.id}
     >
       {/* ── Dot with pulse rings + glow ── */}
       <div className="relative shrink-0 z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getDictionary } from "@/lib/get-dictionary";
 import { FadeIn } from "@/components/animated-text";
 import { ExperienceTimeline } from "@/components/experience-timeline";
+import { ExperienceXPTracker } from "@/components/experience-xp-tracker";
 import { RiCodeSSlashLine, RiArrowRightLine, RiFolderLine } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
 import { Metadata } from "next";
@@ -32,6 +33,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ lan
         </p>
       </FadeIn>
 
+      <ExperienceXPTracker items={dict.experience.items} lang={lang} />
       <ExperienceTimeline items={dict.experience.items} lang={lang} />
 
       <FadeIn direction="up" delay={0.4} className="mt-20">

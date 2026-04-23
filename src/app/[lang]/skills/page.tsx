@@ -1,7 +1,10 @@
+"use client";
+
 import { getDictionary } from "@/lib/get-dictionary";
 import { FadeIn } from "@/components/animated-text";
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "@/components/theme-provider";
 import {
   RiStackLine,
   RiLayoutLine,
@@ -14,13 +17,8 @@ import {
   RiArrowRightLine,
 } from "react-icons/ri";
 import { Dictionary } from "@/lib/dictionary";
-import { Metadata } from "next";
-
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
-  const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
-  return { title: dict.metadata.titles.skills };
-}
+import { useState, useEffect } from "react";
+import { use } from "react";
 
 type CategoryConfig = {
   icon: React.ReactNode;
@@ -99,9 +97,16 @@ const fallbackConfig: CategoryConfig = {
   pillBorder: "border-[var(--primary)]/15",
 };
 
-export default async function SkillsPage({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  const dict = await getDictionary(lang as "de" | "en") as unknown as Dictionary;
+export default function SkillsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { theme } = useTheme();
+  const [dict, setDict] = useState<Dictionary | null>(null);
+  const { lang } = use(params);
+
+  useEffect(() => {
+    getDictionary(lang as "de" | "en").then((d) => setDict(d as Dictionary));
+  }, [lang]);
+
+  if (!dict) return null;
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-20">
@@ -189,12 +194,20 @@ export default async function SkillsPage({ params }: { params: Promise<{ lang: s
 
                 {/* Skill pills */}
                 <div className="flex flex-wrap gap-2 mt-auto">
-                  {category.items.map((item) => (
+                  {category.items.map((item, itemIndex) => (
                     <span
                       key={item}
                       className={`px-2.5 py-1 text-[11px] font-semibold rounded-sm border transition-colors cursor-default
                         ${cfg.pillBg} ${cfg.pillText} ${cfg.pillBorder}
                         hover:${cfg.bg} hover:border-opacity-40`}
+                      style={
+                        theme === "pixel"
+                          ? {
+                              animation: `skillFloat ${2 + (itemIndex % 3) * 0.5}s ease-in-out infinite`,
+                              animationDelay: `${itemIndex * 0.1}s`,
+                            }
+                          : {}
+                      }
                     >
                       {item}
                     </span>
@@ -238,6 +251,23 @@ export default async function SkillsPage({ params }: { params: Promise<{ lang: s
         </div>
       </FadeIn>
 
+      <style>{`
+        @keyframes skillFloat {
+          0%, 100% {
+            transform: translateY(0px);
+            opacity: 1;
+          }
+          25% {
+            transform: translateY(-6px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          75% {
+            transform: translateY(-3px);
+          }
+        }
+      `}</style>
     </main>
   );
 }
