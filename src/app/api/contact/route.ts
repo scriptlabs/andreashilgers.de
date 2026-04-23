@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -13,26 +16,33 @@ export async function POST(request: Request) {
       );
     }
 
-    // In a real application, you would send an email here using a service like Resend, SendGrid, or Postmark.
-    // Example with Resend:
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: 'Portfolio <onboarding@resend.dev>',
-    //   to: 'your-email@example.com',
-    //   subject: `New Contact Form Submission from ${name || email}`,
-    //   text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nMessage: ${message}\nTimestamp: ${timestamp}`,
-    // });
+    // Send email using Resend
+    // Important: Until your domain is verified on Resend, you can only send to yourself
+    // and must use 'onboarding@resend.dev' as the from address.
+    // Once verified, you can use 'contact@andreashilgers.de' etc.
+    const { data, error } = await resend.emails.send({
+      from: 'Andreas Hilgers Portfolio <onboarding@resend.dev>',
+      to: 'andreas_hilgers@icloud.com',
+      replyTo: email,
+      subject: `Portfolio Kontaktanfrage: ${name || email}`,
+      text: `
+Name: ${name}
+Email: ${email}
+Telefon: ${phone || 'Nicht angegeben'}
+Firma: ${company || 'Nicht angegeben'}
+Zeitpunkt: ${timestamp}
 
-    console.log("Contact form submission:", {
-      name,
-      email,
-      phone,
-      company,
-      message,
-      timestamp,
+Nachricht:
+${message}
+      `,
     });
 
-    return NextResponse.json({ success: true }, { status: 200 });
+    if (error) {
+      console.error("Resend error:", error);
+      return NextResponse.json({ error: error.message }, { status: 400 });
+    }
+
+    return NextResponse.json({ success: true, id: data?.id }, { status: 200 });
   } catch (error) {
     console.error("API error:", error);
     return NextResponse.json(
