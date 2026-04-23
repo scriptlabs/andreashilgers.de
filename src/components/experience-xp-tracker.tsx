@@ -119,7 +119,7 @@ export function ExperienceXPTracker({ items, lang }: ExperienceXPTrackerProps) {
       <div
         className="fixed bottom-0 left-0 right-0 transition-opacity duration-300"
         style={{
-          background: "linear-gradient(to top, rgba(13, 13, 21, 0.95), rgba(13, 13, 21, 0.8))",
+          background: "linear-gradient(to top, rgba(13, 13, 21, 0.98), rgba(13, 13, 21, 0.9))",
           borderTop: "2px solid #00f0ff",
           boxShadow: "0 -10px 40px rgba(0, 240, 255, 0.2), inset 0 2px 10px rgba(0, 240, 255, 0.1)",
           fontFamily: "var(--font-pixel)",
@@ -128,27 +128,28 @@ export function ExperienceXPTracker({ items, lang }: ExperienceXPTrackerProps) {
           letterSpacing: "1px",
           opacity: isAtBottom ? 0 : 1,
           pointerEvents: isAtBottom ? "none" : "auto",
-          padding: "1rem",
+          padding: "0.75rem 1rem max(1rem, env(safe-area-inset-bottom))",
+          zIndex: 40,
         }}
       >
         {/* Mobile Layout */}
         <div className="md:hidden">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px" }}>
-            <div>
-              <div style={{ fontSize: "9px", opacity: 0.6 }}>LV</div>
-              <div style={{ fontSize: "16px", fontWeight: "bold" }}>{nextLevel}</div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "8px" }}>
+            <div style={{ minWidth: "35px" }}>
+              <div style={{ fontSize: "8px", opacity: 0.5, lineHeight: "1" }}>LV</div>
+              <div style={{ fontSize: "14px", fontWeight: "bold", lineHeight: "1" }}>{nextLevel}</div>
             </div>
-            <div style={{ fontSize: "12px", opacity: 0.7 }}>|</div>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontSize: "9px", opacity: 0.6 }}>XP</div>
-              <div style={{ fontSize: "14px", fontWeight: "bold" }}>{totalXP}</div>
+            <div style={{ fontSize: "8px", opacity: 0.5 }}>|</div>
+            <div style={{ flex: 1, minWidth: "45px" }}>
+              <div style={{ fontSize: "8px", opacity: 0.5, lineHeight: "1" }}>XP</div>
+              <div style={{ fontSize: "12px", fontWeight: "bold", lineHeight: "1" }}>{totalXP}</div>
             </div>
             {nextLevel >= 14 ? (
-              <div style={{ fontSize: "16px", animation: "starGlow 2s ease-in-out infinite" }}>★</div>
+              <div style={{ fontSize: "14px", animation: "starGlow 2s ease-in-out infinite", minWidth: "20px", textAlign: "center" }}>★</div>
             ) : (
-              <div style={{ fontSize: "9px", opacity: 0.7, textAlign: "right" }}>
-                {(nextLevel + 1) * 500 - totalXP}
-                <div style={{ fontSize: "8px" }}>XP</div>
+              <div style={{ fontSize: "8px", opacity: 0.6, textAlign: "right", minWidth: "35px" }}>
+                <div style={{ lineHeight: "1" }}>{(nextLevel + 1) * 500 - totalXP}</div>
+                <div style={{ fontSize: "7px", opacity: 0.5 }}>XP</div>
               </div>
             )}
           </div>
