@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "@/components/theme-provider";
 
 interface ProjectMemoryCardProps {
@@ -14,6 +14,16 @@ export function ProjectMemoryCard({ children, project }: ProjectMemoryCardProps)
   const { theme } = useTheme();
   const [isFlipped, setIsFlipped] = useState(false);
   const [isFlipping, setIsFlipping] = useState(false);
+  const [cardHeight, setCardHeight] = useState("280px");
+
+  useEffect(() => {
+    const updateHeight = () => {
+      setCardHeight(window.innerWidth < 640 ? "240px" : "280px");
+    };
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
   // Only apply memory style in pixel theme
   if (theme !== "pixel") {
@@ -39,8 +49,9 @@ export function ProjectMemoryCard({ children, project }: ProjectMemoryCardProps)
     >
       {!isFlipped ? (
         <div
-          className="w-full rounded-md p-8 flex flex-col items-center justify-center h-[280px]"
+          className="w-full rounded-md p-4 sm:p-8 flex flex-col items-center justify-center"
           style={{
+            height: cardHeight,
             background:
               "linear-gradient(135deg, #161625 0%, #1a1a2e 50%, #0d0d15 100%)",
             border: "2px solid #00f0ff",
@@ -53,15 +64,14 @@ export function ProjectMemoryCard({ children, project }: ProjectMemoryCardProps)
             className="text-center"
             style={{
               fontFamily: "var(--font-pixel)",
-              fontSize: "14px",
               color: "#00f0ff",
               textShadow: "0 0 10px #00f0ff, 0 0 20px #0099ff",
               letterSpacing: "2px",
             }}
           >
-            <div style={{ marginBottom: "12px" }}>▮▯▮</div>
-            <div>{project?.category || "CARD"}</div>
-            <div style={{ marginTop: "8px", fontSize: "10px", opacity: 0.7 }}>
+            <div style={{ marginBottom: "8px", fontSize: "clamp(12px, 3vw, 14px)" }}>▮▯▮</div>
+            <div style={{ fontSize: "clamp(12px, 3vw, 14px)" }}>{project?.category || "CARD"}</div>
+            <div style={{ marginTop: "6px", fontSize: "8px", opacity: 0.7 }}>
               [CLICK TO FLIP]
             </div>
           </div>
@@ -71,7 +81,7 @@ export function ProjectMemoryCard({ children, project }: ProjectMemoryCardProps)
           style={{
             animation: "flipShow 0.6s ease-out forwards",
             transformStyle: "preserve-3d",
-            height: "280px",
+            height: cardHeight,
             width: "100%",
           }}
         >

@@ -117,7 +117,7 @@ export function ExperienceXPTracker({ items, lang }: ExperienceXPTrackerProps) {
 
       {/* Score display at bottom full width */}
       <div
-        className="fixed bottom-0 left-0 right-0 p-6 transition-opacity duration-300"
+        className="fixed bottom-0 left-0 right-0 transition-opacity duration-300"
         style={{
           background: "linear-gradient(to top, rgba(13, 13, 21, 0.95), rgba(13, 13, 21, 0.8))",
           borderTop: "2px solid #00f0ff",
@@ -126,54 +126,77 @@ export function ExperienceXPTracker({ items, lang }: ExperienceXPTrackerProps) {
           color: "#00f0ff",
           textShadow: "0 0 10px #00f0ff",
           letterSpacing: "1px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "40px",
           opacity: isAtBottom ? 0 : 1,
           pointerEvents: isAtBottom ? "none" : "auto",
+          padding: "1rem",
         }}
       >
-        <div style={{ fontSize: "11px", opacity: 0.7 }}>[EXPERIENCE_TRACKER]</div>
-
-        <div style={{ display: "flex", gap: "40px", flex: 1 }}>
-          <div>
-            <div style={{ fontSize: "10px", opacity: 0.6, marginBottom: "4px" }}>TOTAL XP</div>
-            <div style={{ fontSize: "20px", fontWeight: "bold" }}>{totalXP}</div>
-          </div>
-
-          <div style={{ borderLeft: "1px solid #00f0ff/30", paddingLeft: "40px" }}>
-            <div style={{ fontSize: "10px", opacity: 0.6, marginBottom: "4px" }}>LEVEL</div>
-            <div style={{ fontSize: "20px", fontWeight: "bold" }}>{nextLevel}</div>
-          </div>
-
-          {nextLevel >= 14 ? (
-            <div style={{ borderLeft: "1px solid #00f0ff/30", paddingLeft: "40px", display: "flex", alignItems: "center", gap: "8px" }}>
-              <div
-                style={{
-                  fontSize: "24px",
-                  animation: "starGlow 2s ease-in-out infinite",
-                  color: "#00f0ff",
-                  textShadow: "0 0 10px #00f0ff, 0 0 20px #0099ff",
-                }}
-              >
-                ★
-              </div>
-              <div>
-                <div style={{ fontSize: "10px", opacity: 0.6 }}>STATUS</div>
-                <div style={{ fontSize: "14px", fontWeight: "bold" }}>COMPLETED</div>
-              </div>
+        {/* Mobile Layout */}
+        <div className="md:hidden">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px" }}>
+            <div>
+              <div style={{ fontSize: "9px", opacity: 0.6 }}>LV</div>
+              <div style={{ fontSize: "16px", fontWeight: "bold" }}>{nextLevel}</div>
             </div>
-          ) : (
-            <div style={{ borderLeft: "1px solid #00f0ff/30", paddingLeft: "40px" }}>
-              <div style={{ fontSize: "10px", opacity: 0.6, marginBottom: "4px" }}>NEXT LEVEL</div>
-              <div style={{ fontSize: "14px" }}>{(nextLevel + 1) * 500 - totalXP} XP</div>
+            <div style={{ fontSize: "12px", opacity: 0.7 }}>|</div>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: "9px", opacity: 0.6 }}>XP</div>
+              <div style={{ fontSize: "14px", fontWeight: "bold" }}>{totalXP}</div>
             </div>
-          )}
+            {nextLevel >= 14 ? (
+              <div style={{ fontSize: "16px", animation: "starGlow 2s ease-in-out infinite" }}>★</div>
+            ) : (
+              <div style={{ fontSize: "9px", opacity: 0.7, textAlign: "right" }}>
+                {(nextLevel + 1) * 500 - totalXP}
+                <div style={{ fontSize: "8px" }}>XP</div>
+              </div>
+            )}
+          </div>
         </div>
 
-        <div style={{ textAlign: "right", fontSize: "10px", opacity: 0.6 }}>
-          {lang === "de" ? "▶ PROGRESSION" : "▶ PROGRESSION"}
+        {/* Desktop Layout */}
+        <div className="hidden md:flex items-center justify-between gap-10">
+          <div style={{ fontSize: "11px", opacity: 0.7 }}>[EXPERIENCE_TRACKER]</div>
+
+          <div style={{ display: "flex", gap: "40px", flex: 1 }}>
+            <div>
+              <div style={{ fontSize: "10px", opacity: 0.6, marginBottom: "4px" }}>TOTAL XP</div>
+              <div style={{ fontSize: "20px", fontWeight: "bold" }}>{totalXP}</div>
+            </div>
+
+            <div style={{ borderLeft: "1px solid #00f0ff/30", paddingLeft: "40px" }}>
+              <div style={{ fontSize: "10px", opacity: 0.6, marginBottom: "4px" }}>LEVEL</div>
+              <div style={{ fontSize: "20px", fontWeight: "bold" }}>{nextLevel}</div>
+            </div>
+
+            {nextLevel >= 14 ? (
+              <div style={{ borderLeft: "1px solid #00f0ff/30", paddingLeft: "40px", display: "flex", alignItems: "center", gap: "8px" }}>
+                <div
+                  style={{
+                    fontSize: "24px",
+                    animation: "starGlow 2s ease-in-out infinite",
+                    color: "#00f0ff",
+                    textShadow: "0 0 10px #00f0ff, 0 0 20px #0099ff",
+                  }}
+                >
+                  ★
+                </div>
+                <div>
+                  <div style={{ fontSize: "10px", opacity: 0.6 }}>STATUS</div>
+                  <div style={{ fontSize: "14px", fontWeight: "bold" }}>COMPLETED</div>
+                </div>
+              </div>
+            ) : (
+              <div style={{ borderLeft: "1px solid #00f0ff/30", paddingLeft: "40px" }}>
+                <div style={{ fontSize: "10px", opacity: 0.6, marginBottom: "4px" }}>NEXT LEVEL</div>
+                <div style={{ fontSize: "14px" }}>{(nextLevel + 1) * 500 - totalXP} XP</div>
+              </div>
+            )}
+          </div>
+
+          <div style={{ textAlign: "right", fontSize: "10px", opacity: 0.6 }}>
+            {lang === "de" ? "▶ PROGRESSION" : "▶ PROGRESSION"}
+          </div>
         </div>
       </div>
 
