@@ -17,11 +17,8 @@ export async function POST(request: Request) {
     }
 
     // Send email using Resend
-    // Important: Until your domain is verified on Resend, you can only send to yourself
-    // and must use 'onboarding@resend.dev' as the from address.
-    // Once verified, you can use 'contact@andreashilgers.de' etc.
     const { data, error } = await resend.emails.send({
-      from: 'Andreas Hilgers Portfolio <onboarding@resend.dev>',
+      from: 'Andreas Hilgers Portfolio <contact@andreashilgers.de>',
       to: 'andreas_hilgers@icloud.com',
       replyTo: email,
       subject: `Portfolio Kontaktanfrage: ${name || email}`,
