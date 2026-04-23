@@ -303,43 +303,6 @@
         "link": "#"
       },
       {
-        "id": "p4",
-        "title": "HUNCHster",
-        "logo": "/projects/hunchster.png",
-        "category": "Open Innovation",
-        "description": "Open-Innovation-SaaS-Plattform für Unternehmen — kollaborative Ideenfindung mit tiefer Social-Integration (Facebook, LinkedIn, XING), CRM-Anbindung und nativer iOS-App. Als Lead Developer und Projektmanager von der Idee bis zum Launch verantwortet.",
-        "details": "Vollständige Verantwortung von der Konzeption bis zur Auslieferung: Idee, Planung, Budgetierung, Meilensteinplanung, Anwerben und Steuern externer Agenturen, Designer und eines verteilten Freelancer-Teams. Technische Architektur und Projektmanagement in Personalunion — verantwortlich für Scope, Timelines und Stakeholder-Kommunikation. Die Plattform wurde containerisiert auf Cloud-Infrastruktur betrieben mit CI/CD-Pipelines und einem strukturierten Testing-Prozess.",
-        "features": [
-          "Kollaborative Ideenfindungsplattform mit Echtzeit-Updates via Socket.io",
-          "Tiefe Social-Integration: Facebook, LinkedIn, XING und weitere Netzwerke",
-          "CRM-Integrationen für Enterprise-Anbindung",
-          "Native iOS-App als API-Consumer (REST/JSON)",
-          "Angular-SPA-Frontend mit PHP/Laminas + Node.js/Express Backend",
-          "Cloud-gehostet, containerisiert mit CI/CD und automatisiertem Testing",
-          "Vollständiges Projekt-Ownership: Idee, Budgetierung, Meilensteinplanung, Agentur- und Freelancer-Management"
-        ],
-        "tech": ["PHP", "Laminas", "Node.js", "Express", "Angular", "REST API", "JSON", "Socket.io", "Redis", "MySQL", "iOS", "Docker", "CI/CD", "Testing", "Cloud", "Social APIs"],
-        "link": "#"
-      },
-      {
-        "id": "p8",
-        "title": "CyberGhost VPN",
-        "logo": "/projects/cyberghost.png",
-        "category": "Security SaaS",
-        "description": "Full-Stack-Entwicklung der globalen CyberGhost-VPN-Web-Präsenz und Account-Plattform für Millionen Nutzer — Webseite, Account-Management-Webapp, REST-API, Payment-Integrationen und Marketing-/Tracking-Infrastruktur, gebaut auf PHP/Zend Framework und Angular.",
-        "details": "Verantwortlich für die öffentliche Webseite (PHP/Zend Framework, Bootstrap, jQuery) und die Angular-basierte Account-Management-Webapp. Entwicklung und Betrieb der REST-API (Zend Framework, JSON) für Web-, Desktop- und Mobile-Clients. Integration von Payment-Providern, Marketing-Tracking-Systemen sowie Betrieb der Live-Services in Produktion.",
-        "features": [
-          "Globale Marketing-Webseite in PHP/Zend Framework mit Bootstrap und jQuery",
-          "Angular-SPA für Account-Verwaltung: Abonnements, Geräte, Abrechnung und Profil",
-          "REST-API in Zend Framework/JSON für Web-, Desktop- und Mobile-Consumer",
-          "Payment-Provider-Integrationen für eine globale Multi-Currency-Nutzerbasis",
-          "Marketing- und Tracking-Integrationen: Analytics, Attribution und Kampagnen-Tools",
-          "Produktionsbetrieb und Service-Stabilität für eine Plattform mit Millionen Nutzern"
-        ],
-        "tech": ["PHP", "Zend Framework", "Angular", "Bootstrap", "jQuery", "REST API", "JSON", "Payments", "Marketing", "Tracking"],
-        "link": "#"
-      },
-      {
         "id": "p3",
         "title": "Online Cargo Planner",
         "logo": "/projects/online-cargo-planner.png",
@@ -377,6 +340,24 @@
           "Vollständiges Projekt-Ownership: Idee, Budgetierung, Meilensteinplanung, Agentur- und Freelancer-Management"
         ],
         "tech": ["PHP", "Laminas", "Node.js", "Express", "Angular", "REST API", "JSON", "Socket.io", "Redis", "MySQL", "iOS", "Docker", "CI/CD", "Testing", "Cloud", "Social APIs"],
+        "link": "#"
+      },
+      {
+        "id": "p8",
+        "title": "CyberGhost VPN",
+        "logo": "/projects/cyberghost.png",
+        "category": "Security SaaS",
+        "description": "Full-Stack-Entwicklung der globalen CyberGhost-VPN-Web-Präsenz und Account-Plattform für Millionen Nutzer — Webseite, Account-Management-Webapp, REST-API, Payment-Integrationen und Marketing-/Tracking-Infrastruktur, gebaut auf PHP/Zend Framework und Angular.",
+        "details": "Verantwortlich für die öffentliche Webseite (PHP/Zend Framework, Bootstrap, jQuery) und die Angular-basierte Account-Management-Webapp. Entwicklung und Betrieb der REST-API (Zend Framework, JSON) für Web-, Desktop- und Mobile-Clients. Integration von Payment-Providern, Marketing-Tracking-Systemen sowie Betrieb der Live-Services in Produktion.",
+        "features": [
+          "Globale Marketing-Webseite in PHP/Zend Framework mit Bootstrap und jQuery",
+          "Angular-SPA für Account-Verwaltung: Abonnements, Geräte, Abrechnung und Profil",
+          "REST-API in Zend Framework/JSON für Web-, Desktop- und Mobile-Consumer",
+          "Payment-Provider-Integrationen für eine globale Multi-Currency-Nutzerbasis",
+          "Marketing- und Tracking-Integrationen: Analytics, Attribution und Kampagnen-Tools",
+          "Produktionsbetrieb und Service-Stabilität für eine Plattform mit Millionen Nutzern"
+        ],
+        "tech": ["PHP", "Zend Framework", "Angular", "Bootstrap", "jQuery", "REST API", "JSON", "Payments", "Marketing", "Tracking"],
         "link": "#"
       },
       {

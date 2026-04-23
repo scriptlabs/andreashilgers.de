@@ -303,43 +303,6 @@
         "link": "#"
       },
       {
-        "id": "p4",
-        "title": "HUNCHster",
-        "logo": "/projects/hunchster.png",
-        "category": "Open Innovation",
-        "description": "Open Innovation SaaS platform for enterprises — enabling collaborative idea generation with deep social integration (Facebook, LinkedIn, XING), CRM connectivity, and a native iOS app. Built from idea to launch as Lead Developer and Project Manager.",
-        "details": "Full ownership from concept to delivery: idea, planning, budgeting, milestone planning, hiring and managing external agencies, designers, and a distributed team of freelancers. Led both the technical architecture and the project management — responsible for scope, timelines, and stakeholder communication throughout. The platform was containerized and hosted on cloud infrastructure with CI/CD pipelines and a managed testing process.",
-        "features": [
-          "Collaborative ideation platform for enterprises with real-time updates via Socket.io",
-          "Deep social integration: Facebook, LinkedIn, XING, and more",
-          "CRM integrations for enterprise connectivity",
-          "Native iOS app consuming the REST/JSON API",
-          "Angular SPA frontend with PHP/Laminas + Node.js/Express backend",
-          "Cloud-hosted, containerized architecture with CI/CD and automated testing",
-          "Full project ownership: idea, budgeting, milestone planning, agency and freelancer management"
-        ],
-        "tech": ["PHP", "Laminas", "Node.js", "Express", "Angular", "REST API", "JSON", "Socket.io", "Redis", "MySQL", "iOS", "Docker", "CI/CD", "Testing", "Cloud", "Social APIs"],
-        "link": "#"
-      },
-      {
-        "id": "p8",
-        "title": "CyberGhost VPN",
-        "logo": "/projects/cyberghost.png",
-        "category": "Security SaaS",
-        "description": "Full-stack development on the global CyberGhost VPN web presence and account platform serving millions of users — website, account management webapp, REST API, payment integrations, and marketing/tracking infrastructure, all built on PHP/Zend Framework and Angular.",
-        "details": "Responsible for the public-facing website (PHP/Zend Framework, Bootstrap, jQuery) and the Angular-based account management webapp. Built and maintained the REST API (Zend Framework, JSON) consumed by web, desktop, and mobile clients. Integrated payment providers, marketing tracking systems, and operated the live services in production.",
-        "features": [
-          "Global marketing website in PHP/Zend Framework with Bootstrap and jQuery",
-          "Angular SPA for account management: subscriptions, devices, billing, and profile",
-          "REST API in Zend Framework/JSON for web, desktop, and mobile consumers",
-          "Payment provider integrations for a global multi-currency subscriber base",
-          "Marketing and tracking integrations: analytics, attribution, and campaign tooling",
-          "Production operations and service reliability for a multi-million user platform"
-        ],
-        "tech": ["PHP", "Zend Framework", "Angular", "Bootstrap", "jQuery", "REST API", "JSON", "Payments", "Marketing", "Tracking"],
-        "link": "#"
-      },
-      {
         "id": "p3",
         "title": "Online Cargo Planner",
         "logo": "/projects/online-cargo-planner.png",
@@ -377,6 +340,24 @@
           "Full project ownership: idea, budgeting, milestone planning, agency and freelancer management"
         ],
         "tech": ["PHP", "Laminas", "Node.js", "Express", "Angular", "REST API", "JSON", "Socket.io", "Redis", "MySQL", "iOS", "Docker", "CI/CD", "Testing", "Cloud", "Social APIs"],
+        "link": "#"
+      },
+      {
+        "id": "p8",
+        "title": "CyberGhost VPN",
+        "logo": "/projects/cyberghost.png",
+        "category": "Security SaaS",
+        "description": "Full-stack development on the global CyberGhost VPN web presence and account platform serving millions of users — website, account management webapp, REST API, payment integrations, and marketing/tracking infrastructure, all built on PHP/Zend Framework and Angular.",
+        "details": "Responsible for the public-facing website (PHP/Zend Framework, Bootstrap, jQuery) and the Angular-based account management webapp. Built and maintained the REST API (Zend Framework, JSON) consumed by web, desktop, and mobile clients. Integrated payment providers, marketing tracking systems, and operated the live services in production.",
+        "features": [
+          "Global marketing website in PHP/Zend Framework with Bootstrap and jQuery",
+          "Angular SPA for account management: subscriptions, devices, billing, and profile",
+          "REST API in Zend Framework/JSON for web, desktop, and mobile consumers",
+          "Payment provider integrations for a global multi-currency subscriber base",
+          "Marketing and tracking integrations: analytics, attribution, and campaign tooling",
+          "Production operations and service reliability for a multi-million user platform"
+        ],
+        "tech": ["PHP", "Zend Framework", "Angular", "Bootstrap", "jQuery", "REST API", "JSON", "Payments", "Marketing", "Tracking"],
         "link": "#"
       },
       {
@@ -483,14 +464,14 @@
         "icon": "leadership",
         "description": "Leading cross-functional teams, shaping technical strategy, and driving digital transformation.",
         "items": ["Engineering Management", "Technical Leadership", "Agile / Scrum", "OKR", "Project Management (MSM)", "Stakeholder Management", "Team Building & Mentoring", "Digital Transformation", "System Design & Architecture", "Code Reviews & QA", "Recruiting & Onboarding"]
-        }
-        ],
-        "cta": {
-        "title": "Ready for the next step?",
-        "subtitle": "I'm open to new challenges. Let's discuss how I can strengthen your team.",
-        "button": "Get in touch"
-        }
-        },
+      }
+    ],
+    "cta": {
+      "title": "Ready for the next step?",
+      "subtitle": "I'm open to new challenges. Let's discuss how I can strengthen your team.",
+      "button": "Get in touch"
+    }
+  },
   "contact": {
     "title": "Contact me",
     "subtitle": "Let's explore how I can support your team and projects with my extensive experience in technical leadership and architecture.",
