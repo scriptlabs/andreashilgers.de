@@ -20,9 +20,9 @@ export function ProjectsGrid({ dict, lang }: ProjectsGridProps) {
           <ProjectMemoryCard project={project}>
             <ProjectDetailModal project={project}>
               <HoverCard className="h-full cursor-pointer group/card">
-                <div className="card h-full flex flex-col p-8 rounded-md group border-transparent hover:border-[var(--primary)]/20 transition-all active:scale-[0.98]">
+                <div className="card h-full flex flex-col p-4 sm:p-8 rounded-md group border-transparent hover:border-[var(--primary)]/20 transition-all active:scale-[0.98]">
                   {/* Link icons row */}
-                  <div className="flex items-center justify-end gap-3 text-[var(--secondary)] mb-6">
+                  <div className="flex items-center justify-end gap-3 text-[var(--secondary)] mb-3 sm:mb-6">
                     {project.githubLink && project.githubLink !== "#" && (
                       <a
                         href={project.githubLink}
@@ -49,7 +49,7 @@ export function ProjectsGrid({ dict, lang }: ProjectsGridProps) {
 
                   <div className="flex-grow">
                     {/* Category + title (left) alongside logo (right, full height) */}
-                    <div className="flex items-stretch gap-4 mb-3">
+                    <div className="flex items-stretch gap-2 sm:gap-4 mb-2 sm:mb-3">
                       <div className="flex flex-col flex-1 min-w-0">
                         <div className="text-[10px] uppercase tracking-widest font-bold text-[var(--primary)]/70 mb-2">
                           {project.category}
@@ -69,26 +69,26 @@ export function ProjectsGrid({ dict, lang }: ProjectsGridProps) {
                         </div>
                       )}
                     </div>
-                    <p className="text-[var(--foreground)]/70 mb-6 leading-relaxed text-sm line-clamp-3">
+                    <p className="text-[var(--foreground)]/70 mb-3 sm:mb-6 leading-relaxed text-xs sm:text-sm line-clamp-2 sm:line-clamp-3">
                       {project.description}
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between mt-auto">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.slice(0, 3).map((tech: string) => (
-                        <span key={tech} className="text-xs font-mono text-[var(--secondary)]">
+                  <div className="flex items-center justify-between mt-auto gap-2">
+                    <div className="flex flex-wrap gap-1">
+                      {project.tech.slice(0, 2).map((tech: string) => (
+                        <span key={tech} className="text-[9px] sm:text-xs font-mono text-[var(--secondary)]">
                           {tech}
                         </span>
                       ))}
-                      {project.tech.length > 3 && (
-                        <span className="text-xs font-mono text-[var(--secondary)]/50">
-                          +{project.tech.length - 3}
+                      {project.tech.length > 2 && (
+                        <span className="text-[9px] sm:text-xs font-mono text-[var(--secondary)]/50">
+                          +{project.tech.length - 2}
                         </span>
                       )}
                     </div>
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-[var(--primary)]/50 group-hover:text-[var(--primary)] transition-colors flex items-center gap-1">
-                      Details <RiArrowRightLine size={10} className="transition-transform group-hover:translate-x-1" />
+                    <span className="text-[8px] sm:text-[10px] uppercase tracking-widest font-bold text-[var(--primary)]/50 group-hover:text-[var(--primary)] transition-colors flex items-center gap-0.5 sm:gap-1 whitespace-nowrap">
+                      Details <RiArrowRightLine size={8} className="sm:w-[10px] transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
                 </div>
