@@ -224,16 +224,26 @@ export interface Dictionary {
         subAgents: string;
         repository: string;
       };
+      layerDescriptions: {
+        channels: string;
+        aiRuntime: string;
+        orchestration: string;
+        subAgents: string;
+        repository: string;
+      };
       nodes: {
         whatsapp: string;
         telegram: string;
         slack: string;
         teams: string;
+        web: string;
+        cli: string;
         github: string;
         linear: string;
         nemoclaw: string;
         claude: string;
         codex: string;
+        copilot: string;
         gemini: string;
         n8n: string;
         vibe: string;
@@ -258,6 +268,17 @@ export interface Dictionary {
       role: string;
       capabilities: string[];
     }>;
+    infrastructure: {
+      title: string;
+      subtitle: string;
+      description: string;
+      items: Array<{
+        id: string;
+        title: string;
+        description: string;
+        tech: string[];
+      }>;
+    };
     capabilities: Array<{
       id: string;
       title: string;
@@ -292,6 +313,25 @@ export interface Dictionary {
         items: string[];
       };
     };
+    toolsSection: {
+      title: string;
+      subtitle: string;
+    };
+    capabilitiesSection: {
+      title: string;
+      subtitle: string;
+    };
+    personasSection: {
+      title: string;
+      subtitle: string;
+    };
+    personas: Array<{
+      id: string;
+      title: string;
+      role: string;
+      instructions: string;
+      skills: string[];
+    }>;
     cta: {
       title: string;
       subtitle: string;

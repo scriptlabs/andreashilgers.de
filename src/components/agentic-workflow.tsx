@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   RiFolderOpenLine, RiTicketLine, RiLightbulbFlashLine, RiCodeSSlashLine,
   RiTestTubeLine, RiGitPullRequestLine, RiGitMergeLine
@@ -18,126 +18,96 @@ interface AgenticWorkflowProps {
   steps: WorkflowStep[];
 }
 
-const stepIcons = {
-  trigger: RiFolderOpenLine,
-  ticket: RiTicketLine,
-  planning: RiLightbulbFlashLine,
-  coding: RiCodeSSlashLine,
-  testing: RiTestTubeLine,
-  review: RiGitPullRequestLine,
-  merge: RiGitMergeLine,
+const STEP_META: Record<string, { icon: React.ComponentType<{ size?: number; className?: string }>; color: string }> = {
+  trigger: { icon: RiFolderOpenLine, color: "text-sky-500" },
+  ticket: { icon: RiTicketLine, color: "text-violet-500" },
+  planning: { icon: RiLightbulbFlashLine, color: "text-amber-500" },
+  coding: { icon: RiCodeSSlashLine, color: "text-emerald-500" },
+  testing: { icon: RiTestTubeLine, color: "text-teal-500" },
+  review: { icon: RiGitPullRequestLine, color: "text-pink-500" },
+  merge: { icon: RiGitMergeLine, color: "text-rose-500" },
 };
+
+const FALLBACK_META = { icon: RiTicketLine, color: "text-[var(--primary)]" };
 
 export default function AgenticWorkflow({ steps }: AgenticWorkflowProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
   const isPixel = theme === "pixel";
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 0.8", "end 0.2"],
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, { stiffness: 60, damping: 18 });
-  const progressWidth = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
-
   return (
-    <div ref={containerRef} className="w-full space-y-8">
-      {/* Desktop horizontal layout */}
-      <div className="hidden lg:block">
-        <div className="relative px-6">
-          {/* Background progress line */}
-          <div className="absolute top-8 left-6 right-6 h-0.5 bg-[var(--border)] rounded-full" />
+    <div ref={containerRef} className="relative w-full space-y-4">
+      {steps.map((step, index) => {
+        const meta = STEP_META[step.id] ?? FALLBACK_META;
+        const Icon = meta.icon;
+        const pidHex = (((index + 1) * 173) % 4096).toString(16).padStart(3, "0");
+
+        return (
           <motion.div
-            style={{ width: progressWidth }}
-            className={isPixel ? "h-1 bg-[var(--primary)]" : "h-0.5 bg-[var(--primary)] rounded-full"}
-          />
+            key={step.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="relative flex items-stretch group"
+            style={{ paddingLeft: `${index * 2}rem` }}
+          >
+            {/* Connection Line - Waterfall Style */}
+            {index > 0 && (
+              <div
+                className="absolute top-[-1rem] w-[2px] h-[calc(100%+1rem)] bg-gradient-to-b from-[var(--primary)]/20 to-transparent ml-[1.25rem] -translate-x-full"
+                style={{ left: `${(index - 1) * 2 + 1.25}rem` }}
+              />
+            )}
 
-          {/* Steps */}
-          <div className="flex justify-between relative z-10 pt-0">
-            {steps.map((step, index) => {
-              const Icon = stepIcons[step.id as keyof typeof stepIcons] || RiTicketLine;
-
-              return (
-                <motion.div
-                  key={step.id}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col items-center w-full"
-                >
-                  {/* Step circle */}
-                  <div className={isPixel ? "mb-4 font-pixel text-sm font-bold" : "mb-4 font-bold text-sm"}>
-                    <div className="relative w-16 h-16 flex items-center justify-center rounded-full bg-[var(--card)] border-2 border-[var(--primary)] mx-auto">
-                      <Icon size={24} className="text-[var(--primary)]" />
-                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-bold text-[var(--secondary)]">
-                        {index + 1}
-                      </div>
-                    </div>
+            <div className="flex gap-4 md:gap-6 w-full">
+              {/* Step Icon Node */}
+              <div className="flex-shrink-0 relative">
+                <div className={`w-10 h-10 md:w-12 md:h-12 bg-black border border-[var(--border)] ${isPixel ? "" : "rounded-sm"} flex items-center justify-center ${meta.color} z-10 relative group-hover:border-[var(--primary)] transition-colors shadow-xl`}>
+                  <Icon size={20} />
+                  <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-black border border-[var(--border)] flex items-center justify-center text-[7px] font-mono text-[var(--secondary)]">
+                    {index + 1}
                   </div>
-
-                  {/* Step info */}
-                  <h3 className="font-bold text-center text-sm md:text-base">{step.title}</h3>
-                  <p className="text-xs text-[var(--secondary)] text-center max-w-[120px] mt-1 leading-tight">
-                    {step.description}
-                  </p>
-
-                  {/* Connector arrow (not on last step) */}
-                  {index < steps.length - 1 && (
-                    <motion.div
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      transition={{ duration: 0.6, delay: (index + 1) * 0.1 }}
-                      viewport={{ once: true }}
-                      className="absolute top-8 left-[calc(50%+40px)] w-[calc((100%/7)-80px)] h-0.5 bg-[var(--border)] origin-left"
-                      style={{
-                        width: isPixel ? "calc(100% / 7 - 80px)" : "calc(100% / 7 - 80px)",
-                      }}
-                    />
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile vertical layout */}
-      <div className="lg:hidden space-y-6 px-4">
-        {steps.map((step, index) => {
-          const Icon = stepIcons[step.id as keyof typeof stepIcons] || RiTicketLine;
-
-          return (
-            <motion.div
-              key={step.id}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="flex gap-4"
-            >
-              {/* Step circle */}
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-full bg-[var(--primary)]/10 border-2 border-[var(--primary)] flex items-center justify-center">
-                  <Icon size={20} className="text-[var(--primary)]" />
                 </div>
               </div>
 
-              {/* Step info */}
-              <div className="flex-grow">
-                <h3 className="font-bold text-base">{step.title}</h3>
-                <p className="text-sm text-[var(--secondary)] mt-1">{step.description}</p>
-              </div>
+              {/* Content Block - Technical Schematic Style */}
+              <div className="flex-grow bg-[var(--card)] border border-[var(--border)] p-4 md:p-6 rounded-sm relative overflow-hidden group-hover:border-[var(--primary)]/30 transition-all shadow-sm group-hover:shadow-xl">
+                {/* Decorative scanning line */}
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--primary)]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                  <h3 className="font-black text-sm md:text-base uppercase tracking-tighter text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors">
+                    {step.title}
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[8px] font-mono text-[var(--secondary)] uppercase px-1.5 py-0.5 border border-[var(--border)] rounded-sm">
+                      PID: 0x{pidHex}
+                    </span>
+                    <span className={`w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse`} />
+                  </div>
+                </div>
 
-              {/* Vertical connector (not on last step) */}
-              {index < steps.length - 1 && (
-                <div className="absolute left-6 top-16 w-0.5 h-8 bg-[var(--border)]" />
-              )}
-            </motion.div>
-          );
-        })}
-      </div>
+                <p className="text-xs md:text-sm text-[var(--secondary)] leading-relaxed mb-4 max-w-2xl">
+                  {step.description}
+                </p>
+
+                {/* Technical Meta Footer */}
+                <div className="flex items-center gap-4 pt-3 border-t border-[var(--border)]/50">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1 h-1 bg-[var(--primary)]" />
+                    <span className="text-[8px] font-mono text-[var(--secondary)] uppercase tracking-widest">In: Request_Packet</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1 h-1 bg-emerald-500" />
+                    <span className="text-[8px] font-mono text-[var(--secondary)] uppercase tracking-widest">Out: Success_Flag</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        );
+      })}
     </div>
   );
 }

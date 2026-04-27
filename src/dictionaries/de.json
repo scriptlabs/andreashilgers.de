@@ -586,16 +586,28 @@
         "subAgents": "Spezialisierte Sub-Agenten",
         "repository": "Repository & Outputs"
       },
+      "layerDescriptions": {
+        "channels": "Externe Kommunikationskanäle, über die Aufgaben empfangen und Ergebnisse geliefert werden.",
+        "aiRuntime": "KI-Modelle und Tools, die Intelligenz und Automatisierungsfähigkeiten bereitstellen.",
+        "orchestration": "Zentrale Koordinierungsebene, die Workflows und Agenten-Delegation verwaltet.",
+        "subAgents": "Spezialisierte Agenten, die spezifische Aufgaben wie Codierung, Testen und Reviewen übernehmen.",
+        "repository": "Code-Repositories und Outputs inklusive Pull Requests, Tests und Dokumentation."
+      },
       "nodes": {
         "whatsapp": "WhatsApp",
         "telegram": "Telegram",
         "slack": "Slack",
         "teams": "Teams",
+        "web": "Web",
+        "cli": "CLI",
         "github": "GitHub",
         "linear": "Linear",
+        "ollama": "Ollama",
+        "lmstudio": "LM Studio",
         "nemoclaw": "NemoClaw",
         "claude": "Claude",
         "codex": "OpenClaw",
+        "copilot": "Copilot",
         "gemini": "Gemini",
         "n8n": "N8N",
         "vibe": "Vibe",
@@ -615,14 +627,41 @@
       }
     },
     "tools": [
+      { "id": "ollama", "name": "Ollama", "role": "Local Inference Engine", "capabilities": ["Lokale LLM Inferenz", "REST API für Agenten", "Modell-Management", "GGUF Support"] },
+      { "id": "lmstudio", "name": "LM Studio", "role": "Prototyping & Server", "capabilities": ["Modell-Discovery", "Lokaler OpenAI-kompatibler Server", "Quantisierungs-Check", "GPU Acceleration"] },
       { "id": "nemoclaw", "name": "NemoClaw", "role": "Lokaler CLI Agent", "capabilities": ["Läuft lokal auf macOS", "Datei-Operationen", "Git Workflows", "Ruft Sub-Agenten auf"] },
       { "id": "openclaw", "name": "OpenClaw", "role": "Code Execution Runtime", "capabilities": ["Codex Code-Generierung", "Multi-File Diffs", "Test Execution", "CLI Orchestration"] },
       { "id": "claude", "name": "Claude", "role": "Reasoning & Planung", "capabilities": ["Architektur-Entscheidungen", "ADR Generierung", "Security Review", "PR Analyse"] },
       { "id": "codex", "name": "Codex", "role": "Code Generierung", "capabilities": ["Feature Implementierung", "Refactoring", "Test Generierung", "Bug Fixes"] },
       { "id": "gemini", "name": "Gemini", "role": "Multimodale Analyse", "capabilities": ["Design Review", "Screenshot Analyse", "Large Context Tasks", "Research Synthesis"] },
-      { "id": "n8n", "name": "N8N", "role": "Workflow Automation", "capabilities": ["Webhook Trigger", "Channel Routing", "Background Jobs", "Benachrichtigungen"] },
-      { "id": "vibe", "name": "Vibe", "role": "Vibe Coding Interface", "capabilities": ["Rapid Prototyping", "Live Preview", "Design-to-Code", "Component Generierung"] }
+      { "id": "vibe", "name": "Vibe", "role": "Agent-Orchestrierungs-Workspace", "capabilities": ["Session-Koordination", "Agent-Handoffs", "Prompt-Routing", "Task-Kontextverwaltung"] },
+      { "id": "mistral", "name": "Mistral", "role": "High-Performance LLM Runtime", "capabilities": ["Low-Latency Inferenz", "Reasoning Tasks", "Code Assistance", "Private Model Serving"] }
     ],
+    "infrastructure": {
+      "title": "Lokale Infrastruktur & ML",
+      "subtitle": "Maximale Privacy & Performance durch On-Device Intelligence",
+      "description": "Statt rein auf Cloud-APIs zu setzen, orchestriere ich hybride Systeme. Sensible Daten werden lokal verarbeitet, während rechenintensive Reasoning-Tasks über spezialisierte lokale Nodes laufen.",
+      "items": [
+        {
+          "id": "edge",
+          "title": "Edge Agent Runners",
+          "description": "Agenten laufen auf dedizierten lokalen Nodes (z. B. Mac Mini Cluster), um Latenz zu minimieren und Daten im lokalen Netzwerk zu halten.",
+          "tech": ["Node.js Runner", "Python Sub-Processes", "Local Mesh"]
+        },
+        {
+          "id": "ml",
+          "title": "MLX & Metal",
+          "description": "Optimierung von Machine Learning Modellen für Apple Silicon. Nutzung von Metal für GPU-beschleunigte Inferenz lokaler Modelle.",
+          "tech": ["MLX Framework", "Metal API", "Unified Memory"]
+        },
+        {
+          "id": "quantization",
+          "title": "Modell-Quantisierung",
+          "description": "Einsatz von GGUF und EXL2 Formaten, um große LLMs effizient auf lokaler Hardware mit minimalem Qualitätsverlust zu betreiben.",
+          "tech": ["GGUF", "EXL2", "Bit-Compression"]
+        }
+      ]
+    },
     "capabilities": [
       { "id": "coding", "title": "Code Generierung", "description": "Agenten implementieren Features, refaktorisieren Code und beheben Bugs basierend auf Linear Tickets.", "outputs": ["Features", "Fixes", "Refactors"] },
       { "id": "testing", "title": "Testen", "description": "Automatisierte Test-Generierung und -Ausführung für Unit, Integration, E2E und Smoke Tests.", "outputs": ["Unit Tests", "E2E Tests", "Smoke Tests"] },
@@ -631,7 +670,8 @@
       { "id": "planning", "title": "Planung & Blueprints", "description": "Orchestrator-Agenten erstellen strukturierte Pläne, Blueprints und Architektur-Vorschläge.", "outputs": ["Plans", "Blueprints", "RFCs"] },
       { "id": "analysis", "title": "Analyse & Reports", "description": "Tiefgreifende Analyse von Code-Qualität, Performance-Bottlenecks und Abhängigkeitsgraphen.", "outputs": ["Reports", "Analyses", "Metrics"] },
       { "id": "linting", "title": "Linting & Qualität", "description": "Automatisierte Linting, Formatierung und Code-Style Enforcement bei jedem Commit und PR.", "outputs": ["Lint Report", "Format Diff"] },
-      { "id": "brainstorming", "title": "Brainstorming", "description": "Agenten schlagen kreative Lösungen, alternative Ansätze und Technology Comparisons vor.", "outputs": ["Ideas", "Comparisons", "Proposals"] }
+      { "id": "brainstorming", "title": "Brainstorming", "description": "Agenten schlagen kreative Lösungen, alternative Ansätze und Technology Comparisons vor.", "outputs": ["Ideas", "Comparisons", "Proposals"] },
+      { "id": "agentManagement", "title": "Agenten-Verwaltung", "description": "Master-Agenten koordinieren, delegieren Aufgaben und verwalten Sub-Agenten über die gesamte Entwicklungs-Pipeline.", "outputs": ["Sub-Agenten", "Aufgabenverteilung", "Koordinierte Arbeit"] }
     ],
     "workflow": {
       "sectionTitle": "Workflow Pipeline",
@@ -665,6 +705,76 @@
         "items": ["Slack Benachrichtigungen", "Teams Webhooks", "GitHub PR Kommentare", "Email Reports"]
       }
     },
+    "toolsSection": {
+      "title": "Tools & Plattformen",
+      "subtitle": "Die KI-Engines und Runtimes die unser System antreiben."
+    },
+    "capabilitiesSection": {
+      "title": "Agenten-Fähigkeiten",
+      "subtitle": "Was unsere spezialisierten Agenten können – inklusive der Verwaltung anderer Agenten."
+    },
+    "personasSection": {
+      "title": "Spezialisierte Personas",
+      "subtitle": "Domänenspezifische Agenten-Konfigurationen mit maßgeschneiderten Anweisungen und Expertise."
+    },
+    "personas": [
+      {
+        "id": "designer",
+        "title": "UI/UX Designer",
+        "role": "Design & Ästhetik",
+        "instructions": "Priorisiere Benutzererlebnis, Barrierefreiheit und visuelle Konsistenz. Befolge Design-Systeme, nutze semantische Farb-Tokens und zahle auf responsive Layouts achten. WCAG-Konformität und minimalistische Premium-Ästhetik sind essenziell.",
+        "skills": ["Figma/Adobe XD", "Design-Systeme", "Barrierefreiheit (WCAG)", "Responsive Design", "Typografie", "Farbenlehre"]
+      },
+      {
+        "id": "frontend",
+        "title": "Frontend Entwickler",
+        "role": "Client-seitige Implementierung",
+        "instructions": "Baue performante, zugängliche Benutzeroberflächen. Nutze Next.js Best Practices, bevorzuge Server Components und optimiere für Core Web Vitals. Semantisches HTML, korrekte Hydration-Grenzen und TypeScript-Exzellenz sind Pflicht.",
+        "skills": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Barrierefreiheit", "Performance-Optimierung"]
+      },
+      {
+        "id": "backend",
+        "title": "Backend Entwickler",
+        "role": "Server & API-Entwicklung",
+        "instructions": "Architekturiere robuste, skalierbare serverseitige Lösungen. Implementiere sichere, effiziente APIs. Nutze Server Actions für Mutationen. Achte auf Fehlerbehandlung, Validierung und Rate-Limiting. Trenne Concern klar.",
+        "skills": ["Node.js", "Server Actions", "API-Design", "Sicherheit", "Datenbankmodellierung", "Caching-Strategien"]
+      },
+      {
+        "id": "mobile",
+        "title": "Mobile Entwickler",
+        "role": "Plattformübergreifend Mobile",
+        "instructions": "Entwickle mobile-first Erlebnisse mit Touch-Optimierung. Berücksichtige Offline-Fähigkeiten und gerätespezifische Einschränkungen. Nutze plattformagnostische Muster und sorge für flüssige Animationen.",
+        "skills": ["React Native", "Responsive Design", "Touch-Optimierung", "Offline-First", "Native Features"]
+      },
+      {
+        "id": "devops",
+        "title": "DevOps Engineer",
+        "role": "Infrastruktur & CI/CD",
+        "instructions": "Automatisiere Deployment-Pipelines, stelle Zero-Downtime Deployments sicher und überwache Produktionssysteme. Konfiguriere CI/CD, verwalte Cloud-Ressourcen und implementiere Observability-Tools. Priorisiere Sicherheit und Skalierbarkeit.",
+        "skills": ["Docker/Kubernetes", "CI/CD Pipelines", "Terraform", "Monitoring", "Cloud (Vercel/AWS)", "Security Hardening"]
+      },
+      {
+        "id": "qa",
+        "title": "QA Engineer",
+        "role": "Qualitätssicherung",
+        "instructions": "Teste gründlich auf allen Ebenen. Schreibe umfassende Unit-, Integrations- und E2E-Tests. Validiere Barrierefreiheit, Performance und Sicherheit. Automatisiere Test-Workflows und liefere detaillierte Bug-Reports mit Reproduktionsschritten.",
+        "skills": ["Test-Frameworks", "E2E-Testing", "Performance-Testing", "Sicherheits-Scans", "Barrierefreiheits-Audits", "Test-Automatisierung"]
+      },
+      {
+        "id": "security",
+        "title": "Sicherheitsspezialist",
+        "role": "Sicherheit & Compliance",
+        "instructions": "Prüfe Code auf Sicherheitslücken, Fehlkonfigurationen und Abhängigkeitsrisiken. Implementiere Sicherheitsheader, bereinige Eingaben und erzwinge Minimalrechte. Validiere gegen OWASP Top 10 und sorge für Compliance mit Datenschutzbestimmungen.",
+        "skills": ["OWASP Top 10", "Penetrationstests", "Statische Analyse", "Abhängigkeits-Scans", "DSGVO-Compliance", "Zero Trust"]
+      },
+      {
+        "id": "techWriter",
+        "title": "Technischer Autor",
+        "role": "Dokumentation & Wissensmanagement",
+        "instructions": "Erstelle klare, umfassende Dokumentation. Pflege ADRs, API-Referenzen und Tutorials. Stelle sicher, dass Dokumentation aktuell, durchsuchbar und den Best Practices für technisches Schreiben folgt.",
+        "skills": ["Markdown", "ADR-Autorenschaft", "API-Dokumentation", "Tutorials", "Informationsarchitektur", "SEO für Docs"]
+      }
+    ],
     "cta": {
       "title": "Möchtest du so arbeiten?",
       "subtitle": "Lass uns diskutieren, wie agentische KI-Entwicklung dein Team beschleunigen kann.",
