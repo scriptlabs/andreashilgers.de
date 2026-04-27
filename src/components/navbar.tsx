@@ -40,6 +40,7 @@ export function Navbar({ dict, lang }: NavbarProps) {
     { label: dict.nav.experience, href: `/${lang}/experience` },
     { label: dict.nav.projects, href: `/${lang}/projects` },
     { label: dict.nav.skills, href: `/${lang}/skills` },
+    { label: dict.nav.agenticDevelopment, href: `/${lang}/agentic-development` },
     { label: dict.nav.contact, href: `/${lang}/contact` },
   ];
 

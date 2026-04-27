@@ -13,7 +13,8 @@
       "skills": "Fähigkeiten & Tech-Stack",
       "contact": "Kontakt aufnehmen",
       "vault": "Sicherer Dokumenten-Tresor",
-      "imprint": "Impressum"
+      "imprint": "Impressum",
+      "agenticDevelopment": "Agentische Entwicklung"
     }
   },
   "nav": {
@@ -26,7 +27,8 @@
     "contact": "Kontakt",
     "vault": "Dokumente",
     "hire_me": "Anfragen",
-    "imprint": "Impressum"
+    "imprint": "Impressum",
+    "agenticDevelopment": "Agentische Entwicklung"
   },
   "imprint": {
     "title": "Impressum",
@@ -558,7 +560,6 @@
     "preview": "Vorschau",
     "download": "Herunterladen",
     "download_pdf": "PDF",
-    "download_word": "Word (DOCX)",
     "confidential_notice": "Diese Dokumente sind vertraulich. Bitte behandeln Sie diese mit Diskretion.",
     "contact_questions": "Fragen zu den Dokumenten?"
   },
@@ -568,6 +569,106 @@
       "description": "Die angeforderte Ressource konnte nicht gefunden werden.",
       "back_home": "Zurück zur Startseite",
       "contact": "Kontakt"
+    }
+  },
+  "agenticDevelopment": {
+    "badge": "Agentische KI-Entwicklung",
+    "title": "Agentische Entwicklung",
+    "subtitle": "Wie ich Software mit Multi-Agent KI-Systemen entwickle",
+    "description": "Eine vollautomatisierte Entwicklungs-Pipeline, in der KI-Agenten planen, programmieren, testen, überprüfen und bereitstellen — koordiniert von Orchestrators über Messaging-Kanäle und Code-Repositories.",
+    "topology": {
+      "sectionTitle": "System-Architektur",
+      "sectionSubtitle": "Gesamtansicht der agentischen Pipeline von Input-Kanälen bis Code-Output",
+      "layerLabels": {
+        "channels": "Input / Output Kanäle",
+        "aiRuntime": "KI Runtime & Tools",
+        "orchestration": "Orchestration Layer",
+        "subAgents": "Spezialisierte Sub-Agenten",
+        "repository": "Repository & Outputs"
+      },
+      "nodes": {
+        "whatsapp": "WhatsApp",
+        "telegram": "Telegram",
+        "slack": "Slack",
+        "teams": "Teams",
+        "github": "GitHub",
+        "linear": "Linear",
+        "nemoclaw": "NemoClaw",
+        "claude": "Claude",
+        "codex": "OpenClaw",
+        "gemini": "Gemini",
+        "n8n": "N8N",
+        "vibe": "Vibe",
+        "masterAgent": "Master Agent",
+        "taskDispatcher": "Task Dispatcher",
+        "prManager": "PR Manager",
+        "coder": "Coder",
+        "reviewer": "Reviewer",
+        "tester": "Tester",
+        "auditor": "Auditor",
+        "documenter": "Documenter",
+        "repository": "Repository",
+        "pullRequests": "Pull Requests",
+        "tests": "Test Suite",
+        "docs": "Dokumentation",
+        "tickets": "Tickets"
+      }
+    },
+    "tools": [
+      { "id": "nemoclaw", "name": "NemoClaw", "role": "Lokaler CLI Agent", "capabilities": ["Läuft lokal auf macOS", "Datei-Operationen", "Git Workflows", "Ruft Sub-Agenten auf"] },
+      { "id": "openclaw", "name": "OpenClaw", "role": "Code Execution Runtime", "capabilities": ["Codex Code-Generierung", "Multi-File Diffs", "Test Execution", "CLI Orchestration"] },
+      { "id": "claude", "name": "Claude", "role": "Reasoning & Planung", "capabilities": ["Architektur-Entscheidungen", "ADR Generierung", "Security Review", "PR Analyse"] },
+      { "id": "codex", "name": "Codex", "role": "Code Generierung", "capabilities": ["Feature Implementierung", "Refactoring", "Test Generierung", "Bug Fixes"] },
+      { "id": "gemini", "name": "Gemini", "role": "Multimodale Analyse", "capabilities": ["Design Review", "Screenshot Analyse", "Large Context Tasks", "Research Synthesis"] },
+      { "id": "n8n", "name": "N8N", "role": "Workflow Automation", "capabilities": ["Webhook Trigger", "Channel Routing", "Background Jobs", "Benachrichtigungen"] },
+      { "id": "vibe", "name": "Vibe", "role": "Vibe Coding Interface", "capabilities": ["Rapid Prototyping", "Live Preview", "Design-to-Code", "Component Generierung"] }
+    ],
+    "capabilities": [
+      { "id": "coding", "title": "Code Generierung", "description": "Agenten implementieren Features, refaktorisieren Code und beheben Bugs basierend auf Linear Tickets.", "outputs": ["Features", "Fixes", "Refactors"] },
+      { "id": "testing", "title": "Testen", "description": "Automatisierte Test-Generierung und -Ausführung für Unit, Integration, E2E und Smoke Tests.", "outputs": ["Unit Tests", "E2E Tests", "Smoke Tests"] },
+      { "id": "auditing", "title": "Security Auditing", "description": "Security-Agenten scannen auf Sicherheitslücken, Fehlkonfigurationen und Abhängigkeits-Risiken.", "outputs": ["Security Report", "CVE List", "Audit"] },
+      { "id": "documentation", "title": "Dokumentation", "description": "Agenten generieren und aktualisieren automatisch technische Docs, ADRs, API-Referenzen und READMEs.", "outputs": ["ADRs", "READMEs", "API Docs"] },
+      { "id": "planning", "title": "Planung & Blueprints", "description": "Orchestrator-Agenten erstellen strukturierte Pläne, Blueprints und Architektur-Vorschläge.", "outputs": ["Plans", "Blueprints", "RFCs"] },
+      { "id": "analysis", "title": "Analyse & Reports", "description": "Tiefgreifende Analyse von Code-Qualität, Performance-Bottlenecks und Abhängigkeitsgraphen.", "outputs": ["Reports", "Analyses", "Metrics"] },
+      { "id": "linting", "title": "Linting & Qualität", "description": "Automatisierte Linting, Formatierung und Code-Style Enforcement bei jedem Commit und PR.", "outputs": ["Lint Report", "Format Diff"] },
+      { "id": "brainstorming", "title": "Brainstorming", "description": "Agenten schlagen kreative Lösungen, alternative Ansätze und Technology Comparisons vor.", "outputs": ["Ideas", "Comparisons", "Proposals"] }
+    ],
+    "workflow": {
+      "sectionTitle": "Workflow Pipeline",
+      "sectionSubtitle": "Von Trigger bis Merge — End-to-End Agenten-Orchestrierung",
+      "steps": [
+        { "id": "trigger", "title": "Trigger", "description": "Developer sendet eine Nachricht via WhatsApp, Slack oder Telegram um einen Task zu initiieren." },
+        { "id": "ticket", "title": "Ticket-Zuweisung", "description": "Der Orchestrator erstellt ein Linear Ticket und weist es dem passenden Agenten zu." },
+        { "id": "planning", "title": "Agent Planung", "description": "Der zugewiesene Agent erstellt einen Plan, ADR oder Blueprint bevor Code geschrieben wird." },
+        { "id": "coding", "title": "Code Generierung", "description": "Der Coder Sub-Agent implementiert das Feature in einem dedizierten Branch." },
+        { "id": "testing", "title": "Testing", "description": "Tester Agent führt Unit Tests, E2E Tests und Smoke Tests gegen den Branch aus." },
+        { "id": "review", "title": "PR Review", "description": "Reviewer und Auditor Agenten analysieren den PR, schlagen Verbesserungen vor und markieren Issues." },
+        { "id": "merge", "title": "Merge & Lieferung", "description": "PR wird nach Freigabe gemerged. Outputs (Docs, Reports, Tickets) werden an Kanäle geliefert." }
+      ]
+    },
+    "channels": {
+      "sectionTitle": "Kanäle & Integrationen",
+      "sectionSubtitle": "Wie Agenten Informationen über Plattformen austauschen",
+      "input": {
+        "title": "Input Kanäle",
+        "direction": "Eingehend",
+        "items": ["WhatsApp", "Telegram", "Slack", "Microsoft Teams"]
+      },
+      "bidirectional": {
+        "title": "Code Plattformen",
+        "direction": "Bidirektional",
+        "items": ["GitHub (PRs, Commits, Reviews)", "Linear (Tickets, Status Updates)"]
+      },
+      "output": {
+        "title": "Output & Benachrichtigungen",
+        "direction": "Ausgehend",
+        "items": ["Slack Benachrichtigungen", "Teams Webhooks", "GitHub PR Kommentare", "Email Reports"]
+      }
+    },
+    "cta": {
+      "title": "Möchtest du so arbeiten?",
+      "subtitle": "Lass uns diskutieren, wie agentische KI-Entwicklung dein Team beschleunigen kann.",
+      "button": "Kontakt aufnehmen"
     }
   }
 }

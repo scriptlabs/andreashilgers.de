@@ -129,7 +129,6 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
     degree: string;
     type: string;
     file: string;
-    wordFile?: string;
     size: string;
   }> = [
     { 
@@ -314,27 +313,14 @@ export default function VaultClient({ dict, lang }: VaultClientProps) {
                     <span>{dict.vault.preview}</span>
                   </button>
                   
-                  <div className="flex items-center gap-2 w-full sm:w-auto">
-                    <a 
-                      href={doc.file} 
-                      download
-                      className="flex-1 sm:flex-none px-4 py-2 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-xs font-bold border border-[var(--border)]"
-                    >
-                      <RiDownloadLine size={16} />
-                      <span>{dict.vault.download_pdf}</span>
-                    </a>
-
-                    {doc.wordFile && (
-                      <a 
-                        href={doc.wordFile} 
-                        download
-                        className="flex-1 sm:flex-none px-4 py-2 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-xs font-bold border border-[var(--border)]"
-                      >
-                        <RiDownloadLine size={16} />
-                        <span>{dict.vault.download_word}</span>
-                      </a>
-                    )}
-                  </div>
+                  <a
+                    href={doc.file}
+                    download
+                    className="px-4 py-2 rounded-md bg-[var(--muted)] text-[var(--secondary)] hover:bg-[var(--primary)] hover:text-white transition-all flex items-center justify-center gap-2 text-xs font-bold border border-[var(--border)]"
+                  >
+                    <RiDownloadLine size={16} />
+                    <span>{dict.vault.download_pdf}</span>
+                  </a>
                 </div>
               </div>
             </div>

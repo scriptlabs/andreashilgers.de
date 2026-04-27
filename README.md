@@ -25,7 +25,7 @@ This portfolio highlights professional experience, technical skills, and selecte
 * **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) – Utility-first styling with CSS-native variables
 * **UI Primitives:** [Radix UI](https://www.radix-ui.com/) – Accessible and composable component foundations
 * **Icons:** [Lucide React](https://lucide.dev/) – Consistent and customizable iconography
-* **Theming:** [Next Themes](https://github.com/pacocoursey/next-themes) – Light, Dark, and Forest modes
+* **Theming:** [Next Themes](https://github.com/pacocoursey/next-themes) – Light, Dark, Forest, and Pixel (retro 8-bit easter egg) modes
 * **Internationalization:** Custom high-performance i18n solution optimized for SEO
 * **Deployment:** Optimized for seamless CI/CD with Vercel
 
@@ -34,10 +34,10 @@ This portfolio highlights professional experience, technical skills, and selecte
 ## ✨ Key Features
 
 * **🌍 Internationalization (i18n):** Seamless bilingual support (English and German) with static generation for optimal SEO and performance.
-* **🔐 Enhanced Secure Vault:** Password-protected access to sensitive documents, now featuring direct contact information and secure session management.
-* **📄 Automated CV Generation:** Integrated pipeline for generating professional Word (DOCX) resumes based on structured portfolio data.
+* **🔐 Enhanced Secure Vault:** Password-protected access to sensitive documents, featuring direct contact information and secure session management.
 * **📱 Fully Responsive Design:** Optimized for all device sizes with a mobile-first approach and device-specific optimizations (e.g., adaptive PDF previews).
 * **✨ Premium Animations:** High-end user experience with staggered entry sequences, shimmer effects, and interactive micro-interactions powered by Framer Motion.
+* **🎮 Pixel Theme Easter Egg:** A retro 8-bit gaming-inspired theme with cyan neon colors, VT323 pixel font, sound effects, and interactive game elements (XP tracker, memory cards, snake game).
 * **♿ Accessibility:** Built following WCAG standards using Radix UI primitives.
 * **⚡ Performance Optimization:** Leveraging Server Components, static rendering, and efficient asset delivery.
 

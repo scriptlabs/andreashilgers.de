@@ -14,6 +14,7 @@ export interface Dictionary {
       contact: string;
       vault: string;
       imprint: string;
+      agenticDevelopment: string;
     };
   };
   nav: {
@@ -27,6 +28,7 @@ export interface Dictionary {
     vault: string;
     hire_me: string;
     imprint: string;
+    agenticDevelopment: string;
   };
   imprint: {
     title: string;
@@ -196,7 +198,6 @@ export interface Dictionary {
     preview: string;
     download: string;
     download_pdf: string;
-    download_word: string;
     confidential_notice: string;
     contact_questions: string;
   };
@@ -206,6 +207,95 @@ export interface Dictionary {
       description: string;
       back_home: string;
       contact: string;
+    };
+  };
+  agenticDevelopment: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    topology: {
+      sectionTitle: string;
+      sectionSubtitle: string;
+      layerLabels: {
+        channels: string;
+        aiRuntime: string;
+        orchestration: string;
+        subAgents: string;
+        repository: string;
+      };
+      nodes: {
+        whatsapp: string;
+        telegram: string;
+        slack: string;
+        teams: string;
+        github: string;
+        linear: string;
+        nemoclaw: string;
+        claude: string;
+        codex: string;
+        gemini: string;
+        n8n: string;
+        vibe: string;
+        masterAgent: string;
+        taskDispatcher: string;
+        prManager: string;
+        coder: string;
+        reviewer: string;
+        tester: string;
+        auditor: string;
+        documenter: string;
+        repository: string;
+        pullRequests: string;
+        tests: string;
+        docs: string;
+        tickets: string;
+      };
+    };
+    tools: Array<{
+      id: string;
+      name: string;
+      role: string;
+      capabilities: string[];
+    }>;
+    capabilities: Array<{
+      id: string;
+      title: string;
+      description: string;
+      outputs: string[];
+    }>;
+    workflow: {
+      sectionTitle: string;
+      sectionSubtitle: string;
+      steps: Array<{
+        id: string;
+        title: string;
+        description: string;
+      }>;
+    };
+    channels: {
+      sectionTitle: string;
+      sectionSubtitle: string;
+      input: {
+        title: string;
+        direction: string;
+        items: string[];
+      };
+      bidirectional: {
+        title: string;
+        direction: string;
+        items: string[];
+      };
+      output: {
+        title: string;
+        direction: string;
+        items: string[];
+      };
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      button: string;
     };
   };
 }

@@ -98,6 +98,12 @@ The portfolio should communicate **professionalism, clarity, and technical excel
 - **Animations:** Subtle and performant; prefer `cubic-bezier` easing for smooth transitions.
 - **Spacing & Layout:** Follow a consistent spacing system to maintain visual harmony.
 - **Forest Theme:** A signature feature—ensure it remains **high-contrast**, accessible, and visually consistent across all components.
+- **Pixel Theme:** A retro 8-bit gaming-inspired easter egg theme featuring:
+  - Electric cyan (`#00f0ff`), retro orange (`#ff8a00`), and neon yellow (`#eaff5a`) colors
+  - VT323 pixel font for authentic 8-bit aesthetic
+  - Sound effects (success/failure audio in vault, theme switcher)
+  - Interactive gaming elements: XP tracker (skills page), memory card components (projects), snake game (home)
+  - Keep it fun and immersive without compromising usability
 - **Dark/Light Modes:** Maintain visual parity and readability across all themes.
 
 ---
